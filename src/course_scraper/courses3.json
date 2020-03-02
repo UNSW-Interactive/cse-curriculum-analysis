@@ -1,0 +1,446 @@
+[
+    {
+        "offering_time": "T0",
+        "code": "COMP2521",
+        "name": "Data Structures and Algorithms",
+        "outline": ""
+    },
+    {
+        "offering_time": "T0",
+        "code": "COMP3331",
+        "name": "Computer Networks&Applications (U1B)",
+        "outline": "This course is an introductory course on computer networks, aimed at students with a background in computer science / electrical engineering. We will focus on common paradigms and protocols used in present data communication. Through lectures, in-class activities, labs and assignments, you will learn the theory and application of(1) medium access control, congestion control, flow control, and reliable transmission,(2) addressing and naming,(3) routing and switching,(4) widely used protocols such as Ethernet, IP, TCP, UDP, HTTP, etc.(5) special purpose networks such as content delivery networks and wireless networks.This is a combined undergraduate and postgraduate course."
+    },
+    {
+        "offering_time": "T0",
+        "code": "COMP3411",
+        "name": "Artificial Intelligence (U1B)",
+        "outline": ""
+    },
+    {
+        "offering_time": "T0",
+        "code": "COMP9024",
+        "name": "Data Structures & Algorithms",
+        "outline": "Data structures are about how data is stored inside a computer for effective and efficient use. An algorithm is a step-by-step process for solving a problem within a finite amount of space and time. Data structures and algorithms are not only important in software design, but also in hardware design. Being proficient in data structures and algorithms are essential for good software developers, hardware developers, and system architects.The actual content is taken from a list of subjects that constitute the basis of the tool box of every serious practitioner of computing: data types and data structures, abstract data types, dynamic data structures, analysis of algorithms and a variety of fundamental algorithms for graphs, trees and text processing."
+    },
+    {
+        "offering_time": "T1",
+        "code": "COMP1511",
+        "name": "Programming Fundamentals",
+        "outline": ""
+    },
+    {
+        "offering_time": "T1",
+        "code": "COMP1531",
+        "name": "Software Eng Fundamentals",
+        "outline": "This course provides an introduction to software engineering principles: software life-cycle concepts, software development methodologies, conceptual modeling and how these activities relate to software development. The students are exposed to agile software practices, team collaboration and effective communication through implementing a group project based on agile software methodologies that requires them to analyse, design, build and deploy a web-based application. This course is typically taken in the semester after completing COMP 1511, but could be delayed and taken later.  It provides essential background for the teamwork and project management required in many later courses.The goal of this course is to expose the students to:basic elements of software engineering - derived from the life-cycle of a software system, including requirements elicitation, analysis and specification; design; construction; verification and validation; deployment;software engineering methodologies, processes, tools and techniquesagile software, collaboration and communication practicesweb-based system architecture and development practices on web platforms"
+    },
+    {
+        "offering_time": "T1",
+        "code": "COMP1911",
+        "name": "Computing 1A",
+        "outline": ""
+    },
+    {
+        "offering_time": "T1",
+        "code": "COMP2111",
+        "name": "System Modelling and Design",
+        "outline": "The course builds on the MATH1081 Discrete Mathematics course, examining the role of Mathematics in Computer Science.  The main focus will be on introducing students to formal modelling and specification and how they are used in Software Development."
+    },
+    {
+        "offering_time": "T1",
+        "code": "COMP2121",
+        "name": "Microprocessors & Interfacing",
+        "outline": "The aims of this course are to introduce students to the basic concepts and major components of microprocessors and micro controllers and to provide students with knowledge and skills for solving problems with microprocessors and micro-controllers."
+    },
+    {
+        "offering_time": "T1",
+        "code": "COMP2521",
+        "name": "Data Structures and Algorithms",
+        "outline": ""
+    },
+    {
+        "offering_time": "T1",
+        "code": "COMP3131",
+        "name": "Programming Languages & Compil",
+        "outline": ""
+    },
+    {
+        "offering_time": "T1",
+        "code": "COMP3211",
+        "name": "Computer Architecture",
+        "outline": ""
+    },
+    {
+        "offering_time": "T1",
+        "code": "COMP3311",
+        "name": "Database Systems",
+        "outline": ""
+    },
+    {
+        "offering_time": "T1",
+        "code": "COMP3411",
+        "name": "Artificial Intelligence",
+        "outline": "Give a brief summary for why this course is relevant, where it fits in the \n  degree(s), and its aims ..."
+    },
+    {
+        "offering_time": "T1",
+        "code": "COMP4601",
+        "name": "Design Project B",
+        "outline": "COMP4601 is a team-based project development course involving the design and implementation of embedded and/or high performance and/or low power systems using FPGAs.Teams develop a solution to one of a number of suggested project problems. Project teams are expected to investigate possible approaches, develop their proposal, implement their design, present their solution, and to report on their investigation and implementation.The course involves lectures, seminars, lab exercises and project work. Lectures will provide some context for the problems being studied and some background on solution approaches. Students will prepare and assess seminars on related research publications. Project teams will present the results of their investigations and developments.Return to ToC"
+    },
+    {
+        "offering_time": "T1",
+        "code": "COMP6324",
+        "name": "IoT Services Engineering",
+        "outline": ""
+    },
+    {
+        "offering_time": "T1",
+        "code": "COMP6443",
+        "name": "Web Application Security",
+        "outline": ""
+    },
+    {
+        "offering_time": "T1",
+        "code": "COMP6452",
+        "name": "Blockchain App Architecture",
+        "outline": "A new course in a popular area, which complements the other new course in this space (COMP6451 Cryptocurrency and Distributed Ledger Technologies). It will be taught initially by the blockchain group from Data61 (Ingo Weber, Xiwei Xu, Mark Staples), who have established a strong reputation for their work in this area.This course addresses the knowledge that is needed in order to build applications based on blockchain technology, by offering an architectural view of software systems that make beneficial use of it. It provides guidance on assessing the suitability of blockchain, on the roles blockchain can play in an architecture, on designing blockchain applications, and on assessing different architecture designs and tradeoffs. It also serves as a reference on blockchain design patterns and design analysis, and refers to practical examples of blockchain-based applications.The course covers the following:a general introduction to the topic and to existing blockchain platforms including Bitcoin, Ethereum, and Hyperledger Fabric, and offers examples of blockchain-based applications;the functional aspects of software architecture are covered, describing the main roles blockchain can play in an architecture, as well as its potential suitability and design process;non-functional aspects of blockchain applications, which are often cross-cutting concerns including cost estimation, performance, security;Real-world use cases will be covered, offering additional insights from a practical perspective."
+    },
+    {
+        "offering_time": "T1",
+        "code": "COMP9020",
+        "name": "Foundations of Comp. Science",
+        "outline": "The official scope is: mathematical methods for designing correct and efficient programs; mathematics for algorithm analysis; logic for proving and verification.The actual content is taken from a list of subjects that constitute the basis of the tool box of every serious practitioner of computing: set, function and relation theory; propositional logic and boolean algebras; graph theory and trees for algorithmic applications; induction, recursion and recurrence relations; order of growth of functions; structured counting (combinatorics); discrete probability."
+    },
+    {
+        "offering_time": "T1",
+        "code": "COMP9024",
+        "name": "Data Structures & Algorithms",
+        "outline": "Data structures are about how data is stored inside a computer for effective and efficient use. An algorithm is a step-by-step process for solving a problem within a finite amount of space and time. Data structures and algorithms are not only important in software design, but also in hardware design. Being proficient in data structures and algorithms are essential for good software developers, hardware developers, and system architects.The actual content is taken from a list of subjects that constitute the basis of the tool box of every serious practitioner of computing: data types and data structures, abstract data types, dynamic data structures, analysis of algorithms and a variety of fundamental algorithms for graphs, trees and text processing."
+    },
+    {
+        "offering_time": "T1",
+        "code": "COMP9311",
+        "name": "Database Systems",
+        "outline": ""
+    },
+    {
+        "offering_time": "T1",
+        "code": "COMP9321",
+        "name": "Data Services Engineering",
+        "outline": ""
+    },
+    {
+        "offering_time": "T1",
+        "code": "COMP9322",
+        "name": "Software Service Design & Eng",
+        "outline": ""
+    },
+    {
+        "offering_time": "T1",
+        "code": "COMP9334",
+        "name": "Systems Capacity Planning",
+        "outline": "We live in a world that events do not happen instantly. It takes a certain amount of time to download a video from a server to your own mobile device. It takes a certain amount of time for a computer to finish the execution of an algorithm. The time to completion (or response time in performance analysis terminology) is a performance metric that computer scientists and computer engineers should be concerned about because no one wants to wait unnecessarily. If you can understand the factors that determine the response time, then you can influence those factors so that the response time is acceptable. This course will take a mathematical modelling and analytical approach to understand response time in computer systems and networks. The primary goal is to explore how mathematical modelling and mathematical methods can be used to model, analyse and design computer systems and networks so that they have good performance. There are three major topics that will be covered by this course:Queuing analysis (Note: Queues are important because they give rise to waiting time.)Discrete event simulationInteger programming for network design"
+    },
+    {
+        "offering_time": "T1",
+        "code": "COMP9414",
+        "name": "Artificial Intelligence",
+        "outline": ""
+    },
+    {
+        "offering_time": "T1",
+        "code": "COMP9900",
+        "name": "Info Tech Project",
+        "outline": "A capstone software project. Students work in teams to define, implement and evaluate a real-world software system. Most of the work in this course is team-based project work, although there are some introductory lectures on software project management and teamwork strategies. Project teams meet weekly with project mentors to report on the progress of the project. Assessment is based on a project proposal, a final project demonstration and report, and on the quality of the software system itself. Students are also required to reflect on their work and to provide peer assessment of their team-mates' contributions to the project."
+    },
+    {
+        "offering_time": "T2",
+        "code": "COMP1511",
+        "name": "Programming Fundamentals",
+        "outline": ""
+    },
+    {
+        "offering_time": "T2",
+        "code": "COMP1521",
+        "name": "Computer Systems Fundamentals",
+        "outline": ""
+    },
+    {
+        "offering_time": "T2",
+        "code": "COMP2121",
+        "name": "Microprocessors & Interfacing",
+        "outline": "The aims of this course are to introduce students to the basic concepts and major components of microprocessors and micro controllers and to provide students with knowledge and skills for solving problems with microprocessors and micro-controllers."
+    },
+    {
+        "offering_time": "T2",
+        "code": "COMP2511",
+        "name": "O-O Design & Programming",
+        "outline": "COMP 2511 covers the theory and practice of object-oriented design and programming with an emphasis on teaching students how to apply software design principles and design patterns to the building of flexible, reusable and maintainable systems. The course also introduces user-interface design and programming and includes the implementation of a large project done in pairs using agile software practices and enables students to have hands-on experience in applying the principles taught, implementing and incorporating the use of good design principles and design patterns in software programs"
+    },
+    {
+        "offering_time": "T2",
+        "code": "COMP2521",
+        "name": "Data Structures and Algorithms",
+        "outline": ""
+    },
+    {
+        "offering_time": "T2",
+        "code": "COMP3151",
+        "name": "Foundations of Concurrency",
+        "outline": "In this course you will learn about the foundational concepts of concurrent programs (including multi-threaded, parallel, and distributed programs) and the crucial abstractions used to implement or understand behaviour of concurrent programs. Classical problems arising in concurrent programs will be examined and solutions to these problems will be analysed. Practical work will include proofs of program properties, plus some programming in a concurrent programming language (Java or a suitable alternative) with simultaneous model checking."
+    },
+    {
+        "offering_time": "T2",
+        "code": "COMP3331",
+        "name": "Computer Networks&Applications",
+        "outline": "This course is an introductory course on computer networks, aimed at students with a background in computer science / electrical engineering. We will focus on common paradigms and protocols used in present data communication. Through lectures, in-class activities, labs and assignments, you will learn the theory and application of(1) medium access control, congestion control, flow control, and reliable transmission,(2) addressing and naming,(3) routing and switching,(4) widely used protocols such as Ethernet, IP, TCP, UDP, HTTP, etc.(5) security threats and common defensive techniques, and(6) special purpose networks such as content delivery networks, peer-to-peer networks and wireless networks.This is a combined undergraduate and postgraduate course."
+    },
+    {
+        "offering_time": "T2",
+        "code": "COMP3421",
+        "name": "Computer Graphics",
+        "outline": "This course teaches the fundamental algorithms underlying computer graphics in both 2D and 3D. It introduces students to an industry standard graphics API (OpenGL) and gives them experience developing graphical applications."
+    },
+    {
+        "offering_time": "T2",
+        "code": "COMP6447",
+        "name": "Security Assessment",
+        "outline": ""
+    },
+    {
+        "offering_time": "T2",
+        "code": "COMP6771",
+        "name": "Advanced C++ Programming",
+        "outline": "COMP6771 is an advanced programming course teaching practical aspects of intermediate/advanced C++ programming. The course focuses on teaching the fundamentals of C++, followed by exploring powerful abstractions that C++ enables. This course focuses on using abstractions as well as building abstractions.COMP6771 is focused on modern, practical programming methods and tools. This course is designed for latter year CSE students with a reasonable degree of programming competencies.The course is heavily supported byChristopher Di Bella, a UNSW CSE graduate who is a well regarded expert on C++. His knowledge and expertise assists in forming and updating the course.Our aim for students who complete this course satisfactorily is that they are highly competent in understanding C++ and it's core features, being able to build complex programs, data structures, and algorithms with C++, and being ready to immediately move into the workforce in areas that rely heavily on C++.COMP6771 can be a challenging course for students due to the volume of work to complete in a 10 week period."
+    },
+    {
+        "offering_time": "T2",
+        "code": "COMP9024",
+        "name": "Data Structures & Algorithms",
+        "outline": "Data structures are used to store data inside a computer. It's crucial that data can be accessed and manipulated efficiently. An algorithm is a step-by-step process for solving a problem in a finite amount of space and time. The design of an algorithm can heavily influence the design of a data structure, and vice versa. Understanding how data and algorithm must work together is essential for good software and hardware developers and system architects. The content of this course forms the basis of a tool box that every serious computer-science practitioner should have: data types and structures, abstract data types, dynamic data structures, complexity analysis and a variety of basic graph and tree processing algorithms."
+    },
+    {
+        "offering_time": "T2",
+        "code": "COMP9311",
+        "name": "Database Systems",
+        "outline": ""
+    },
+    {
+        "offering_time": "T2",
+        "code": "COMP9313",
+        "name": "Big Data Management",
+        "outline": ""
+    },
+    {
+        "offering_time": "T2",
+        "code": "COMP9315",
+        "name": "Database Systems Implementat'n",
+        "outline": "This course aims to introduce students to the detailed internal structure of database management systems (DBMSs) such as Oracle or SQL Server. DBMSs contain a variety of interesting data structures and algorithms that are also potentially useful outside the DBMS context; knowing about them is a useful way of extending your general programming background.  While the focus is on relational DBMSs, given that they have the best-developed technological foundation, we will also consider more recent developments in the management of large data repositories.Relational DBMSs need to deal with a variety of issues: storage structures and management, implementation of relational operations, query optimisation, transactions, concurrency, recovery, security. The course will address most of these, along with a brief look at emerging database systems trends. The level of detail on individual topics will vary; some will be covered in significant detail, others will be covered relatively briefly.An important aspect of this course is to give you a chance to undertake an in-depth exploration of the internals of arealDBMS: PostgreSQL. Lectures will discuss the general principles of how DBMSs are implemented, and will also illustrate them with examples from PostgreSQL where possible."
+    },
+    {
+        "offering_time": "T2",
+        "code": "COMP9319",
+        "name": "Web Data Compression & Search",
+        "outline": "As the amount of Web data increases, it is becoming vital to not only be able to search and retrieve this information quickly, but also to store it in a compact manner. This is especially important for mobile devices which are becoming increasingly popular. Without loss of generality, within this course, we assume Web data (excluding media content) will be in XML and its like (e.g., XHTML).This course aims to introduce the concepts, theories, and algorithmic issues important to Web data compression and search. The course will also introduce the most recent development in various areas of Web data optimization topics, common practice, and its applications. The course is composed of the following parts:Adaptive coding, information theoryText compression (zip, gzip, bzip, etc)Burrows-Wheeler Transform and backward searchXML compressionIndexingPattern matching and regular expression searchDistributed queryingFast index constructionImplementationIf time allows, we may cover optional topics such as: streaming algorithms, text analytics, Web data optimization for mobile devices.The lecture materials will be complemented by two programming assignments and numerous tutorial exercises."
+    },
+    {
+        "offering_time": "T2",
+        "code": "COMP9322",
+        "name": "Software Service Design & Eng",
+        "outline": ""
+    },
+    {
+        "offering_time": "T2",
+        "code": "COMP9417",
+        "name": "Machine Learning & Data Mining",
+        "outline": "This course explores machine learning as the algorithmic approach to learning from data. The course also covers key aspects of data mining, which is understood as the application of machine learning tools to obtain insight from data. Algorithms are placed in the context of their theoretical foundations in order to understand their derivation and correct application. Topics include: linear models for regression and classification, local methods (nearest neighbour), neural networks, tree learning, kernel machines, unsupervised learning, ensemble learning, computational and statistical learning theory, and Bayesian learning. To expand and extend the development of theory and algorithms presented in lectures, practical applications will be given in tutorials and programming tasks during the project."
+    },
+    {
+        "offering_time": "T2",
+        "code": "COMP9517",
+        "name": "Computer Vision",
+        "outline": "The course will cover topics from: Introduction, image processing, feature detection, pattern recognition, deep learning  , segmentation, motion and image tracking, applications."
+    },
+    {
+        "offering_time": "T2",
+        "code": "COMP9900",
+        "name": "Info Tech Project",
+        "outline": ""
+    },
+    {
+        "offering_time": "T3",
+        "code": "COMP1511",
+        "name": "Programming Fundamentals",
+        "outline": ""
+    },
+    {
+        "offering_time": "T3",
+        "code": "COMP1531",
+        "name": "Software Eng Fundamentals",
+        "outline": ""
+    },
+    {
+        "offering_time": "T3",
+        "code": "COMP2511",
+        "name": "O-O Design & Programming",
+        "outline": "COMP 2511 covers the theory and practice of object-oriented design and programming with an emphasis on teaching students how to apply software design principles and design patterns to the building of flexible, reusable and maintainable systems. The course also introduces user-interface design and programming and includes the implementation of a large project done in pairs using agile software practices and enables students to have hands-on experience in applying the principles taught, implementing and incorporating the use of good design principles and design patterns in software programs"
+    },
+    {
+        "offering_time": "T3",
+        "code": "COMP2521",
+        "name": "Data Structures and Algorithms",
+        "outline": ""
+    },
+    {
+        "offering_time": "T3",
+        "code": "COMP3222",
+        "name": "Digital Circuits and Systems",
+        "outline": "This course teaches students the fundamentals of digital design.The course introduces the components of digital systems, explains how these are described in the VHDL hardware description language and familiarizes the student with the implementation of digital circuits using FPGA prototyping boards.Students are expected to attend lectures, tutorials and laboratories.Students are assessed via the completion of lab exercises, a class test and final theoretical and practical exams."
+    },
+    {
+        "offering_time": "T3",
+        "code": "COMP3311",
+        "name": "Database Systems",
+        "outline": "This course aims to explore in depth the practice of developing database applications and the theory behind relational database management systems (RDBMSs). It will also give an overview of the technologies used in implementing database management systems and the past, present and future of database systems and database research.Large data resources are critical to the functioning of just about every significant modern computer application. Hence, knowledge of how to manage them is clearly important to the IT industry. In the context of further study, understanding how to use databases effectively is essential for courses such asCOMP9321Data Services Engineering andCOMP9322Software Service Design and Engineering. COMP3311 also provides a foundation for further study in advanced database topics, such asCOMP9315Database Systems Implementation andCOMP9318Data Warehousing and Data Mining. Database concepts are also relevant in courses such asCOMP9319Web Data Compression and Search andCOMP6714Information Retrieval and Web Search.By the end of this course, we want you to be capable of building high-quality (correct, efficient, and usable) applications based on relational databases, to have a sound understanding of issues in administering relational database management systems, and have an overview of how they work internally."
+    },
+    {
+        "offering_time": "T3",
+        "code": "COMP3331",
+        "name": "Computer Networks&Applications",
+        "outline": "This course is an introductory course on computer networks, aimed at students with a background in computer science / electrical engineering. We will focus on common paradigms and protocols used in present data communication. Through lectures, in-class activities, labs and assignments, you will learn the theory and application of(1) medium access control, congestion control, flow control, and reliable transmission,(2) addressing and naming,(3) routing and switching,(4) widely used protocols such as Ethernet, IP, TCP, UDP, HTTP, etc.(5) security threats and common defensive techniques, and(6) special purpose networks such as content delivery networks, peer-to-peer networks and wireless networks.This is a combined undergraduate and postgraduate course."
+    },
+    {
+        "offering_time": "T3",
+        "code": "COMP3431",
+        "name": "Robotic Software Architecture",
+        "outline": "This course gives both a theoretical and a practical introduction to the control of robotic systems. The course is in two parts:An overview of robot software architectures:This part of the course gives students an introduction to the structure of robot software, including the theory of decision making: How can an agent build up knowledge of its world? Having done that, how can an agent choose its actions? A variety of different decision making and planning architectures are covered; including classical planning, reinforcement learning and cognitive architectures. In labs, students will get hands on experience with some of these planning systems.Practical RoboticsThis part of the course gives students a practical introduction to some specific robot architectures; the main system architecture will be the Robot Operating System,ROS. We will be usingTurtleBot3 WaffleRobots, or other robots as available.At the end of this course, students should have:experience with the details of one robot architecture,an overview of a range of other architectures and decision making systems,an understanding of the practicalities of programming physical robots as opposed to purely software systems,an understanding of a robot as a complete system, as well as its component parts."
+    },
+    {
+        "offering_time": "T3",
+        "code": "COMP3601",
+        "name": "Design Project A",
+        "outline": "This course aims to teach students how to design real world hardware/software co-design projects. Throughout the course of the semester, students will work in groups to achieve a complicated design using and FPGA and external hardware connected to a PC. At the beginning of the course, students will be assigned to a group and given a design task. Several required parameters for the task, including a budget, will be provided to students. This course builds upon the skills you have learnt in other courses, such as COMP2121, COMP3222, electrical engineering and software design courses to complete a large project through group participation."
+    },
+    {
+        "offering_time": "T3",
+        "code": "COMP4418",
+        "name": "Knowledge Representation",
+        "outline": "Knowledge Representation and Reasoning (KRR) is at the core of Artificial Intelligence. It is concerned with the representation of knowledge in symbolic form and the use of this knowledge for reasoning. This course presents current trends and research issues in Knowledge Representation and Reasoning (KRR). It enables students interested in Artificial Intelligence to deepen their knowledge in this important area and gives them a solid background for doing their own work/research in this area. The topics covered include: Commonsense reasoning, Propositional and First-order Logic, Answer set programming, Planning, Reasoning about action, Constraint programming.This course can be a starting point for further exploration of artificial intelligence. Further courses include COMP3431/COMP9431: Robotic Software Architecture, COMP9417: Machine Learning and Data Mining, COMP9444: Neural Networks and COMP9844: Extended Neural Networks."
+    },
+    {
+        "offering_time": "T3",
+        "code": "COMP6445",
+        "name": "Digital Forensics",
+        "outline": ""
+    },
+    {
+        "offering_time": "T3",
+        "code": "COMP6733",
+        "name": "Internet of Things",
+        "outline": ""
+    },
+    {
+        "offering_time": "T3",
+        "code": "COMP6741",
+        "name": "Parameterized & Exact Comp.",
+        "outline": "The course focuses on algorithms for exactly solving NP-hard computational problems. Since no polynomial time algorithm is known for any of these problems, the running time of the algorithms will have a super-polynomial dependence on the input size or some other parameter of the input."
+    },
+    {
+        "offering_time": "T3",
+        "code": "COMP9020",
+        "name": "Foundations of Comp. Science",
+        "outline": "The official scope is: mathematical methods for designing correct and \nefficient programs; mathematics for algorithm analysis; logic for \nproving and verification.The actual content is taken from a list of subjects that constitute \nthe basis of the tool box of every serious practitioner of computing: \nset and relation theory; induction, recursion and recurrence relations; \norder of growth of functions; structured counting (combinatorics); \ndiscrete probability; graph theory and trees for algorithmic \napplications; propositional logic and boolean algebras."
+    },
+    {
+        "offering_time": "T3",
+        "code": "COMP9021",
+        "name": "Principles of Programming",
+        "outline": ""
+    },
+    {
+        "offering_time": "T3",
+        "code": "COMP9024",
+        "name": "Data Structures & Algorithms",
+        "outline": "Data structures are about how data is stored inside a computer for effective and efficient use. An algorithm is a step-by-step process for solving a problem within a finite amount of space and time. Data structures and algorithms are not only important in software design, but also in hardware design. Being proficient in data structures and algorithms are essential for good software developers, hardware developers, and system architects.The actual content is taken from a list of subjects that constitute the basis of the tool box of every serious practitioner of computing: data types and data structures, abstract data types, dynamic data structures, analysis of algorithms and a variety of fundamental algorithms for graphs, trees and text processing."
+    },
+    {
+        "offering_time": "T3",
+        "code": "COMP9032",
+        "name": "Microprocessors & Interfacing",
+        "outline": "This course is to introduce students to the basic concepts and structure of the microprocessor and microcontroller, and provide students with knowledge and skills for solving problems with microprocessor/microcontroller."
+    },
+    {
+        "offering_time": "T3",
+        "code": "COMP9243",
+        "name": "Distributed Systems",
+        "outline": "A distributed system is a computer system consisting of several independent computers, connected by a network, that can work together to perform a task or provide a service. Typical examples include: the World Wide Web, cloud computing, networked file systems, DNS, and massive multiprocessor supercomputers.In this course we aim to provide students with a deeper understanding of distributed systems. In particular we focus on the principles, techniques, and practices relevant to the design and implementation of such systems. The course takes a systems-oriented view of distributed systems, concentrating on infrastructure software and providing hands-on experience implementing distributed systems."
+    },
+    {
+        "offering_time": "T3",
+        "code": "COMP9311",
+        "name": "Database Systems",
+        "outline": ""
+    },
+    {
+        "offering_time": "T3",
+        "code": "COMP9313",
+        "name": "Big Data Management",
+        "outline": ""
+    },
+    {
+        "offering_time": "T3",
+        "code": "COMP9321",
+        "name": "Data Services Engineering",
+        "outline": ""
+    },
+    {
+        "offering_time": "T3",
+        "code": "COMP9323",
+        "name": "e-Enterprise Project",
+        "outline": ""
+    },
+    {
+        "offering_time": "T3",
+        "code": "COMP9418",
+        "name": "Advanced Machine Learning",
+        "outline": "This course presents an in-depth study of statistical machine learning approaches. It aims to provide the student with a solid understanding of methods for learning and inference in structured probabilistic models, with a healthy balance of theory and practice."
+    },
+    {
+        "offering_time": "T3",
+        "code": "COMP9444",
+        "name": "Neural Networks, Deep Learning",
+        "outline": "This course aims to introduce students to the main topics and methods in the field of neural networks and deep learning, ranging from traditional neural network models to the latest research and applications of deep learning.Topics chosen from: perceptrons, feedforward neural networks, backpropagation, deep convolutional networks for image processing; geometric analysis of trained neural networks; recurrent networks, language processing, semantic analysis, long short term memory; Hopfield networks, restricted Boltzmann machines and autoencoders, generative adversarial networks; deep reinforcement learning; designing successful applications of neural networks; recent developments in neural networks and deep learning."
+    },
+    {
+        "offering_time": "T3",
+        "code": "COMP9517",
+        "name": "Computer Vision",
+        "outline": "The course will cover topics from: Introduction, image processing, feature detection, pattern recognition, deep learning  , segmentation, motion and image tracking, applications."
+    },
+    {
+        "offering_time": "T3",
+        "code": "COMP9900",
+        "name": "Info Tech Project",
+        "outline": ""
+    },
+    {
+        "offering_time": "T1",
+        "code": "SENG2021",
+        "name": "Reqts & Design Workshop",
+        "outline": ""
+    },
+    {
+        "offering_time": "T1",
+        "code": "SENG3011",
+        "name": "Software Eng Workshop 3",
+        "outline": "The purpose of the 3rd year software engineering workshop is to give students experience with a group-based large-scale software development project involving a realistic application in a real-life domain (data analytics).In this session, teams will be developing a complex software application and the focus is to learn about a new application domain, study the requirements, manage the project, liaise with the stakeholder and deliver high quality working solutions. Another aspect of the workshop is to reinforce skills in software design, testing, reporting and the use of support tools around these activities."
+    },
+    {
+        "offering_time": "T3",
+        "code": "SENG2011",
+        "name": "Program Reasoning Workshop",
+        "outline": ""
+    }
+]

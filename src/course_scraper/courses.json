@@ -1,0 +1,760 @@
+[
+  {
+    "offering_time": "T0",
+    "code": "COMP2521",
+    "name": "Data Structures and Algorithms"
+  },
+  {
+    "offering_time": "T0",
+    "code": "COMP3331",
+    "name": "Computer Networks&Applications (U1B)"
+  },
+  {
+    "offering_time": "T0",
+    "code": "COMP3411",
+    "name": "Artificial Intelligence (U1B)"
+  },
+  {
+    "offering_time": "T0",
+    "code": "COMP3511",
+    "name": "Human Computer Interaction (U1B)"
+  },
+  { "offering_time": "T0", "code": "COMP3901", "name": "Special Project A" },
+  {
+    "offering_time": "T0",
+    "code": "COMP6448",
+    "name": "Security Masterclass (U1B)"
+  },
+  {
+    "offering_time": "T0",
+    "code": "COMP6451",
+    "name": "Cryptocurrency and DLT"
+  },
+  {
+    "offering_time": "T0",
+    "code": "COMP9024",
+    "name": "Data Structures & Algorithms"
+  },
+  {
+    "offering_time": "T0",
+    "code": "COMP9331",
+    "name": "Computer Networks&Applications (U1B)"
+  },
+  {
+    "offering_time": "T0",
+    "code": "COMP9414",
+    "name": "Artificial Intelligence (U1B)"
+  },
+  {
+    "offering_time": "T0",
+    "code": "COMP9511",
+    "name": "Human Computer Interaction (U1B)"
+  },
+  {
+    "offering_time": "T1",
+    "code": "COMP1511",
+    "name": "Programming Fundamentals"
+  },
+  {
+    "offering_time": "T1",
+    "code": "COMP1531",
+    "name": "Software Eng Fundamentals"
+  },
+  { "offering_time": "T1", "code": "COMP1911", "name": "Computing 1A" },
+  {
+    "offering_time": "T1",
+    "code": "COMP2111",
+    "name": "System Modelling and Design"
+  },
+  {
+    "offering_time": "T1",
+    "code": "COMP2121",
+    "name": "Microprocessors & Interfacing"
+  },
+  {
+    "offering_time": "T1",
+    "code": "COMP2521",
+    "name": "Data Structures and Algorithms"
+  },
+  {
+    "offering_time": "T1",
+    "code": "COMP3121",
+    "name": "Algorithms & Programming Tech"
+  },
+  {
+    "offering_time": "T1",
+    "code": "COMP3131",
+    "name": "Programming Languages & Compil"
+  },
+  {
+    "offering_time": "T1",
+    "code": "COMP3153",
+    "name": "Algorithmic Verification"
+  },
+  {
+    "offering_time": "T1",
+    "code": "COMP3211",
+    "name": "Computer Architecture"
+  },
+  { "offering_time": "T1", "code": "COMP3231", "name": "Operating Systems" },
+  { "offering_time": "T1", "code": "COMP3311", "name": "Database Systems" },
+  {
+    "offering_time": "T1",
+    "code": "COMP3331",
+    "name": "Computer Networks&Applications"
+  },
+  {
+    "offering_time": "T1",
+    "code": "COMP3411",
+    "name": "Artificial Intelligence"
+  },
+  {
+    "offering_time": "T1",
+    "code": "COMP3891",
+    "name": "Ext Operating Systems"
+  },
+  {
+    "offering_time": "T1",
+    "code": "COMP3900",
+    "name": "Computer Science Project"
+  },
+  { "offering_time": "T1", "code": "COMP3901", "name": "Special Project A" },
+  { "offering_time": "T1", "code": "COMP3902", "name": "Special Project B" },
+  {
+    "offering_time": "T1",
+    "code": "COMP4141",
+    "name": "Theory of Computation"
+  },
+  {
+    "offering_time": "T1",
+    "code": "COMP4337",
+    "name": "Securing Wireless Networks"
+  },
+  { "offering_time": "T1", "code": "COMP4601", "name": "Design Project B" },
+  { "offering_time": "T1", "code": "COMP4930", "name": "Thesis Part A" },
+  { "offering_time": "T1", "code": "COMP4931", "name": "Thesis Part B" },
+  { "offering_time": "T1", "code": "COMP4941", "name": "Thesis Part B" },
+  { "offering_time": "T1", "code": "COMP4951", "name": "Research Thesis A" },
+  {
+    "offering_time": "T1",
+    "code": "COMP4961",
+    "name": "Computer Science Thesis A"
+  },
+  {
+    "offering_time": "T1",
+    "code": "COMP4962",
+    "name": "Computer Science Thesis B"
+  },
+  {
+    "offering_time": "T1",
+    "code": "COMP4963",
+    "name": "Computer Science Thesis C"
+  },
+  {
+    "offering_time": "T1",
+    "code": "COMP6324",
+    "name": "IoT Services Engineering"
+  },
+  {
+    "offering_time": "T1",
+    "code": "COMP6443",
+    "name": "Web Application Security"
+  },
+  {
+    "offering_time": "T1",
+    "code": "COMP6452",
+    "name": "Blockchain App Architecture"
+  },
+  {
+    "offering_time": "T1",
+    "code": "COMP6843",
+    "name": "Extended WebApp Security"
+  },
+  {
+    "offering_time": "T1",
+    "code": "COMP9020",
+    "name": "Foundations of Comp. Science"
+  },
+  {
+    "offering_time": "T1",
+    "code": "COMP9021",
+    "name": "Principles of Programming"
+  },
+  {
+    "offering_time": "T1",
+    "code": "COMP9024",
+    "name": "Data Structures & Algorithms"
+  },
+  {
+    "offering_time": "T1",
+    "code": "COMP9101",
+    "name": "Design &Analysis of Algorithms"
+  },
+  {
+    "offering_time": "T1",
+    "code": "COMP9102",
+    "name": "Programming Lang & Compilers"
+  },
+  {
+    "offering_time": "T1",
+    "code": "COMP9153",
+    "name": "Algorithmic Verification"
+  },
+  { "offering_time": "T1", "code": "COMP9201", "name": "Operating Systems" },
+  {
+    "offering_time": "T1",
+    "code": "COMP9211",
+    "name": "Computer Architecture"
+  },
+  {
+    "offering_time": "T1",
+    "code": "COMP9283",
+    "name": "Ext Operating Systems"
+  },
+  { "offering_time": "T1", "code": "COMP9311", "name": "Database Systems" },
+  {
+    "offering_time": "T1",
+    "code": "COMP9318",
+    "name": "Data Warehousing & Data Mining"
+  },
+  {
+    "offering_time": "T1",
+    "code": "COMP9321",
+    "name": "Data Services Engineering"
+  },
+  {
+    "offering_time": "T1",
+    "code": "COMP9322",
+    "name": "Software Service Design & Eng"
+  },
+  {
+    "offering_time": "T1",
+    "code": "COMP9331",
+    "name": "Computer Networks&Applications"
+  },
+  {
+    "offering_time": "T1",
+    "code": "COMP9334",
+    "name": "Systems Capacity Planning"
+  },
+  {
+    "offering_time": "T1",
+    "code": "COMP9337",
+    "name": "Securing Wireless Networks"
+  },
+  {
+    "offering_time": "T1",
+    "code": "COMP9414",
+    "name": "Artificial Intelligence"
+  },
+  { "offering_time": "T1", "code": "COMP9596", "name": "Research Project" },
+  { "offering_time": "T1", "code": "COMP9900", "name": "Info Tech Project" },
+  {
+    "offering_time": "T1",
+    "code": "COMP9901",
+    "name": "P/T Res. Thesis Comp Sci & Eng"
+  },
+  {
+    "offering_time": "T1",
+    "code": "COMP9902",
+    "name": "Res. Thesis Comp Sci & Eng F/T"
+  },
+  { "offering_time": "T1", "code": "COMP9945", "name": "Research Project" },
+  {
+    "offering_time": "T2",
+    "code": "COMP1000",
+    "name": "Web, Spreadsheets & Databases"
+  },
+  {
+    "offering_time": "T2",
+    "code": "COMP1511",
+    "name": "Programming Fundamentals"
+  },
+  {
+    "offering_time": "T2",
+    "code": "COMP1521",
+    "name": "Computer Systems Fundamentals"
+  },
+  {
+    "offering_time": "T2",
+    "code": "COMP2041",
+    "name": "Software Construction"
+  },
+  {
+    "offering_time": "T2",
+    "code": "COMP2121",
+    "name": "Microprocessors & Interfacing"
+  },
+  {
+    "offering_time": "T2",
+    "code": "COMP2511",
+    "name": "O-O Design & Programming"
+  },
+  {
+    "offering_time": "T2",
+    "code": "COMP2521",
+    "name": "Data Structures and Algorithms"
+  },
+  {
+    "offering_time": "T2",
+    "code": "COMP3141",
+    "name": "Software Sys Des&Implementat'n"
+  },
+  {
+    "offering_time": "T2",
+    "code": "COMP3151",
+    "name": "Foundations of Concurrency"
+  },
+  {
+    "offering_time": "T2",
+    "code": "COMP3331",
+    "name": "Computer Networks&Applications"
+  },
+  {
+    "offering_time": "T2",
+    "code": "COMP3411",
+    "name": "Artificial Intelligence"
+  },
+  { "offering_time": "T2", "code": "COMP3421", "name": "Computer Graphics" },
+  {
+    "offering_time": "T2",
+    "code": "COMP3821",
+    "name": "Ext Algorithms&Prog Techniques"
+  },
+  {
+    "offering_time": "T2",
+    "code": "COMP3900",
+    "name": "Computer Science Project"
+  },
+  { "offering_time": "T2", "code": "COMP3901", "name": "Special Project A" },
+  { "offering_time": "T2", "code": "COMP3902", "name": "Special Project B" },
+  {
+    "offering_time": "T2",
+    "code": "COMP4336",
+    "name": "Mobile Data Networking"
+  },
+  {
+    "offering_time": "T2",
+    "code": "COMP4511",
+    "name": "User Interface Design & Constr"
+  },
+  { "offering_time": "T2", "code": "COMP4930", "name": "Thesis Part A" },
+  { "offering_time": "T2", "code": "COMP4931", "name": "Thesis Part B" },
+  { "offering_time": "T2", "code": "COMP4941", "name": "Thesis Part B" },
+  { "offering_time": "T2", "code": "COMP4951", "name": "Research Thesis A" },
+  { "offering_time": "T2", "code": "COMP4952", "name": "Research Thesis B" },
+  { "offering_time": "T2", "code": "COMP4953", "name": "Research Thesis C" },
+  {
+    "offering_time": "T2",
+    "code": "COMP4961",
+    "name": "Computer Science Thesis A"
+  },
+  {
+    "offering_time": "T2",
+    "code": "COMP4962",
+    "name": "Computer Science Thesis B"
+  },
+  {
+    "offering_time": "T2",
+    "code": "COMP4963",
+    "name": "Computer Science Thesis C"
+  },
+  { "offering_time": "T2", "code": "COMP6441", "name": "Security Engineering" },
+  { "offering_time": "T2", "code": "COMP6447", "name": "Security Assessment" },
+  { "offering_time": "T2", "code": "COMP6721", "name": "(In-)Formal Methods" },
+  {
+    "offering_time": "T2",
+    "code": "COMP6752",
+    "name": "Modelling Concurrent Systems"
+  },
+  {
+    "offering_time": "T2",
+    "code": "COMP6771",
+    "name": "Advanced C++ Programming"
+  },
+  {
+    "offering_time": "T2",
+    "code": "COMP6841",
+    "name": "Extended Security Engineering"
+  },
+  {
+    "offering_time": "T2",
+    "code": "COMP9021",
+    "name": "Principles of Programming"
+  },
+  {
+    "offering_time": "T2",
+    "code": "COMP9024",
+    "name": "Data Structures & Algorithms"
+  },
+  {
+    "offering_time": "T2",
+    "code": "COMP9044",
+    "name": "Software Construction"
+  },
+  {
+    "offering_time": "T2",
+    "code": "COMP9154",
+    "name": "Foundations of Concurrency"
+  },
+  {
+    "offering_time": "T2",
+    "code": "COMP9242",
+    "name": "Advanced Operating Systems"
+  },
+  {
+    "offering_time": "T2",
+    "code": "COMP9301",
+    "name": "Cyber Security Project"
+  },
+  {
+    "offering_time": "T2",
+    "code": "COMP9302",
+    "name": "Cyber Security Project B"
+  },
+  { "offering_time": "T2", "code": "COMP9311", "name": "Database Systems" },
+  { "offering_time": "T2", "code": "COMP9313", "name": "Big Data Management" },
+  {
+    "offering_time": "T2",
+    "code": "COMP9315",
+    "name": "Database Systems Implementat'n"
+  },
+  {
+    "offering_time": "T2",
+    "code": "COMP9319",
+    "name": "Web Data Compression & Search"
+  },
+  {
+    "offering_time": "T2",
+    "code": "COMP9322",
+    "name": "Software Service Design & Eng"
+  },
+  {
+    "offering_time": "T2",
+    "code": "COMP9331",
+    "name": "Computer Networks&Applications"
+  },
+  {
+    "offering_time": "T2",
+    "code": "COMP9332",
+    "name": "Network Routing and Switching"
+  },
+  {
+    "offering_time": "T2",
+    "code": "COMP9336",
+    "name": "Mobile Data Networking"
+  },
+  {
+    "offering_time": "T2",
+    "code": "COMP9414",
+    "name": "Artificial Intelligence"
+  },
+  { "offering_time": "T2", "code": "COMP9415", "name": "Computer Graphics" },
+  {
+    "offering_time": "T2",
+    "code": "COMP9417",
+    "name": "Machine Learning & Data Mining"
+  },
+  { "offering_time": "T2", "code": "COMP9517", "name": "Computer Vision" },
+  { "offering_time": "T2", "code": "COMP9596", "name": "Research Project" },
+  {
+    "offering_time": "T2",
+    "code": "COMP9801",
+    "name": "Ext Design&Analysis of Algo"
+  },
+  { "offering_time": "T2", "code": "COMP9900", "name": "Info Tech Project" },
+  {
+    "offering_time": "T2",
+    "code": "COMP9901",
+    "name": "P/T Res. Thesis Comp Sci & Eng"
+  },
+  {
+    "offering_time": "T2",
+    "code": "COMP9902",
+    "name": "Res. Thesis Comp Sci & Eng F/T"
+  },
+  { "offering_time": "T2", "code": "COMP9945", "name": "Research Project" },
+  {
+    "offering_time": "T3",
+    "code": "COMP1400",
+    "name": "Programming for Designers"
+  },
+  {
+    "offering_time": "T3",
+    "code": "COMP1511",
+    "name": "Programming Fundamentals"
+  },
+  {
+    "offering_time": "T3",
+    "code": "COMP1521",
+    "name": "Computer Systems Fundamentals"
+  },
+  {
+    "offering_time": "T3",
+    "code": "COMP1531",
+    "name": "Software Eng Fundamentals"
+  },
+  {
+    "offering_time": "T3",
+    "code": "COMP2511",
+    "name": "O-O Design & Programming"
+  },
+  {
+    "offering_time": "T3",
+    "code": "COMP2521",
+    "name": "Data Structures and Algorithms"
+  },
+  {
+    "offering_time": "T3",
+    "code": "COMP3161",
+    "name": "Concepts of Programming Lang."
+  },
+  {
+    "offering_time": "T3",
+    "code": "COMP3222",
+    "name": "Digital Circuits and Systems"
+  },
+  { "offering_time": "T3", "code": "COMP3311", "name": "Database Systems" },
+  {
+    "offering_time": "T3",
+    "code": "COMP3331",
+    "name": "Computer Networks&Applications"
+  },
+  {
+    "offering_time": "T3",
+    "code": "COMP3431",
+    "name": "Robotic Software Architecture"
+  },
+  {
+    "offering_time": "T3",
+    "code": "COMP3511",
+    "name": "Human Computer Interaction"
+  },
+  { "offering_time": "T3", "code": "COMP3601", "name": "Design Project A" },
+  {
+    "offering_time": "T3",
+    "code": "COMP3900",
+    "name": "Computer Science Project"
+  },
+  { "offering_time": "T3", "code": "COMP3901", "name": "Special Project A" },
+  { "offering_time": "T3", "code": "COMP3902", "name": "Special Project B" },
+  {
+    "offering_time": "T3",
+    "code": "COMP4121",
+    "name": "Advanced & Parallel Algorithms"
+  },
+  {
+    "offering_time": "T3",
+    "code": "COMP4128",
+    "name": "Programming Challenges"
+  },
+  {
+    "offering_time": "T3",
+    "code": "COMP4161",
+    "name": "Advanced Verification"
+  },
+  {
+    "offering_time": "T3",
+    "code": "COMP4418",
+    "name": "Knowledge Representation"
+  },
+  {
+    "offering_time": "T3",
+    "code": "COMP4920",
+    "name": "Management and Ethics"
+  },
+  { "offering_time": "T3", "code": "COMP4930", "name": "Thesis Part A" },
+  { "offering_time": "T3", "code": "COMP4931", "name": "Thesis Part B" },
+  { "offering_time": "T3", "code": "COMP4941", "name": "Thesis Part B" },
+  { "offering_time": "T3", "code": "COMP4951", "name": "Research Thesis A" },
+  { "offering_time": "T3", "code": "COMP4952", "name": "Research Thesis B" },
+  { "offering_time": "T3", "code": "COMP4953", "name": "Research Thesis C" },
+  {
+    "offering_time": "T3",
+    "code": "COMP4961",
+    "name": "Computer Science Thesis A"
+  },
+  {
+    "offering_time": "T3",
+    "code": "COMP4962",
+    "name": "Computer Science Thesis B"
+  },
+  {
+    "offering_time": "T3",
+    "code": "COMP4963",
+    "name": "Computer Science Thesis C"
+  },
+  { "offering_time": "T3", "code": "COMP6445", "name": "Digital Forensics" },
+  {
+    "offering_time": "T3",
+    "code": "COMP6451",
+    "name": "Cryptocurrency and DLT"
+  },
+  {
+    "offering_time": "T3",
+    "code": "COMP6714",
+    "name": "Info Retrieval and Web Search"
+  },
+  { "offering_time": "T3", "code": "COMP6733", "name": "Internet of Things" },
+  {
+    "offering_time": "T3",
+    "code": "COMP6741",
+    "name": "Parameterized & Exact Comp."
+  },
+  {
+    "offering_time": "T3",
+    "code": "COMP6845",
+    "name": "Extended Digital Forensics"
+  },
+  {
+    "offering_time": "T3",
+    "code": "COMP9020",
+    "name": "Foundations of Comp. Science"
+  },
+  {
+    "offering_time": "T3",
+    "code": "COMP9021",
+    "name": "Principles of Programming"
+  },
+  {
+    "offering_time": "T3",
+    "code": "COMP9024",
+    "name": "Data Structures & Algorithms"
+  },
+  {
+    "offering_time": "T3",
+    "code": "COMP9032",
+    "name": "Microprocessors & Interfacing"
+  },
+  {
+    "offering_time": "T3",
+    "code": "COMP9164",
+    "name": "Concepts of Programming Lang."
+  },
+  {
+    "offering_time": "T3",
+    "code": "COMP9222",
+    "name": "Digital Circuits and Systems"
+  },
+  { "offering_time": "T3", "code": "COMP9243", "name": "Distributed Systems" },
+  {
+    "offering_time": "T3",
+    "code": "COMP9301",
+    "name": "Cyber Security Project"
+  },
+  {
+    "offering_time": "T3",
+    "code": "COMP9302",
+    "name": "Cyber Security Project B"
+  },
+  { "offering_time": "T3", "code": "COMP9311", "name": "Database Systems" },
+  { "offering_time": "T3", "code": "COMP9313", "name": "Big Data Management" },
+  {
+    "offering_time": "T3",
+    "code": "COMP9321",
+    "name": "Data Services Engineering"
+  },
+  { "offering_time": "T3", "code": "COMP9323", "name": "e-Enterprise Project" },
+  {
+    "offering_time": "T3",
+    "code": "COMP9331",
+    "name": "Computer Networks&Applications"
+  },
+  {
+    "offering_time": "T3",
+    "code": "COMP9417",
+    "name": "Machine Learning & Data Mining"
+  },
+  {
+    "offering_time": "T3",
+    "code": "COMP9418",
+    "name": "Advanced Machine Learning"
+  },
+  {
+    "offering_time": "T3",
+    "code": "COMP9434",
+    "name": "Robotic Software Architecture"
+  },
+  {
+    "offering_time": "T3",
+    "code": "COMP9444",
+    "name": "Neural Networks, Deep Learning"
+  },
+  {
+    "offering_time": "T3",
+    "code": "COMP9511",
+    "name": "Human Computer Interaction"
+  },
+  { "offering_time": "T3", "code": "COMP9517", "name": "Computer Vision" },
+  { "offering_time": "T3", "code": "COMP9596", "name": "Research Project" },
+  { "offering_time": "T3", "code": "COMP9900", "name": "Info Tech Project" },
+  {
+    "offering_time": "T3",
+    "code": "COMP9901",
+    "name": "P/T Res. Thesis Comp Sci & Eng"
+  },
+  {
+    "offering_time": "T3",
+    "code": "COMP9902",
+    "name": "Res. Thesis Comp Sci & Eng F/T"
+  },
+  { "offering_time": "T3", "code": "COMP9945", "name": "Research Project" },
+  {
+    "offering_time": "T0",
+    "code": "SENG4904",
+    "name": "Industrial Training 1"
+  },
+  { "offering_time": "T0", "code": "SENG4911", "name": "Thesis Part B" },
+  {
+    "offering_time": "T1",
+    "code": "SENG2021",
+    "name": "Reqts & Design Workshop"
+  },
+  {
+    "offering_time": "T1",
+    "code": "SENG3011",
+    "name": "Software Eng Workshop 3"
+  },
+  {
+    "offering_time": "T1",
+    "code": "SENG4906",
+    "name": "Industrial Training 3"
+  },
+  {
+    "offering_time": "T1",
+    "code": "SENG4907",
+    "name": "Industrial Training 4"
+  },
+  { "offering_time": "T1", "code": "SENG4910", "name": "Thesis Part A" },
+  { "offering_time": "T1", "code": "SENG4911", "name": "Thesis Part B" },
+  {
+    "offering_time": "T2",
+    "code": "SENG4906",
+    "name": "Industrial Training 3"
+  },
+  {
+    "offering_time": "T2",
+    "code": "SENG4907",
+    "name": "Industrial Training 4"
+  },
+  { "offering_time": "T2", "code": "SENG4910", "name": "Thesis Part A" },
+  { "offering_time": "T2", "code": "SENG4911", "name": "Thesis Part B" },
+  {
+    "offering_time": "T3",
+    "code": "SENG2011",
+    "name": "Program Reasoning Workshop"
+  },
+  {
+    "offering_time": "T3",
+    "code": "SENG4906",
+    "name": "Industrial Training 3"
+  },
+  {
+    "offering_time": "T3",
+    "code": "SENG4907",
+    "name": "Industrial Training 4"
+  },
+  { "offering_time": "T3", "code": "SENG4910", "name": "Thesis Part A" },
+  { "offering_time": "T3", "code": "SENG4911", "name": "Thesis Part B" },
+  { "offering_time": "T3", "code": "SENG4920", "name": "Ethics and Management" }
+]
