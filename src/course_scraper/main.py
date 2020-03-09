@@ -54,21 +54,9 @@ class WebCMS(CourseHost):
             # Check for iframe
             external = soup.find_all(text=re.compile("View in browser"))
             if external:
-                # print("Found iframe...")
-                # print(external[0].parent)
-                print("overriding with ", external[0].parent["href"])
                 self.base_url = external[0].parent["href"]
-                # for now, just record the url, do manual later?
+                # for now, just record the url
                 return ""
-                # soup = get_soup(self.base_url)
-                # tag = soup.find(text=re.compile("Course Aims"))
-                # print(tag)
-                # course_summary = tag.next_sibling
-                # outline = ""
-                # while course_summary.name != "h3":
-                #     if not isinstance(course_summary, NavigableString):
-                #         outline += course_summary.get_text(strip=True)
-                #     course_summary = course_summary.next_sibling
             else:
                 return ""
 
@@ -101,9 +89,7 @@ courses_result = []
 for course in courses:
     course_code = course["code"]
     offering_term = course["offering_time"]
-    print(course_code, offering_term)
     if "outline" in course and course["outline"]:
-        # not emtpy
         continue
 
     if course_code in course_hosts:

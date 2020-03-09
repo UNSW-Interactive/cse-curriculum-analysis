@@ -1,3 +1,5 @@
+# parses classutil for all courses
+
 import requests
 import json
 from bs4 import BeautifulSoup
