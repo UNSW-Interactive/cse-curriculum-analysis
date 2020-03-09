@@ -17,16 +17,6 @@ class CourseHost:
         return self.base_url
 
 
-class Unknown(CourseHost):
-    def get_course_outline(self):
-        return ""
-
-
-class CGICSE(CourseHost):
-    def __init__(self, base_url):  # todo: change to kwargs, take in url params
-        super().__init__(base_url)
-
-
 class WebCMS(CourseHost):
     def __init__(self, base_url):
         super().__init__(base_url)
@@ -36,7 +26,7 @@ class WebCMS(CourseHost):
         course_summary = next(
             (
                 x
-                for x in soup.find_all("h3")
+                for x in soup.find_all(["h1", "h2", "h3"])
                 if x.get_text(strip=True) == "Course Summary"
             ),
             None,
@@ -45,8 +35,9 @@ class WebCMS(CourseHost):
         outline = ""
         if course_summary is not None:
             # This course uses webcms
+            orig = course_summary.name
             course_summary = course_summary.next_sibling
-            while course_summary.name != "h3":
+            while course_summary.name != orig:
                 if not isinstance(course_summary, NavigableString):
                     outline += course_summary.get_text(strip=True)
                 course_summary = course_summary.next_sibling
@@ -75,8 +66,6 @@ def is_webcms3(course_code, offering_term):
 def recognise_course_host(course_host_url):
     if course_host_url.startswith("https://webcms3.cse.unsw.edu.au/"):
         return WebCMS(course_host_url)
-    elif course_host_url.startswith("http://cgi.cse.unsw.edu.au/"):
-        return CGICSE(course_host_url)
 
 
 with open("src/course_scraper/courses.json") as course_file:
@@ -85,33 +74,35 @@ with open("src/course_scraper/courses.json") as course_file:
 with open("src/course_scraper/course_host.json") as course_host_file:
     course_hosts = json.load(course_host_file)
 
-courses_result = []
 for course in courses:
     course_code = course["code"]
     offering_term = course["offering_time"]
+    course["url"] = course_hosts[course_code]
     if "outline" in course and course["outline"]:
         continue
 
     if course_code in course_hosts:
-        url = course_hosts[course_code + offering_term]
+        url = course_hosts[course_code]
         course_platform: CourseHost = recognise_course_host(url)
+        if course_platform is None:
+            continue
     else:
         # check webcms only
         if (url := is_webcms3(course_code, offering_term)) :
             course_platform: CourseHost = WebCMS(url)
         else:
             print(
-                f"Course {course_code} needs a course outline website added to the repo!"
+                f"Course {course_code} needs a course outline website manually added tocourse_host.json!"
             )
+            course_hosts[course_code] = ""
             continue
 
     course["outline"] = course_platform.get_course_outline()
     # run this after in case it changes when geting course_outline
-    course_hosts[course_code + offering_term] = course_platform.get_base_url()
-    courses_result.append(course)
+    course_hosts[course_code] = course_platform.get_base_url()
 
-with open("src/course_scraper/courses3.json", "w") as repo:
-    json.dump(courses_result, repo, indent=4)
+with open("src/course_scraper/courses.json", "w") as course_file:
+    json.dump(courses, course_file, indent=4)
 
 with open("src/course_scraper/course_host.json", "w") as course_host_file:
     json.dump(course_hosts, course_host_file)
