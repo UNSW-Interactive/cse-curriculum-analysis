@@ -113,13 +113,6 @@
   },
   {
     "offering_time": "T1",
-    "code": "COMP2521",
-    "name": "Data Structures and Algorithms",
-    "url": "https://cgi.cse.unsw.edu.au/~cs2521/19T3/admin/outline/index.php",
-    "outline": "The goal of this course is\nto deepen your understanding of data structures and algorithms\nand how these can be employed effectively\nin the design of software systems.\nIt is an important course in covering\na range of core data structures and algorithms\nthat will be used in context in later courses.\nYou explore these ideas in lectres, tutorials, lab classes, and assignments.\nAssessment involves labs, tutes, practical lab exams, a practical final exam, and a theory exam.\nAt the end of the course, we want you to be a solid programmer, with knowledge of a range of useful\ndata structures and programming techniques, capable of building significant\nsoftware systems in a team environment, and ready to continue with further specialised studies in computing.Topics:\nAn introduction the structure, analysis and usage\nof a range of fundamental data types and\nthe core algorithms that operate on them, including:\nalgorithm analysis, sorting, searching, trees,\ngraphs, files, algorithmic strategies,\nanalysis and measurement of programs.\nLabs and programming assignments in C,\nusing a range of Unix tools.Executive SummaryA summary of the critical things to know about COMP2521:attempt all of the labs, tutorials, and assignments yourselfalways try to produce a better program than last timein lectures, think critically about what's being said/shownthe textbook is a useful reference source beyond this courseassessment: labs: 8%, assignments: 22%, midterm exam: 10%, final exam: 60%enjoy the course!Now, please read the rest of this document.Course TimetableThe complete course timetable is available at:webcms3:/timetableCourse AimsThe aim of this course is\nto get you tothink like a computer scientist.\nThis certainly sounds like a noble goal...\nbut what does it really mean?\nHow does ascientist,\nlet alone a computer scientist,\nactually think?What many types of scientists try to do\nis understand natural systems and processes:\na geologist, for example,\ntries to understand the structure of the earth;\na biologist tries to understand living organisms;\na chemist tries to understand materials and reactions,\nand so on.Computer scientists don't,\nas the name might suggest,\nsimply try to understand\nthe structure and behaviour of computers,\nbut are more concerned with\nunderstanding software systems\n(and the interaction between\nthe software and the hardware on which it runs).\nAlso, unlike other scientists,\ncomputer scientists frequently build\nthe objects that they study.During this course, we'll be looking at\nways of creating, analysing and understanding software.\nUltimately, you should be able to answer the question,is this piece of software any good?and be able to provide sound reasons to justify your answer.This course follows on from introductory C programming courses:\nCOMP1511, COMP1917, or COMP1921.\nWe cover additional aspects of the C programming language\nthat were not covered in those courses,\nand also look at some programming tools\nwhich were not covered (in detail) earlier.\nHowever, this course is not simply\na second C programming course:\nthe focus is on the ideas and abstractions\nbehind the data structures and algorithms that are used.COMP2521 is a critical course\nin the study of computing at UNSW,\nsince it deals with many concepts that are\ncentral to future studies in the area.\nWhether you are studying Computer Science,\nSoftware Engineering, Bioinformatics,\nComputer Engineering,\nor even a discipline outside the realm of computing,\nunderstanding a range of algorithms and data structures\nand how to use them\nwill make you a much more effective\ncomputing problem solver in the future.Student Learning Outcomes"
-  },
-  {
-    "offering_time": "T1",
     "code": "COMP3121",
     "name": "Algorithms & Programming Tech",
     "url": "https://cgi.cse.unsw.edu.au/~cs3121/extended.php",
@@ -163,20 +156,6 @@
   },
   {
     "offering_time": "T1",
-    "code": "COMP3331",
-    "name": "Computer Networks&Applications",
-    "outline": "This course is an introductory course on computer networks, aimed at students with a background in computer science / electrical engineering. We will focus on common paradigms and protocols used in present data communication. Through lectures, in-class activities, labs and assignments, you will learn the theory and application of(1) medium access control, congestion control, flow control, and reliable transmission,(2) addressing and naming,(3) routing and switching,(4) widely used protocols such as Ethernet, IP, TCP, UDP, HTTP, etc.(5) security threats and common defensive techniques, and(6) special purpose networks such as content delivery networks, peer-to-peer networks and wireless networks.This is a combined undergraduate and postgraduate course.",
-    "url": "https://webcms3.cse.unsw.edu.au/COMP3331/19T3/outline"
-  },
-  {
-    "offering_time": "T1",
-    "code": "COMP3411",
-    "name": "Artificial Intelligence",
-    "outline": "Give a brief summary for why this course is relevant, where it fits in the \n  degree(s), and its aims ...",
-    "url": "https://webcms3.cse.unsw.edu.au/COMP3411/19T1/outline"
-  },
-  {
-    "offering_time": "T1",
     "code": "COMP3891",
     "name": "Ext Operating Systems",
     "url": "http://cgi.cse.unsw.edu.au/~cs3231/intro.php",
@@ -191,13 +170,6 @@
   },
   {
     "offering_time": "T1",
-    "code": "COMP3901",
-    "name": "Special Project A",
-    "url": "http://www.cse.unsw.edu.au/~morri/specialProject.html",
-    "outline": ""
-  },
-  {
-    "offering_time": "T1",
     "code": "COMP3902",
     "name": "Special Project B",
     "url": "http://www.cse.unsw.edu.au/~morri/specialProject.html",
@@ -207,7 +179,8 @@
     "offering_time": "T1",
     "code": "COMP4141",
     "name": "Theory of Computation",
-    "url": ""
+    "url": "https://www.cse.unsw.edu.au/~cs4141/19s1/admin/outline.html",
+    "outline": ""
   },
   {
     "offering_time": "T1",
@@ -290,7 +263,8 @@
     "offering_time": "T1",
     "code": "COMP6843",
     "name": "Extended WebApp Security",
-    "url": ""
+    "url": "https://webcms3.cse.unsw.edu.au/static/uploads/course/COMP6443/19T1/1136c95eb7873bb6aa7866c7933ac655bda339753c40f85b97ec7d9bad827c00/Web_Application_Security_v2.pdf",
+    "outline": ""
   },
   {
     "offering_time": "T1",
@@ -306,13 +280,6 @@
     "outline": "",
     "url": "https://webcms3.cse.unsw.edu.au/COMP9021/19T3/outline",
     "private": true
-  },
-  {
-    "offering_time": "T1",
-    "code": "COMP9024",
-    "name": "Data Structures & Algorithms",
-    "outline": "Data structures are about how data is stored inside a computer for effective and efficient use. An algorithm is a step-by-step process for solving a problem within a finite amount of space and time. Data structures and algorithms are not only important in software design, but also in hardware design. Being proficient in data structures and algorithms are essential for good software developers, hardware developers, and system architects.The actual content is taken from a list of subjects that constitute the basis of the tool box of every serious practitioner of computing: data types and data structures, abstract data types, dynamic data structures, analysis of algorithms and a variety of fundamental algorithms for graphs, trees and text processing.",
-    "url": "https://webcms3.cse.unsw.edu.au/COMP9024/19T3/outline"
   },
   {
     "offering_time": "T1",
@@ -346,7 +313,9 @@
     "offering_time": "T1",
     "code": "COMP9211",
     "name": "Computer Architecture",
-    "url": ""
+    "outline": "",
+    "url": "https://webcms3.cse.unsw.edu.au/COMP3211/19T1/outline",
+    "private": true
   },
   {
     "offering_time": "T1",
@@ -386,13 +355,6 @@
   },
   {
     "offering_time": "T1",
-    "code": "COMP9331",
-    "name": "Computer Networks&Applications",
-    "outline": "This course is an introductory course on computer networks, aimed at students with a background in computer science / electrical engineering. We will focus on common paradigms and protocols used in present data communication. Through lectures, in-class activities, labs and assignments, you will learn the theory and application of(1) medium access control, congestion control, flow control, and reliable transmission,(2) addressing and naming,(3) routing and switching,(4) widely used protocols such as Ethernet, IP, TCP, UDP, HTTP, etc.(5) security threats and common defensive techniques, and(6) special purpose networks such as content delivery networks, peer-to-peer networks and wireless networks.This is a combined undergraduate and postgraduate course.",
-    "url": "https://webcms3.cse.unsw.edu.au/COMP3331/19T2/outline"
-  },
-  {
-    "offering_time": "T1",
     "code": "COMP9334",
     "name": "Systems Capacity Planning",
     "outline": "We live in a world that events do not happen instantly. It takes a certain amount of time to download a video from a server to your own mobile device. It takes a certain amount of time for a computer to finish the execution of an algorithm. The time to completion (or response time in performance analysis terminology) is a performance metric that computer scientists and computer engineers should be concerned about because no one wants to wait unnecessarily. If you can understand the factors that determine the response time, then you can influence those factors so that the response time is acceptable. This course will take a mathematical modelling and analytical approach to understand response time in computer systems and networks. The primary goal is to explore how mathematical modelling and mathematical methods can be used to model, analyse and design computer systems and networks so that they have good performance. There are three major topics that will be covered by this course:Queuing analysis (Note: Queues are important because they give rise to waiting time.)Discrete event simulationInteger programming for network design",
@@ -404,14 +366,6 @@
     "name": "Securing Wireless Networks",
     "outline": "To provide an in-depth introduction to a wide range of topics in the field of Wireless Network Security. To get a hands-on understanding of the security issues in wireless networks. Assumed KnowledgeBefore commencing this course, students should:have completed COMP3331/9331<o:p></o:p>have programming skills acquired in other subjects.",
     "url": "https://webcms3.cse.unsw.edu.au/COMP9337/20T1/outline"
-  },
-  {
-    "offering_time": "T1",
-    "code": "COMP9414",
-    "name": "Artificial Intelligence",
-    "outline": "",
-    "url": "https://webcms3.cse.unsw.edu.au/COMP9414/19T1/outline",
-    "private": true
   },
   {
     "offering_time": "T1",
@@ -454,13 +408,6 @@
   },
   {
     "offering_time": "T2",
-    "code": "COMP1511",
-    "name": "Programming Fundamentals",
-    "url": "https://www.cse.unsw.edu.au/~cs1511/19T3/resources/outline.html",
-    "outline": "This course introduces students to the basics of programming.\nTopics covered include:fundamental programming conceptsthe C programming language and use of a C compilerprogramming styleprogram design and organisation conceptsprogram testing and debuggingCourse AimsThe course aims for students to become proficient in programming using a high\nlevel language, C.\n\nBy the end of the course, students should be able to\nconstruct C programs to solve problems.Course Learning Outcomesunderstand the core syntax and semantics of the C programming language including\ntypes, I/O, arrays, functions, pointers, structs and dynamic memory allocationgiven a problem, solve it by proficiently constructing (designing, testing,\ndebugging) a secure, reliable and correct C programunderstand and employ fundamental data structures including arrays and\nlinked listsuse Linux and Unix-like operating systems to develop and test softwareCOMP1511 versus COMP1911COMP1511 is designed for computer science majors, and for any student\nwith a keen interest in computing, regardless of their degree program.COMP1911 is for students who are not computer science majors.\nCOMP1911 covers a subset of the material in COMP1511 and moves at a more\ngentle pace.If you are a computer science major, you must take COMP1511If you are not a computer science major, but have an interest in computer\nscience and think you may take further COMP courses, you also should enrol in\nCOMP1511And if you have previous programming experience -and enjoyed it- choose COMP1511Course ScheduleWeek 1Course Introduction, Compiling and Running C Programs,\n    Variables, Simple input and output, If statementsWeek 2Continuing If statements,\n    Boolean Expressions,\n\tLoops,\n\tProblem SolvingWeek 3Loops,\n\tNested Loops,\n\tMemory and Arrays,\n\tCode ReviewsWeek 4More Arrays,\n    Characters and Strings,\n    FunctionsWeek 5Pointers and Memory,\n    DebuggingWeek 6Structs and Pointers,\n    ProfessionalismAssignment 1dueWeek 7Multi-file projects,\n    Memory Allocation,\n    Linked ListsWeek 8Linked ListsWeek 9Abstract data types & Interfaces,\n\tStacks and Queues,Week 10Revision,\n    Exam preparationAssignment 2dueExam PeriodFinal ExamTopics including development approaches, programming style, testing, debugging\nstrategies and ethics will be discussed though the course as they arise.Teaching RationaleThis course has a heavy practical orientation.  Lectures will revolve\naround live demonstrations of programming and use of tools.\nLabs and assignments form a key part.On top of this, the course is not just about the specific technical\naspects of Programming, but also a preparation for studying Computer Science\nand the thought processes and skills necessary for a career in the field.Teaching StrategiesLecturesLectures will be used to present the theory and\npractice of the techniques and tools in this course. There will be\nextensive use of  practical demonstrations during\nlectures. Lecture notes will be available on the course web pages\nbefore each lecture.TutorialsFrom week 1 you will also be expected to attend a one-hour tutorial\nsession to clarify ideas from lectures and work through exercises\nbased on the lecture material. You should make sure that you use them\neffectively by examining in advance the material to be covered in each\nweek's tutorial, by asking questions, by offering suggestions and by generally\nparticipating. The tutorial questions will be posted on the Web in the\nweek before each tutorial.  There are no marks for tutorial attendance.Laboratory ClassesFollowing the tutorial class each week, there will be a two-hour laboratory class,\nduring which you will work on a variety of small practical problems\ninvolving the tools introduced in lectures.\nBecause this course is practical in nature, laboratory classes are a very\nimportant component. If you do not put a great deal of effort into the lab classes\nyou risk failing the final exam.Each week, there will be several exercises to work on. These exercises will be\nreleased in the week preceding the lab class.Most lab exercises will be done in\npairs, and you and you partner should discuss the exercises before the lab to\nmaximise the usefulness of the class.Tutors  will facilitate you forming pairs in your week 1 lab (which is not\nassessed). The pairs will change twice during session.Starting week 3, pairs will also be asked to do code reviews in the tutorials,\nto explain how they tackled a particular problem and describe interesting\nfeatures of their solution.OverviewLab exercises will be automarked (marked automatically by a computer),\nso that tutors can spend lab time assisting students rather than marking\nlabs.SubmissionFor each of the lab exercises,bothmembers of each lab pair need\nto submit the exerciseseparatelyusinggive.You cannot obtain marks by e-mailing lab work to tutors or lecturers.If you cannot complete the exercise by the end of the lab\nyou may complete it in your own time and submit it using thegivecommandbefore 5pm Monday(Monday 17:00).Challenge ExercisesChallenge exercises may be specified for some labs.Some challenge lab exercises typically will specify that they are individual\nexercises (not to be done with your partner).Challenge exercises may be silly, confusing or unreasonably difficult.Do not worry if you can not complete challenge exercises.Lab MarkingLab exercises will be automarked, using test cases that you haven't seen:\ndifferent to the test casesautotestruns for\nyou.\n\n(Hint: do your own testing as well as runningautotest)There will be partial marks for attempts which fail some of these\nautomated tests.AutomarkingAutomarking will be run several days after the submission deadline\nfor the lab. When it  is complete you should be able toview it hereor by running this command on a CSE machine:1511 classrun -collect exercise_nameLab MarksWhen all components of a lab  are automarked you should be able to view the\nthe marksvia give's web interfaceor by running this command on a CSE machine:1511 classrun -sturecThere will be more lab marks available than necessary\nto obtain full marks for the 13% lab component.\nIn other words: total lab marks will be capped.The lab exercises for week are worth in total 2 marks.Except there are no marks for the week 1 lab.Usually each lab exercise will be worth the same - for example if\nthere are 5 lab exercises each will be worth 0.4 marks.Except challenge exercises (see below) will never total more than 20% of each week's lab mark.The best 8 of your 9 lab marks for weeks 2-10, will be summed to give you a mark out of 13.If their sum exceeds 13 - your total mark will be capped at 13.Hence:You can miss 1 lab without affecting your mark.You can obtain full marks for the lab component without doing any challenge exercises.Help SessionsThere will be consultation sessions starting in week 2 where tutors will be \navailable for one on one help with\nspecific problems and assignment clarification. These sessions are optional and \nwill run at different times during the week, with more sessions available \naround assignment deadlines and in later weeks of the term. Check the course\ntimetable for what Help Sessions have been scheduled.Live StreamingLive Streaming sessions that you can join from your own computer will be run at\nspecific times in the term when help is needed.\nThese will involve some live problem solving and coding that will \nanswer frequently asked questions as well as show some more examples of specific\ncoding based on student requests. Live participation will allow students to ask\nquestions during the sessions.\nThese sessions will be recorded and available for viewing after they're streamed.\nCheck the course website for a stream schedule.Weekly Coding TestsThere will be 8 weekly coding tests from weeks 3-10 designed to give you timely\n& realistic feedback of your understanding of the course material.These will be conducted in your own time under self-enforced exam-like conditions.Each test will specify the conditions but typically these will includeNo assistance from any person.A time limit (1 hour).No access to materials (written or online) except specified language\n    documentation or man pages.Each coding test will be automatically marked. There will be partial marks for\nattempts which do not pass automatic tests.\n\nHere is an indicative guide:Passes all automatic tests.1/1Fails several automatic tests.0.75/1otherwise0.5/1Your mark for the coding test component will be the sum of your best 7 of 8 test marks.Any deliberate violation of the test conditions will result in a mark of zero\nfor the entire programming test component.The weekly programming test must be completed by Thursday 5pm the week after it is released.AssignmentsThere are two assessable programming assignments. Assignments give you the\nchance to practice what you have learned on relatively large problems (compared\nto the small exercises in the labs).\n\nAssignments are a very important part of this course, therefore it is essential\nthat you attempt them yourself.Assignment 1 (Submission, Week 6)   13%Assignment 2 (Submission, Week 10)  13%The assignment weighting and deadlines may change a little when the assignment\ndesigns are complete.Late assignments submissions will be penalized.  The exact penalty will be\nspecified in the assignment specification - typically it is 2% reduction in maximum\nmark for every hour late.Final ExamThere will be a three-hour primarily practical exam, to be held in the CSE labs\nduring the exam period.  This will be centrally timetabled and appear\nin your UNSW exam timetable.It will contain implementation tasks which will require you to write C programs.\nIt will also contain sections which require you to read code or answer questions.During this exam you will be able to execute, debug and test your answers.\nThe implementation tasks will be similar to those encountered in lab exercisesAssessmentComponentWeightLab Work13%Weekly Tests7%Assignments26%Final Exam  (exam period)54%Supplementary AssessmentStudents will be offered a supplementary exam if they miss the original\nexam due to (documented) illness or misadventure. Applications for Special\nConsideration are handled by UNSW Student Support and Services, not by\nsubject staff.The supplementary exam is scheduled for the week of the 13-17th January 2020.\nIt is your responsibility to be in Sydney and available for the supplementary exam.\nNo alternative will be offered.Student ConductThe Student Code of Conduct (Information,Policy)\nsets out what the University expects from students as members of the UNSW\ncommunity.\n\nAs well as the learning, teaching and research environment, the\nUniversity aims to provide an environment that enables students to achieve\ntheir full potential and to provide an experience consistent with the\nUniversity's values and guiding principles.\n\nA condition of enrolment is that\nstudents inform themselves of the University's rules and policies affecting\nthem, and conduct themselves accordingly.In particular, students have the responsibility to observe standards of equity\nand respect in dealing with every member of the University community.\n\nThis applies to all activities on UNSW premises and all external activities\nrelated to study and research. This includes behaviour in person as well as\nbehaviour on social media, for example Facebook groups set up for the purpose of\ndiscussing UNSW courses or course work.\n\nBehaviour that is considered in breach of the Student Code Policy as\ndiscriminatory, sexually inappropriate, bullying, harassing, invading another's\nprivacy or causing any person to fear for their personal safety is serious\nmisconduct and can lead to severe penalties, including suspension or exclusion\nfrom UNSW.If you have any concerns, you may raise them with your lecturer, or approach\ntheSchool Ethics Officer,Grievance Officer,\nor one of the student representatives.All work submitted for assessment must be your own work.Lab exercises must be completed by you and your partner.Assignments must be completedindividually.Submission of other people's work as your own (plagiarism) has a major impact on\nlearning so we use plagiarism detection software to search for\nmultiply-submitted work.Please note:Submitting part or all of other students' work, with or without acknowledgement,\nis not acceptable.Submitting work written even partly by another person is also not acceptable.Building on ideas and code snippets obtained from public sources, e.g. Stack\nOverflow, is acceptable (unless the assignment/lab forbids this) provided full\nacknowledgement of their resources is made.Discussing approaches to exercises and assignments with other students is quite\nappropriate, but any discussions should remain at the design level, and must not\ninclude program text. Comparison tools will detect any common code across\nthe student body and previous iterations of the course.The safest approach is to work diligently on your own, seeking help from the\nforum or course staff.Submission of work derived from another person, or jointly written with someone\nelse will result in loss of marks and your name being entered on UNSW's\nplagiarism register.\nThis loss of marks often results in the student failing the course.Providing your work to another person will also result in the loss of marks\nand your name being entered on UNSW's plagiarism register.\nDo not provide your work to any other person, even people who are not UNSW students.\nYou will be held responsible for the actions of anyone you provide your work to.Severe or second offences may result in automatic failure or exclusion from UNSW.Make sure you read:the Learning Centre'sexplanation of plagiarism.UNSW's policy regarding academic honesty and plagiarismOther mattersOccupational Health and Safety policiesInformation for students with disabilitiesContact the lecturer ASAP if you have any disabilities that may affect this course.Course Evaluation and DevelopmentEvery semester, COMP1511 student feedback is requested in a survey at the\nend of this course using UNSW's myExperience online survey system.This feedback is used to improve the course materials and their delivery.In the most recent session feedback was very favourable probably as a result of\nchanges based on the previous session's feedback.\n\nFeedback from surveys for COMP1511's previous offerings has resulted in\nchanges to COMP1511 delivery, including introduction of weekly programming tests.\n\nSome lab exercises and lecture topics will be updated to better reflect current\npractice.Students are also encouraged to provide informal feedback during the session,\nand to let the lecturer in charge know of any problems, as soon as they arise.\n\nSuggestions will be listened to very openly, positively, constructively, and\nthankfully, and every reasonable effort will be made to address them.Resources for StudentsNo textbook is required for COMP1511.The optional textbook for the course is:Programming, Problem Solving, and Abstraction with Cby Alistair Moffat,ISBN978\u00a01\u00a074103\u00a0080\u00a03,\nwhich can be purchased from the UNSW Bookshop.COMP1511 19T3: Programming Fundamentalsis brought to you bytheSchool of Computer Science and Engineeringat theUniversity of New South Wales, Sydney.For all enquiries, please email the class account atcs1511@cse.unsw.edu.auCRICOS Provider 00098G"
-  },
-  {
-    "offering_time": "T2",
     "code": "COMP1521",
     "name": "Computer Systems Fundamentals",
     "outline": "This course introduces students to\nhow computer systems are structured\nin terms of basic electronic components,\nhow they are used to implement procedural programs,\nand how they are structured\nas a collection of software layers.\nIt introduces students to\nlow-level software layers such as\noperating systems and network infrastructure,\nand introduces concurrency concepts.\nThe goal is to give students\na solid understanding of what happens\nwhen high-level programs are executed,\nas a basis for further study\nin important areas of computing\nsuch as computer architecture,\noperating systems, and networks.",
@@ -475,24 +422,10 @@
   },
   {
     "offering_time": "T2",
-    "code": "COMP2121",
-    "name": "Microprocessors & Interfacing",
-    "outline": "The aims of this course are to introduce students to the basic concepts and major components of microprocessors and micro controllers and to provide students with knowledge and skills for solving problems with microprocessors and micro-controllers.",
-    "url": "https://webcms3.cse.unsw.edu.au/COMP2121/19T2/outline"
-  },
-  {
-    "offering_time": "T2",
     "code": "COMP2511",
     "name": "O-O Design & Programming",
     "outline": "COMP 2511 covers the theory and practice of object-oriented design and programming with an emphasis on teaching students how to apply software design principles and design patterns to the building of flexible, reusable and maintainable systems. The course also introduces user-interface design and programming and includes the implementation of a large project done in pairs using agile software practices and enables students to have hands-on experience in applying the principles taught, implementing and incorporating the use of good design principles and design patterns in software programs",
     "url": "https://webcms3.cse.unsw.edu.au/COMP2511/19T3/outline"
-  },
-  {
-    "offering_time": "T2",
-    "code": "COMP2521",
-    "name": "Data Structures and Algorithms",
-    "url": "https://cgi.cse.unsw.edu.au/~cs2521/19T3/admin/outline/index.php",
-    "outline": "The goal of this course is\nto deepen your understanding of data structures and algorithms\nand how these can be employed effectively\nin the design of software systems.\nIt is an important course in covering\na range of core data structures and algorithms\nthat will be used in context in later courses.\nYou explore these ideas in lectres, tutorials, lab classes, and assignments.\nAssessment involves labs, tutes, practical lab exams, a practical final exam, and a theory exam.\nAt the end of the course, we want you to be a solid programmer, with knowledge of a range of useful\ndata structures and programming techniques, capable of building significant\nsoftware systems in a team environment, and ready to continue with further specialised studies in computing.Topics:\nAn introduction the structure, analysis and usage\nof a range of fundamental data types and\nthe core algorithms that operate on them, including:\nalgorithm analysis, sorting, searching, trees,\ngraphs, files, algorithmic strategies,\nanalysis and measurement of programs.\nLabs and programming assignments in C,\nusing a range of Unix tools.Executive SummaryA summary of the critical things to know about COMP2521:attempt all of the labs, tutorials, and assignments yourselfalways try to produce a better program than last timein lectures, think critically about what's being said/shownthe textbook is a useful reference source beyond this courseassessment: labs: 8%, assignments: 22%, midterm exam: 10%, final exam: 60%enjoy the course!Now, please read the rest of this document.Course TimetableThe complete course timetable is available at:webcms3:/timetableCourse AimsThe aim of this course is\nto get you tothink like a computer scientist.\nThis certainly sounds like a noble goal...\nbut what does it really mean?\nHow does ascientist,\nlet alone a computer scientist,\nactually think?What many types of scientists try to do\nis understand natural systems and processes:\na geologist, for example,\ntries to understand the structure of the earth;\na biologist tries to understand living organisms;\na chemist tries to understand materials and reactions,\nand so on.Computer scientists don't,\nas the name might suggest,\nsimply try to understand\nthe structure and behaviour of computers,\nbut are more concerned with\nunderstanding software systems\n(and the interaction between\nthe software and the hardware on which it runs).\nAlso, unlike other scientists,\ncomputer scientists frequently build\nthe objects that they study.During this course, we'll be looking at\nways of creating, analysing and understanding software.\nUltimately, you should be able to answer the question,is this piece of software any good?and be able to provide sound reasons to justify your answer.This course follows on from introductory C programming courses:\nCOMP1511, COMP1917, or COMP1921.\nWe cover additional aspects of the C programming language\nthat were not covered in those courses,\nand also look at some programming tools\nwhich were not covered (in detail) earlier.\nHowever, this course is not simply\na second C programming course:\nthe focus is on the ideas and abstractions\nbehind the data structures and algorithms that are used.COMP2521 is a critical course\nin the study of computing at UNSW,\nsince it deals with many concepts that are\ncentral to future studies in the area.\nWhether you are studying Computer Science,\nSoftware Engineering, Bioinformatics,\nComputer Engineering,\nor even a discipline outside the realm of computing,\nunderstanding a range of algorithms and data structures\nand how to use them\nwill make you a much more effective\ncomputing problem solver in the future.Student Learning Outcomes"
   },
   {
     "offering_time": "T2",
@@ -510,20 +443,6 @@
   },
   {
     "offering_time": "T2",
-    "code": "COMP3331",
-    "name": "Computer Networks&Applications",
-    "outline": "This course is an introductory course on computer networks, aimed at students with a background in computer science / electrical engineering. We will focus on common paradigms and protocols used in present data communication. Through lectures, in-class activities, labs and assignments, you will learn the theory and application of(1) medium access control, congestion control, flow control, and reliable transmission,(2) addressing and naming,(3) routing and switching,(4) widely used protocols such as Ethernet, IP, TCP, UDP, HTTP, etc.(5) security threats and common defensive techniques, and(6) special purpose networks such as content delivery networks, peer-to-peer networks and wireless networks.This is a combined undergraduate and postgraduate course.",
-    "url": "https://webcms3.cse.unsw.edu.au/COMP3331/19T3/outline"
-  },
-  {
-    "offering_time": "T2",
-    "code": "COMP3411",
-    "name": "Artificial Intelligence",
-    "outline": "Give a brief summary for why this course is relevant, where it fits in the \n  degree(s), and its aims ...",
-    "url": "https://webcms3.cse.unsw.edu.au/COMP3411/19T1/outline"
-  },
-  {
-    "offering_time": "T2",
     "code": "COMP3421",
     "name": "Computer Graphics",
     "outline": "This course teaches the fundamental algorithms underlying computer graphics in both 2D and 3D. It introduces students to an industry standard graphics API (OpenGL) and gives them experience developing graphical applications.",
@@ -538,27 +457,6 @@
   },
   {
     "offering_time": "T2",
-    "code": "COMP3900",
-    "name": "Computer Science Project",
-    "outline": "A capstone software project. Students work in teams to define, implement and evaluate a real-world software system. Most of the work in this course is team-based project work, although there are some introductory lectures on software project management and teamwork strategies. Project teams meet weekly with project mentors to report on the progress of the project. Assessment is based on a project proposal, a final project demonstration and report, and on the quality of the software system itself. Students are also required to reflect on their work and to provide peer assessment of their team-mates' contributions to the project.",
-    "url": "https://webcms3.cse.unsw.edu.au/COMP9900/19T1/outline"
-  },
-  {
-    "offering_time": "T2",
-    "code": "COMP3901",
-    "name": "Special Project A",
-    "url": "http://www.cse.unsw.edu.au/~morri/specialProject.html",
-    "outline": ""
-  },
-  {
-    "offering_time": "T2",
-    "code": "COMP3902",
-    "name": "Special Project B",
-    "url": "http://www.cse.unsw.edu.au/~morri/specialProject.html",
-    "outline": ""
-  },
-  {
-    "offering_time": "T2",
     "code": "COMP4336",
     "name": "Mobile Data Networking",
     "url": ""
@@ -567,31 +465,8 @@
     "offering_time": "T2",
     "code": "COMP4511",
     "name": "User Interface Design & Constr",
-    "url": ""
-  },
-  {
-    "offering_time": "T2",
-    "code": "COMP4930",
-    "name": "Thesis Part A",
-    "url": ""
-  },
-  {
-    "offering_time": "T2",
-    "code": "COMP4931",
-    "name": "Thesis Part B",
-    "url": ""
-  },
-  {
-    "offering_time": "T2",
-    "code": "COMP4941",
-    "name": "Thesis Part B",
-    "url": ""
-  },
-  {
-    "offering_time": "T2",
-    "code": "COMP4951",
-    "name": "Research Thesis A",
-    "url": ""
+    "url": "https://www.cse.unsw.edu.au/~cs4511/csedocs/CourseOutline2018.pdf",
+    "outline": ""
   },
   {
     "offering_time": "T2",
@@ -603,24 +478,6 @@
     "offering_time": "T2",
     "code": "COMP4953",
     "name": "Research Thesis C",
-    "url": ""
-  },
-  {
-    "offering_time": "T2",
-    "code": "COMP4961",
-    "name": "Computer Science Thesis A",
-    "url": ""
-  },
-  {
-    "offering_time": "T2",
-    "code": "COMP4962",
-    "name": "Computer Science Thesis B",
-    "url": ""
-  },
-  {
-    "offering_time": "T2",
-    "code": "COMP4963",
-    "name": "Computer Science Thesis C",
     "url": ""
   },
   {
@@ -665,21 +522,6 @@
   },
   {
     "offering_time": "T2",
-    "code": "COMP9021",
-    "name": "Principles of Programming",
-    "outline": "",
-    "url": "https://webcms3.cse.unsw.edu.au/COMP9021/19T3/outline",
-    "private": true
-  },
-  {
-    "offering_time": "T2",
-    "code": "COMP9024",
-    "name": "Data Structures & Algorithms",
-    "outline": "Data structures are about how data is stored inside a computer for effective and efficient use. An algorithm is a step-by-step process for solving a problem within a finite amount of space and time. Data structures and algorithms are not only important in software design, but also in hardware design. Being proficient in data structures and algorithms are essential for good software developers, hardware developers, and system architects.The actual content is taken from a list of subjects that constitute the basis of the tool box of every serious practitioner of computing: data types and data structures, abstract data types, dynamic data structures, analysis of algorithms and a variety of fundamental algorithms for graphs, trees and text processing.",
-    "url": "https://webcms3.cse.unsw.edu.au/COMP9024/19T3/outline"
-  },
-  {
-    "offering_time": "T2",
     "code": "COMP9044",
     "name": "Software Construction",
     "url": "https://cgi.cse.unsw.edu.au/~cs2041/19T2/resources/outline.html",
@@ -713,14 +555,6 @@
   },
   {
     "offering_time": "T2",
-    "code": "COMP9311",
-    "name": "Database Systems",
-    "outline": "",
-    "url": "https://webcms3.cse.unsw.edu.au/COMP9311/19T3/outline",
-    "private": true
-  },
-  {
-    "offering_time": "T2",
     "code": "COMP9313",
     "name": "Big Data Management",
     "url": "https://webcms3.cse.unsw.edu.au/static/uploads/course/COMP9313/19T2/45d97e095ed0ec82f8a4e1dbf149cf7917e34668ef062e87b12e3a0a94258f9d/Course-Outline.pdf",
@@ -742,20 +576,6 @@
   },
   {
     "offering_time": "T2",
-    "code": "COMP9322",
-    "name": "Software Service Design & Eng",
-    "url": "https://webcms3.cse.unsw.edu.au/static/uploads/course/COMP9322/19T2/12de7bb6a37496b728201e17e66eefff411844532d2904167181a1e4a7c80179/Comp9322__Software_Service_Design_and_Engineering-2.pdf",
-    "outline": ""
-  },
-  {
-    "offering_time": "T2",
-    "code": "COMP9331",
-    "name": "Computer Networks&Applications",
-    "outline": "This course is an introductory course on computer networks, aimed at students with a background in computer science / electrical engineering. We will focus on common paradigms and protocols used in present data communication. Through lectures, in-class activities, labs and assignments, you will learn the theory and application of(1) medium access control, congestion control, flow control, and reliable transmission,(2) addressing and naming,(3) routing and switching,(4) widely used protocols such as Ethernet, IP, TCP, UDP, HTTP, etc.(5) security threats and common defensive techniques, and(6) special purpose networks such as content delivery networks, peer-to-peer networks and wireless networks.This is a combined undergraduate and postgraduate course.",
-    "url": "https://webcms3.cse.unsw.edu.au/COMP3331/19T2/outline"
-  },
-  {
-    "offering_time": "T2",
     "code": "COMP9332",
     "name": "Network Routing and Switching",
     "url": "http://www.cse.unsw.edu.au/~cs9332/outline18s1.html",
@@ -766,14 +586,6 @@
     "code": "COMP9336",
     "name": "Mobile Data Networking",
     "url": ""
-  },
-  {
-    "offering_time": "T2",
-    "code": "COMP9414",
-    "name": "Artificial Intelligence",
-    "outline": "",
-    "url": "https://webcms3.cse.unsw.edu.au/COMP9414/19T1/outline",
-    "private": true
   },
   {
     "offering_time": "T2",
@@ -798,42 +610,10 @@
   },
   {
     "offering_time": "T2",
-    "code": "COMP9596",
-    "name": "Research Project",
-    "url": ""
-  },
-  {
-    "offering_time": "T2",
     "code": "COMP9801",
     "name": "Ext Design&Analysis of Algo",
     "url": "https://cgi.cse.unsw.edu.au/~cs3121/extended.php",
     "outline": ""
-  },
-  {
-    "offering_time": "T2",
-    "code": "COMP9900",
-    "name": "Info Tech Project",
-    "outline": "",
-    "url": "https://webcms3.cse.unsw.edu.au/COMP9900/19T3/outline",
-    "private": true
-  },
-  {
-    "offering_time": "T2",
-    "code": "COMP9901",
-    "name": "P/T Res. Thesis Comp Sci & Eng",
-    "url": ""
-  },
-  {
-    "offering_time": "T2",
-    "code": "COMP9902",
-    "name": "Res. Thesis Comp Sci & Eng F/T",
-    "url": ""
-  },
-  {
-    "offering_time": "T2",
-    "code": "COMP9945",
-    "name": "Research Project",
-    "url": ""
   },
   {
     "offering_time": "T3",
@@ -841,41 +621,6 @@
     "name": "Programming for Designers",
     "outline": "",
     "url": "https://webcms3.cse.unsw.edu.au/static/uploads/course/COMP1400/18s2/e21a9db0fb5e62a0423b7df090da765e2da7cfa22895c180f31aad62d185144a/Comp1400-outline-2018.html"
-  },
-  {
-    "offering_time": "T3",
-    "code": "COMP1511",
-    "name": "Programming Fundamentals",
-    "url": "https://www.cse.unsw.edu.au/~cs1511/19T3/resources/outline.html",
-    "outline": "This course introduces students to the basics of programming.\nTopics covered include:fundamental programming conceptsthe C programming language and use of a C compilerprogramming styleprogram design and organisation conceptsprogram testing and debuggingCourse AimsThe course aims for students to become proficient in programming using a high\nlevel language, C.\n\nBy the end of the course, students should be able to\nconstruct C programs to solve problems.Course Learning Outcomesunderstand the core syntax and semantics of the C programming language including\ntypes, I/O, arrays, functions, pointers, structs and dynamic memory allocationgiven a problem, solve it by proficiently constructing (designing, testing,\ndebugging) a secure, reliable and correct C programunderstand and employ fundamental data structures including arrays and\nlinked listsuse Linux and Unix-like operating systems to develop and test softwareCOMP1511 versus COMP1911COMP1511 is designed for computer science majors, and for any student\nwith a keen interest in computing, regardless of their degree program.COMP1911 is for students who are not computer science majors.\nCOMP1911 covers a subset of the material in COMP1511 and moves at a more\ngentle pace.If you are a computer science major, you must take COMP1511If you are not a computer science major, but have an interest in computer\nscience and think you may take further COMP courses, you also should enrol in\nCOMP1511And if you have previous programming experience -and enjoyed it- choose COMP1511Course ScheduleWeek 1Course Introduction, Compiling and Running C Programs,\n    Variables, Simple input and output, If statementsWeek 2Continuing If statements,\n    Boolean Expressions,\n\tLoops,\n\tProblem SolvingWeek 3Loops,\n\tNested Loops,\n\tMemory and Arrays,\n\tCode ReviewsWeek 4More Arrays,\n    Characters and Strings,\n    FunctionsWeek 5Pointers and Memory,\n    DebuggingWeek 6Structs and Pointers,\n    ProfessionalismAssignment 1dueWeek 7Multi-file projects,\n    Memory Allocation,\n    Linked ListsWeek 8Linked ListsWeek 9Abstract data types & Interfaces,\n\tStacks and Queues,Week 10Revision,\n    Exam preparationAssignment 2dueExam PeriodFinal ExamTopics including development approaches, programming style, testing, debugging\nstrategies and ethics will be discussed though the course as they arise.Teaching RationaleThis course has a heavy practical orientation.  Lectures will revolve\naround live demonstrations of programming and use of tools.\nLabs and assignments form a key part.On top of this, the course is not just about the specific technical\naspects of Programming, but also a preparation for studying Computer Science\nand the thought processes and skills necessary for a career in the field.Teaching StrategiesLecturesLectures will be used to present the theory and\npractice of the techniques and tools in this course. There will be\nextensive use of  practical demonstrations during\nlectures. Lecture notes will be available on the course web pages\nbefore each lecture.TutorialsFrom week 1 you will also be expected to attend a one-hour tutorial\nsession to clarify ideas from lectures and work through exercises\nbased on the lecture material. You should make sure that you use them\neffectively by examining in advance the material to be covered in each\nweek's tutorial, by asking questions, by offering suggestions and by generally\nparticipating. The tutorial questions will be posted on the Web in the\nweek before each tutorial.  There are no marks for tutorial attendance.Laboratory ClassesFollowing the tutorial class each week, there will be a two-hour laboratory class,\nduring which you will work on a variety of small practical problems\ninvolving the tools introduced in lectures.\nBecause this course is practical in nature, laboratory classes are a very\nimportant component. If you do not put a great deal of effort into the lab classes\nyou risk failing the final exam.Each week, there will be several exercises to work on. These exercises will be\nreleased in the week preceding the lab class.Most lab exercises will be done in\npairs, and you and you partner should discuss the exercises before the lab to\nmaximise the usefulness of the class.Tutors  will facilitate you forming pairs in your week 1 lab (which is not\nassessed). The pairs will change twice during session.Starting week 3, pairs will also be asked to do code reviews in the tutorials,\nto explain how they tackled a particular problem and describe interesting\nfeatures of their solution.OverviewLab exercises will be automarked (marked automatically by a computer),\nso that tutors can spend lab time assisting students rather than marking\nlabs.SubmissionFor each of the lab exercises,bothmembers of each lab pair need\nto submit the exerciseseparatelyusinggive.You cannot obtain marks by e-mailing lab work to tutors or lecturers.If you cannot complete the exercise by the end of the lab\nyou may complete it in your own time and submit it using thegivecommandbefore 5pm Monday(Monday 17:00).Challenge ExercisesChallenge exercises may be specified for some labs.Some challenge lab exercises typically will specify that they are individual\nexercises (not to be done with your partner).Challenge exercises may be silly, confusing or unreasonably difficult.Do not worry if you can not complete challenge exercises.Lab MarkingLab exercises will be automarked, using test cases that you haven't seen:\ndifferent to the test casesautotestruns for\nyou.\n\n(Hint: do your own testing as well as runningautotest)There will be partial marks for attempts which fail some of these\nautomated tests.AutomarkingAutomarking will be run several days after the submission deadline\nfor the lab. When it  is complete you should be able toview it hereor by running this command on a CSE machine:1511 classrun -collect exercise_nameLab MarksWhen all components of a lab  are automarked you should be able to view the\nthe marksvia give's web interfaceor by running this command on a CSE machine:1511 classrun -sturecThere will be more lab marks available than necessary\nto obtain full marks for the 13% lab component.\nIn other words: total lab marks will be capped.The lab exercises for week are worth in total 2 marks.Except there are no marks for the week 1 lab.Usually each lab exercise will be worth the same - for example if\nthere are 5 lab exercises each will be worth 0.4 marks.Except challenge exercises (see below) will never total more than 20% of each week's lab mark.The best 8 of your 9 lab marks for weeks 2-10, will be summed to give you a mark out of 13.If their sum exceeds 13 - your total mark will be capped at 13.Hence:You can miss 1 lab without affecting your mark.You can obtain full marks for the lab component without doing any challenge exercises.Help SessionsThere will be consultation sessions starting in week 2 where tutors will be \navailable for one on one help with\nspecific problems and assignment clarification. These sessions are optional and \nwill run at different times during the week, with more sessions available \naround assignment deadlines and in later weeks of the term. Check the course\ntimetable for what Help Sessions have been scheduled.Live StreamingLive Streaming sessions that you can join from your own computer will be run at\nspecific times in the term when help is needed.\nThese will involve some live problem solving and coding that will \nanswer frequently asked questions as well as show some more examples of specific\ncoding based on student requests. Live participation will allow students to ask\nquestions during the sessions.\nThese sessions will be recorded and available for viewing after they're streamed.\nCheck the course website for a stream schedule.Weekly Coding TestsThere will be 8 weekly coding tests from weeks 3-10 designed to give you timely\n& realistic feedback of your understanding of the course material.These will be conducted in your own time under self-enforced exam-like conditions.Each test will specify the conditions but typically these will includeNo assistance from any person.A time limit (1 hour).No access to materials (written or online) except specified language\n    documentation or man pages.Each coding test will be automatically marked. There will be partial marks for\nattempts which do not pass automatic tests.\n\nHere is an indicative guide:Passes all automatic tests.1/1Fails several automatic tests.0.75/1otherwise0.5/1Your mark for the coding test component will be the sum of your best 7 of 8 test marks.Any deliberate violation of the test conditions will result in a mark of zero\nfor the entire programming test component.The weekly programming test must be completed by Thursday 5pm the week after it is released.AssignmentsThere are two assessable programming assignments. Assignments give you the\nchance to practice what you have learned on relatively large problems (compared\nto the small exercises in the labs).\n\nAssignments are a very important part of this course, therefore it is essential\nthat you attempt them yourself.Assignment 1 (Submission, Week 6)   13%Assignment 2 (Submission, Week 10)  13%The assignment weighting and deadlines may change a little when the assignment\ndesigns are complete.Late assignments submissions will be penalized.  The exact penalty will be\nspecified in the assignment specification - typically it is 2% reduction in maximum\nmark for every hour late.Final ExamThere will be a three-hour primarily practical exam, to be held in the CSE labs\nduring the exam period.  This will be centrally timetabled and appear\nin your UNSW exam timetable.It will contain implementation tasks which will require you to write C programs.\nIt will also contain sections which require you to read code or answer questions.During this exam you will be able to execute, debug and test your answers.\nThe implementation tasks will be similar to those encountered in lab exercisesAssessmentComponentWeightLab Work13%Weekly Tests7%Assignments26%Final Exam  (exam period)54%Supplementary AssessmentStudents will be offered a supplementary exam if they miss the original\nexam due to (documented) illness or misadventure. Applications for Special\nConsideration are handled by UNSW Student Support and Services, not by\nsubject staff.The supplementary exam is scheduled for the week of the 13-17th January 2020.\nIt is your responsibility to be in Sydney and available for the supplementary exam.\nNo alternative will be offered.Student ConductThe Student Code of Conduct (Information,Policy)\nsets out what the University expects from students as members of the UNSW\ncommunity.\n\nAs well as the learning, teaching and research environment, the\nUniversity aims to provide an environment that enables students to achieve\ntheir full potential and to provide an experience consistent with the\nUniversity's values and guiding principles.\n\nA condition of enrolment is that\nstudents inform themselves of the University's rules and policies affecting\nthem, and conduct themselves accordingly.In particular, students have the responsibility to observe standards of equity\nand respect in dealing with every member of the University community.\n\nThis applies to all activities on UNSW premises and all external activities\nrelated to study and research. This includes behaviour in person as well as\nbehaviour on social media, for example Facebook groups set up for the purpose of\ndiscussing UNSW courses or course work.\n\nBehaviour that is considered in breach of the Student Code Policy as\ndiscriminatory, sexually inappropriate, bullying, harassing, invading another's\nprivacy or causing any person to fear for their personal safety is serious\nmisconduct and can lead to severe penalties, including suspension or exclusion\nfrom UNSW.If you have any concerns, you may raise them with your lecturer, or approach\ntheSchool Ethics Officer,Grievance Officer,\nor one of the student representatives.All work submitted for assessment must be your own work.Lab exercises must be completed by you and your partner.Assignments must be completedindividually.Submission of other people's work as your own (plagiarism) has a major impact on\nlearning so we use plagiarism detection software to search for\nmultiply-submitted work.Please note:Submitting part or all of other students' work, with or without acknowledgement,\nis not acceptable.Submitting work written even partly by another person is also not acceptable.Building on ideas and code snippets obtained from public sources, e.g. Stack\nOverflow, is acceptable (unless the assignment/lab forbids this) provided full\nacknowledgement of their resources is made.Discussing approaches to exercises and assignments with other students is quite\nappropriate, but any discussions should remain at the design level, and must not\ninclude program text. Comparison tools will detect any common code across\nthe student body and previous iterations of the course.The safest approach is to work diligently on your own, seeking help from the\nforum or course staff.Submission of work derived from another person, or jointly written with someone\nelse will result in loss of marks and your name being entered on UNSW's\nplagiarism register.\nThis loss of marks often results in the student failing the course.Providing your work to another person will also result in the loss of marks\nand your name being entered on UNSW's plagiarism register.\nDo not provide your work to any other person, even people who are not UNSW students.\nYou will be held responsible for the actions of anyone you provide your work to.Severe or second offences may result in automatic failure or exclusion from UNSW.Make sure you read:the Learning Centre'sexplanation of plagiarism.UNSW's policy regarding academic honesty and plagiarismOther mattersOccupational Health and Safety policiesInformation for students with disabilitiesContact the lecturer ASAP if you have any disabilities that may affect this course.Course Evaluation and DevelopmentEvery semester, COMP1511 student feedback is requested in a survey at the\nend of this course using UNSW's myExperience online survey system.This feedback is used to improve the course materials and their delivery.In the most recent session feedback was very favourable probably as a result of\nchanges based on the previous session's feedback.\n\nFeedback from surveys for COMP1511's previous offerings has resulted in\nchanges to COMP1511 delivery, including introduction of weekly programming tests.\n\nSome lab exercises and lecture topics will be updated to better reflect current\npractice.Students are also encouraged to provide informal feedback during the session,\nand to let the lecturer in charge know of any problems, as soon as they arise.\n\nSuggestions will be listened to very openly, positively, constructively, and\nthankfully, and every reasonable effort will be made to address them.Resources for StudentsNo textbook is required for COMP1511.The optional textbook for the course is:Programming, Problem Solving, and Abstraction with Cby Alistair Moffat,ISBN978\u00a01\u00a074103\u00a0080\u00a03,\nwhich can be purchased from the UNSW Bookshop.COMP1511 19T3: Programming Fundamentalsis brought to you bytheSchool of Computer Science and Engineeringat theUniversity of New South Wales, Sydney.For all enquiries, please email the class account atcs1511@cse.unsw.edu.auCRICOS Provider 00098G"
-  },
-  {
-    "offering_time": "T3",
-    "code": "COMP1521",
-    "name": "Computer Systems Fundamentals",
-    "outline": "This course introduces students to\nhow computer systems are structured\nin terms of basic electronic components,\nhow they are used to implement procedural programs,\nand how they are structured\nas a collection of software layers.\nIt introduces students to\nlow-level software layers such as\noperating systems and network infrastructure,\nand introduces concurrency concepts.\nThe goal is to give students\na solid understanding of what happens\nwhen high-level programs are executed,\nas a basis for further study\nin important areas of computing\nsuch as computer architecture,\noperating systems, and networks.",
-    "url": "https://webcms3.cse.unsw.edu.au/COMP1521/19T2/outline"
-  },
-  {
-    "offering_time": "T3",
-    "code": "COMP1531",
-    "name": "Software Eng Fundamentals",
-    "outline": "",
-    "url": "https://webcms3.cse.unsw.edu.au/COMP1531/19T3/outline"
-  },
-  {
-    "offering_time": "T3",
-    "code": "COMP2511",
-    "name": "O-O Design & Programming",
-    "outline": "COMP 2511 covers the theory and practice of object-oriented design and programming with an emphasis on teaching students how to apply software design principles and design patterns to the building of flexible, reusable and maintainable systems. The course also introduces user-interface design and programming and includes the implementation of a large project done in pairs using agile software practices and enables students to have hands-on experience in applying the principles taught, implementing and incorporating the use of good design principles and design patterns in software programs",
-    "url": "https://webcms3.cse.unsw.edu.au/COMP2511/19T3/outline"
-  },
-  {
-    "offering_time": "T3",
-    "code": "COMP2521",
-    "name": "Data Structures and Algorithms",
-    "url": "https://cgi.cse.unsw.edu.au/~cs2521/19T3/admin/outline/index.php",
-    "outline": "The goal of this course is\nto deepen your understanding of data structures and algorithms\nand how these can be employed effectively\nin the design of software systems.\nIt is an important course in covering\na range of core data structures and algorithms\nthat will be used in context in later courses.\nYou explore these ideas in lectres, tutorials, lab classes, and assignments.\nAssessment involves labs, tutes, practical lab exams, a practical final exam, and a theory exam.\nAt the end of the course, we want you to be a solid programmer, with knowledge of a range of useful\ndata structures and programming techniques, capable of building significant\nsoftware systems in a team environment, and ready to continue with further specialised studies in computing.Topics:\nAn introduction the structure, analysis and usage\nof a range of fundamental data types and\nthe core algorithms that operate on them, including:\nalgorithm analysis, sorting, searching, trees,\ngraphs, files, algorithmic strategies,\nanalysis and measurement of programs.\nLabs and programming assignments in C,\nusing a range of Unix tools.Executive SummaryA summary of the critical things to know about COMP2521:attempt all of the labs, tutorials, and assignments yourselfalways try to produce a better program than last timein lectures, think critically about what's being said/shownthe textbook is a useful reference source beyond this courseassessment: labs: 8%, assignments: 22%, midterm exam: 10%, final exam: 60%enjoy the course!Now, please read the rest of this document.Course TimetableThe complete course timetable is available at:webcms3:/timetableCourse AimsThe aim of this course is\nto get you tothink like a computer scientist.\nThis certainly sounds like a noble goal...\nbut what does it really mean?\nHow does ascientist,\nlet alone a computer scientist,\nactually think?What many types of scientists try to do\nis understand natural systems and processes:\na geologist, for example,\ntries to understand the structure of the earth;\na biologist tries to understand living organisms;\na chemist tries to understand materials and reactions,\nand so on.Computer scientists don't,\nas the name might suggest,\nsimply try to understand\nthe structure and behaviour of computers,\nbut are more concerned with\nunderstanding software systems\n(and the interaction between\nthe software and the hardware on which it runs).\nAlso, unlike other scientists,\ncomputer scientists frequently build\nthe objects that they study.During this course, we'll be looking at\nways of creating, analysing and understanding software.\nUltimately, you should be able to answer the question,is this piece of software any good?and be able to provide sound reasons to justify your answer.This course follows on from introductory C programming courses:\nCOMP1511, COMP1917, or COMP1921.\nWe cover additional aspects of the C programming language\nthat were not covered in those courses,\nand also look at some programming tools\nwhich were not covered (in detail) earlier.\nHowever, this course is not simply\na second C programming course:\nthe focus is on the ideas and abstractions\nbehind the data structures and algorithms that are used.COMP2521 is a critical course\nin the study of computing at UNSW,\nsince it deals with many concepts that are\ncentral to future studies in the area.\nWhether you are studying Computer Science,\nSoftware Engineering, Bioinformatics,\nComputer Engineering,\nor even a discipline outside the realm of computing,\nunderstanding a range of algorithms and data structures\nand how to use them\nwill make you a much more effective\ncomputing problem solver in the future.Student Learning Outcomes"
   },
   {
     "offering_time": "T3",
@@ -893,20 +638,6 @@
   },
   {
     "offering_time": "T3",
-    "code": "COMP3311",
-    "name": "Database Systems",
-    "outline": "This course aims to explore in depth the practice of developing database applications and the theory behind relational database management systems (RDBMSs). It will also give an overview of the technologies used in implementing database management systems and the past, present and future of database systems and database research.Large data resources are critical to the functioning of just about every significant modern computer application. Hence, knowledge of how to manage them is clearly important to the IT industry. In the context of further study, understanding how to use databases effectively is essential for courses such asCOMP9321Data Services Engineering andCOMP9322Software Service Design and Engineering. COMP3311 also provides a foundation for further study in advanced database topics, such asCOMP9315Database Systems Implementation andCOMP9318Data Warehousing and Data Mining. Database concepts are also relevant in courses such asCOMP9319Web Data Compression and Search andCOMP6714Information Retrieval and Web Search.By the end of this course, we want you to be capable of building high-quality (correct, efficient, and usable) applications based on relational databases, to have a sound understanding of issues in administering relational database management systems, and have an overview of how they work internally.",
-    "url": "https://webcms3.cse.unsw.edu.au/COMP3311/19T3/outline"
-  },
-  {
-    "offering_time": "T3",
-    "code": "COMP3331",
-    "name": "Computer Networks&Applications",
-    "outline": "This course is an introductory course on computer networks, aimed at students with a background in computer science / electrical engineering. We will focus on common paradigms and protocols used in present data communication. Through lectures, in-class activities, labs and assignments, you will learn the theory and application of(1) medium access control, congestion control, flow control, and reliable transmission,(2) addressing and naming,(3) routing and switching,(4) widely used protocols such as Ethernet, IP, TCP, UDP, HTTP, etc.(5) security threats and common defensive techniques, and(6) special purpose networks such as content delivery networks, peer-to-peer networks and wireless networks.This is a combined undergraduate and postgraduate course.",
-    "url": "https://webcms3.cse.unsw.edu.au/COMP3331/19T3/outline"
-  },
-  {
-    "offering_time": "T3",
     "code": "COMP3431",
     "name": "Robotic Software Architecture",
     "outline": "This course gives both a theoretical and a practical introduction to the control of robotic systems. The course is in two parts:An overview of robot software architectures:This part of the course gives students an introduction to the structure of robot software, including the theory of decision making: How can an agent build up knowledge of its world? Having done that, how can an agent choose its actions? A variety of different decision making and planning architectures are covered; including classical planning, reinforcement learning and cognitive architectures. In labs, students will get hands on experience with some of these planning systems.Practical RoboticsThis part of the course gives students a practical introduction to some specific robot architectures; the main system architecture will be the Robot Operating System,ROS. We will be usingTurtleBot3 WaffleRobots, or other robots as available.At the end of this course, students should have:experience with the details of one robot architecture,an overview of a range of other architectures and decision making systems,an understanding of the practicalities of programming physical robots as opposed to purely software systems,an understanding of a robot as a complete system, as well as its component parts.",
@@ -914,38 +645,10 @@
   },
   {
     "offering_time": "T3",
-    "code": "COMP3511",
-    "name": "Human Computer Interaction",
-    "url": "https://www.cse.unsw.edu.au/~cs3511/HCICourseOutline2019-V1.pdf",
-    "outline": ""
-  },
-  {
-    "offering_time": "T3",
     "code": "COMP3601",
     "name": "Design Project A",
     "outline": "This course aims to teach students how to design real world hardware/software co-design projects. Throughout the course of the semester, students will work in groups to achieve a complicated design using and FPGA and external hardware connected to a PC. At the beginning of the course, students will be assigned to a group and given a design task. Several required parameters for the task, including a budget, will be provided to students. This course builds upon the skills you have learnt in other courses, such as COMP2121, COMP3222, electrical engineering and software design courses to complete a large project through group participation.",
     "url": "https://webcms3.cse.unsw.edu.au/COMP3601/19T3/outline"
-  },
-  {
-    "offering_time": "T3",
-    "code": "COMP3900",
-    "name": "Computer Science Project",
-    "outline": "A capstone software project. Students work in teams to define, implement and evaluate a real-world software system. Most of the work in this course is team-based project work, although there are some introductory lectures on software project management and teamwork strategies. Project teams meet weekly with project mentors to report on the progress of the project. Assessment is based on a project proposal, a final project demonstration and report, and on the quality of the software system itself. Students are also required to reflect on their work and to provide peer assessment of their team-mates' contributions to the project.",
-    "url": "https://webcms3.cse.unsw.edu.au/COMP9900/19T1/outline"
-  },
-  {
-    "offering_time": "T3",
-    "code": "COMP3901",
-    "name": "Special Project A",
-    "url": "http://www.cse.unsw.edu.au/~morri/specialProject.html",
-    "outline": ""
-  },
-  {
-    "offering_time": "T3",
-    "code": "COMP3902",
-    "name": "Special Project B",
-    "url": "http://www.cse.unsw.edu.au/~morri/specialProject.html",
-    "outline": ""
   },
   {
     "offering_time": "T3",
@@ -984,72 +687,11 @@
   },
   {
     "offering_time": "T3",
-    "code": "COMP4930",
-    "name": "Thesis Part A",
-    "url": ""
-  },
-  {
-    "offering_time": "T3",
-    "code": "COMP4931",
-    "name": "Thesis Part B",
-    "url": ""
-  },
-  {
-    "offering_time": "T3",
-    "code": "COMP4941",
-    "name": "Thesis Part B",
-    "url": ""
-  },
-  {
-    "offering_time": "T3",
-    "code": "COMP4951",
-    "name": "Research Thesis A",
-    "url": ""
-  },
-  {
-    "offering_time": "T3",
-    "code": "COMP4952",
-    "name": "Research Thesis B",
-    "url": ""
-  },
-  {
-    "offering_time": "T3",
-    "code": "COMP4953",
-    "name": "Research Thesis C",
-    "url": ""
-  },
-  {
-    "offering_time": "T3",
-    "code": "COMP4961",
-    "name": "Computer Science Thesis A",
-    "url": ""
-  },
-  {
-    "offering_time": "T3",
-    "code": "COMP4962",
-    "name": "Computer Science Thesis B",
-    "url": ""
-  },
-  {
-    "offering_time": "T3",
-    "code": "COMP4963",
-    "name": "Computer Science Thesis C",
-    "url": ""
-  },
-  {
-    "offering_time": "T3",
     "code": "COMP6445",
     "name": "Digital Forensics",
     "outline": "",
     "url": "https://webcms3.cse.unsw.edu.au/COMP6445/19T3/outline",
     "private": true
-  },
-  {
-    "offering_time": "T3",
-    "code": "COMP6451",
-    "name": "Cryptocurrency and DLT",
-    "url": "http://www.cse.unsw.edu.au/~cs6451/",
-    "outline": "The course aims to develop an understanding of the requirements for\nelectronic payment systems and how these requirements are realised\nusing distributed ledger technologies. The technical ideas to be\nunderstood include the key cryptographic constructs, economic\nincentive mechanisms and distributed algorithms underpinning\ncryptocurrencies such as Bitcoin and Ethereum. The concept of smart\ncontract will be introduced, and the course aims to develop a basic\nfacility with programming smart contracts on one cryptocurrency\nplatform. The course also aims to introduce students to the broader\ncontext of the range of alternate designs for distributed ledger\ntechnologies, the range of potential applications for these\ntechnologies, and the socio-economic, ethical and legal dimensions of\ntheir use."
   },
   {
     "offering_time": "T3",
@@ -1077,28 +719,6 @@
     "name": "Extended Digital Forensics",
     "outline": "This is a specialist security course in Digital Forensics. Topics include principles of forensic analysis, forensics and the law, forensics on several types of infrastructure, management of forensic methodologies and various real life case studies of forensic analyses.Students of this course will apply forensic methods in controlled environments and gain an understanding of the technical process of uncovering hidden data and other metadata which may reveal user behaviour. Students will also develop skills in reporting their findings and evaluate the ethical consequences of their findings.",
     "url": "https://webcms3.cse.unsw.edu.au/COMP6445/18s2/outline"
-  },
-  {
-    "offering_time": "T3",
-    "code": "COMP9020",
-    "name": "Foundations of Comp. Science",
-    "outline": "The official scope is: mathematical methods for designing correct and \nefficient programs; mathematics for algorithm analysis; logic for \nproving and verification.The actual content is taken from a list of subjects that constitute \nthe basis of the tool box of every serious practitioner of computing: \nset and relation theory; induction, recursion and recurrence relations; \norder of growth of functions; structured counting (combinatorics); \ndiscrete probability; graph theory and trees for algorithmic \napplications; propositional logic and boolean algebras.",
-    "url": "https://webcms3.cse.unsw.edu.au/COMP9020/19T3/outline"
-  },
-  {
-    "offering_time": "T3",
-    "code": "COMP9021",
-    "name": "Principles of Programming",
-    "outline": "",
-    "url": "https://webcms3.cse.unsw.edu.au/COMP9021/19T3/outline",
-    "private": true
-  },
-  {
-    "offering_time": "T3",
-    "code": "COMP9024",
-    "name": "Data Structures & Algorithms",
-    "outline": "Data structures are about how data is stored inside a computer for effective and efficient use. An algorithm is a step-by-step process for solving a problem within a finite amount of space and time. Data structures and algorithms are not only important in software design, but also in hardware design. Being proficient in data structures and algorithms are essential for good software developers, hardware developers, and system architects.The actual content is taken from a list of subjects that constitute the basis of the tool box of every serious practitioner of computing: data types and data structures, abstract data types, dynamic data structures, analysis of algorithms and a variety of fundamental algorithms for graphs, trees and text processing.",
-    "url": "https://webcms3.cse.unsw.edu.au/COMP9024/19T3/outline"
   },
   {
     "offering_time": "T3",
@@ -1130,58 +750,10 @@
   },
   {
     "offering_time": "T3",
-    "code": "COMP9301",
-    "name": "Cyber Security Project",
-    "url": ""
-  },
-  {
-    "offering_time": "T3",
-    "code": "COMP9302",
-    "name": "Cyber Security Project B",
-    "url": ""
-  },
-  {
-    "offering_time": "T3",
-    "code": "COMP9311",
-    "name": "Database Systems",
-    "outline": "",
-    "url": "https://webcms3.cse.unsw.edu.au/COMP9311/19T3/outline",
-    "private": true
-  },
-  {
-    "offering_time": "T3",
-    "code": "COMP9313",
-    "name": "Big Data Management",
-    "url": "https://webcms3.cse.unsw.edu.au/static/uploads/course/COMP9313/19T3/69847171a7f732cc40ee8ed06b034dd3260f6709a0a018994568d46569b6516b/Outline_latest.pdf",
-    "outline": ""
-  },
-  {
-    "offering_time": "T3",
-    "code": "COMP9321",
-    "name": "Data Services Engineering",
-    "url": "https://webcms3.cse.unsw.edu.au/static/uploads/course/COMP9321/19T3/c287839ae9aa88d19fd1025e912308e3dcbbe68ee2e468dcce50870614d7ecf6/Outline_2019T3_latest.pdf",
-    "outline": ""
-  },
-  {
-    "offering_time": "T3",
     "code": "COMP9323",
     "name": "e-Enterprise Project",
     "url": "https://webcms3.cse.unsw.edu.au/static/uploads/course/COMP9323/19T3/e0c967290aa973cfd9614cdc8f71d1233a640838017d1119780ce7ac2615c5b6/COMP9323-2019-intro_.pdf",
     "outline": ""
-  },
-  {
-    "offering_time": "T3",
-    "code": "COMP9331",
-    "name": "Computer Networks&Applications",
-    "outline": "This course is an introductory course on computer networks, aimed at students with a background in computer science / electrical engineering. We will focus on common paradigms and protocols used in present data communication. Through lectures, in-class activities, labs and assignments, you will learn the theory and application of(1) medium access control, congestion control, flow control, and reliable transmission,(2) addressing and naming,(3) routing and switching,(4) widely used protocols such as Ethernet, IP, TCP, UDP, HTTP, etc.(5) security threats and common defensive techniques, and(6) special purpose networks such as content delivery networks, peer-to-peer networks and wireless networks.This is a combined undergraduate and postgraduate course.",
-    "url": "https://webcms3.cse.unsw.edu.au/COMP3331/19T2/outline"
-  },
-  {
-    "offering_time": "T3",
-    "code": "COMP9417",
-    "name": "Machine Learning & Data Mining",
-    "outline": "This course explores machine learning as the algorithmic approach to learning from data. The course also covers key aspects of data mining, which is understood as the application of machine learning tools to obtain insight from data. Algorithms are placed in the context of their theoretical foundations in order to understand their derivation and correct application. Topics include: linear models for regression and classification, local methods (nearest neighbour), neural networks, tree learning, kernel machines, unsupervised learning, ensemble learning, computational and statistical learning theory, and Bayesian learning. To expand and extend the development of theory and algorithms presented in lectures, practical applications will be given in tutorials and programming tasks during the project.",
-    "url": "https://webcms3.cse.unsw.edu.au/COMP9417/19T2/outline"
   },
   {
     "offering_time": "T3",
@@ -1203,52 +775,6 @@
     "name": "Neural Networks, Deep Learning",
     "outline": "This course aims to introduce students to the main topics and methods in the field of neural networks and deep learning, ranging from traditional neural network models to the latest research and applications of deep learning.Topics chosen from: perceptrons, feedforward neural networks, backpropagation, deep convolutional networks for image processing; geometric analysis of trained neural networks; recurrent networks, language processing, semantic analysis, long short term memory; Hopfield networks, restricted Boltzmann machines and autoencoders, generative adversarial networks; deep reinforcement learning; designing successful applications of neural networks; recent developments in neural networks and deep learning.",
     "url": "https://webcms3.cse.unsw.edu.au/COMP9444/19T3/outline"
-  },
-  {
-    "offering_time": "T3",
-    "code": "COMP9511",
-    "name": "Human Computer Interaction",
-    "url": "https://www.cse.unsw.edu.au/~cs3511/HCICourseOutline2019-V1.pdf",
-    "outline": ""
-  },
-  {
-    "offering_time": "T3",
-    "code": "COMP9517",
-    "name": "Computer Vision",
-    "outline": "The course will cover topics from: Introduction, image processing, feature detection, pattern recognition, deep learning  , segmentation, motion and image tracking, applications.",
-    "url": "https://webcms3.cse.unsw.edu.au/COMP9517/19T3/outline"
-  },
-  {
-    "offering_time": "T3",
-    "code": "COMP9596",
-    "name": "Research Project",
-    "url": ""
-  },
-  {
-    "offering_time": "T3",
-    "code": "COMP9900",
-    "name": "Info Tech Project",
-    "outline": "",
-    "url": "https://webcms3.cse.unsw.edu.au/COMP9900/19T3/outline",
-    "private": true
-  },
-  {
-    "offering_time": "T3",
-    "code": "COMP9901",
-    "name": "P/T Res. Thesis Comp Sci & Eng",
-    "url": ""
-  },
-  {
-    "offering_time": "T3",
-    "code": "COMP9902",
-    "name": "Res. Thesis Comp Sci & Eng F/T",
-    "url": ""
-  },
-  {
-    "offering_time": "T3",
-    "code": "COMP9945",
-    "name": "Research Project",
-    "url": ""
   },
   {
     "offering_time": "T0",
@@ -1295,66 +821,12 @@
     "url": ""
   },
   {
-    "offering_time": "T1",
-    "code": "SENG4911",
-    "name": "Thesis Part B",
-    "url": ""
-  },
-  {
-    "offering_time": "T2",
-    "code": "SENG4906",
-    "name": "Industrial Training 3",
-    "url": ""
-  },
-  {
-    "offering_time": "T2",
-    "code": "SENG4907",
-    "name": "Industrial Training 4",
-    "url": ""
-  },
-  {
-    "offering_time": "T2",
-    "code": "SENG4910",
-    "name": "Thesis Part A",
-    "url": ""
-  },
-  {
-    "offering_time": "T2",
-    "code": "SENG4911",
-    "name": "Thesis Part B",
-    "url": ""
-  },
-  {
     "offering_time": "T3",
     "code": "SENG2011",
     "name": "Program Reasoning Workshop",
     "outline": "",
     "url": "https://webcms3.cse.unsw.edu.au/SENG2011/19T3/outline",
     "private": true
-  },
-  {
-    "offering_time": "T3",
-    "code": "SENG4906",
-    "name": "Industrial Training 3",
-    "url": ""
-  },
-  {
-    "offering_time": "T3",
-    "code": "SENG4907",
-    "name": "Industrial Training 4",
-    "url": ""
-  },
-  {
-    "offering_time": "T3",
-    "code": "SENG4910",
-    "name": "Thesis Part A",
-    "url": ""
-  },
-  {
-    "offering_time": "T3",
-    "code": "SENG4911",
-    "name": "Thesis Part B",
-    "url": ""
   },
   {
     "offering_time": "T3",
