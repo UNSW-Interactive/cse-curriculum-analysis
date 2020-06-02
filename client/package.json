@@ -1,0 +1,27 @@
+{
+  "name": "client",
+  "version": "1.0.0",
+  "description": "CSE Curriculum Analysis",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/UNSW-Interactive/cse-curriculum-analysis.git"
+  },
+  "keywords": [
+    "cse",
+    "curriculum",
+    "analysis"
+  ],
+  "author": "Terry Agapitos",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/UNSW-Interactive/cse-curriculum-analysis/issues"
+  },
+  "homepage": "https://github.com/UNSW-Interactive/cse-curriculum-analysis#readme"
+}
