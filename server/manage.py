@@ -19,7 +19,7 @@ manager = Manager(app)
 
 @manager.command
 def run():
-    app.run()
+    app.run(debug=True) # TODO: Not debug=True, do better (config)
 
 
 if __name__ == "__main__":
