@@ -7,7 +7,9 @@
     "test": "tests"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "parcel src/index.html",
+    "build": "parcel build src/index.html"
   },
   "repository": {
     "type": "git",
@@ -23,5 +25,11 @@
   "bugs": {
     "url": "https://github.com/UNSW-Interactive/cse-curriculum-analysis/issues"
   },
-  "homepage": "https://github.com/UNSW-Interactive/cse-curriculum-analysis#readme"
+  "homepage": "https://github.com/UNSW-Interactive/cse-curriculum-analysis#readme",
+  "dependencies": {
+    "parcel-bundler": "^1.12.4"
+  },
+  "devDependencies": {
+    "parcel": "^1.12.4"
+  }
 }
