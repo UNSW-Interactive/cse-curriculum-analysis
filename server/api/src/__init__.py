@@ -1,6 +1,6 @@
 from flask import Flask
 from flask_restful import Api
-from flask_cors import CORS, cross_origin
+from flask_cors import CORS
 
 from src.routes.index import Index
 from src.routes.graph import Graph
