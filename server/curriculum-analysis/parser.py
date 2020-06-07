@@ -3,50 +3,51 @@
 # docker run -p 3001:3001 axarev/
 import requests
 import json
-from typing import List
+from typing import List, NewType, Dict
+from http import HTTPStatus
 from contextlib import ExitStack
+import time
 
 PARSR_URL = 'http://localhost:3001'
 
-def parse_pdfs(*pdf_files: List[str]) -> dict:
-    """
-    Takes in a list of PDFs to parse.
+QueueID = NewType("QueueID", str)
 
-    Returns a dictionary of file_name: ID to fetch the ifnomraion of
+def start_parsing_pdf(pdf_file_name: str) -> QueueID:
     """
-    result = {}
-    for pdf_file_name in enumerate(pdf_files):
-        files = {}
-        try:
-            with open(pdf_file_name, 'rb') as pdf_file:
-                files = {'file': (pdf_file_name, pdf_file, 'application/pdf')}
-        except FileNotFoundError:
-            result[pdf_file] = ''
-        else:
+    Takes in a PDF to parse and returns the QueueID to track Parsr parsing it.
+    """
+    try:
+        with open(pdf_file_name, 'rb') as pdf_file:
+            files = {'file': (pdf_file_name, pdf_file, 'application/pdf')}
             req = requests.post(f'{PARSR_URL}/api/v1/document', files=files)
-            if not req.ok:
-                return ""
-        
-        
-        print(files)
-        
+    except FileNotFoundError:
+        return None
+    else:
+        return req.text if req.ok else None
+
+def get_parsed_json(queueID: QueueID, retries=5) -> dict:
+    """
+    Given the QueueID for parsing a PDF, check if it's completed and return the parsed JSON
+    """
+    if retries <= 0:
+        return {}
+
+    req = requests.get(f'{PARSR_URL}/api/v1/queue/{queueID}')
+    if not req.ok:
+        return {} # should probs be an error
+
+    if req.status_code == HTTPStatus.OK:
+        # Request isn't ready yet
+        # TODO: DO we actually need this?
+        # TODO: What to return here? Retries?
+        time.sleep(30)
+        return get_parsed_json(queueID, retries-1)
+
+    json_url = req.json()['json']
+    result_req = requests.get(f'{PARSR_URL}{json_url}')
+    return result_req.json()
     
-    print(req)
-    
 
-    
-    
-
-parse_pdfs('curriculum-analysis/file-management.pdf')  
-
-# files = {
-#     'file': ('curriculum-analysis/file-management.pdf', open('curriculum-analysis/file-management.pdf', 'rb'), 'application/pdf'),
-# }
-
-# r = requests.post(f'{PARSR_URL}/api/v1/document', files=files)
-# file_id = r.text
-
-# r2 = requests.get(f'{PARSR_URL}/api/v1/queue/{file_id}')
-# json_PARSR_URL = r2.json()['json']
-
-# r3 = requests.get(f'{PARSR_URL}{json_PARSR_URL}')
+qID = start_parsing_pdf('curriculum-analysis/file-management.pdf')
+j = get_parsed_json(qID)
+print(len(j))
