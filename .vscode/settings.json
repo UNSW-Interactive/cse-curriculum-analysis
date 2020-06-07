@@ -1,5 +1,5 @@
 {
-    "python.pythonPath": "/Users/terry/.local/share/virtualenvs/cse-curriculum-analysis-PwFiLI6G/bin/python",
+    "python.pythonPath": "/Users/terry/.local/share/virtualenvs/server-pBXFemK1",
     "python.linting.pylintEnabled": true,
     "python.linting.enabled": true,
     "python.formatting.provider": "black"
