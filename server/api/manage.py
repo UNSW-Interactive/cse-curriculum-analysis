@@ -1,6 +1,6 @@
 from flask import Flask
 from flask_script import Manager
-from app import app
+from src import app
 from config import ProductionConfig
 
 
