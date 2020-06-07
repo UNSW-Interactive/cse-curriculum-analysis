@@ -4,7 +4,6 @@ from src import app
 from config import ProductionConfig
 
 
-
 # from flask_sqlalchemy import SQLAlchemy
 # from flask_bcrypt import Bcrypt
 
