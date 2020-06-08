@@ -43,7 +43,7 @@
                 "queries": [
                     {
                         "label": "Course",
-                        "regex": "([A-Z]{4}-\\d{4})"
+                        "regex": "([A-Z]{4}\\d{4})"
                     },
                     {
                         "label": "Percent",

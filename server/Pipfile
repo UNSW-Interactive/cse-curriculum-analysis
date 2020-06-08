@@ -17,6 +17,7 @@ flask-restful = "*"
 flask-cors = "*"
 psycopg2 = "*"
 parsr-client = "*"
+matplotlib = "*"
 
 [requires]
 python_version = "3.8"

@@ -1,35 +1,72 @@
-import psycopg2
-
-# docker run --name some-postgres -e POSTGRES_PASSWORD=mysecretpassword -p 5432:5432 -d postgres
-# conn = psycopg2.connect(dbname="postgres", user="postgres", host="127.0.0.1", password="mysecretpassword")
-
-# cursor = conn.cursor()
-# cursor.execute('''CREATE TABLE mytable(
-#     id int
-# );''')
-
-# cursor.execute('''insert into mytable values (4);''')
-# cursor.execute('''select * from mytable;''')
-# for i, record in enumerate(cursor):
-#     print ("\n", type(record))
-#     print ( record )
-# cursor.close()
-# conn.close()
-
-# docker run -p 3001:3001 axarev/
-
-import requests
+# Main file
+from parsr import Parsr
 import json
 
-url='http://localhost:3001'
-files = {
-    'file': ('curriculum-analysis/file-management.pdf', open('curriculum-analysis/file-management.pdf', 'rb'), 'application/pdf'),
-}
+# p = Parsr(config_file='curriculum-analysis/config.json')
+# with p:
+#     qID = p.start_parsing_pdf('curriculum-analysis/file-management.pdf')
+#     j = p.get_parsed_json(qID)
+# with open('res.json', 'w') as myf:
+#     myf.write(json.dumps(j))
+# print(len(j))
 
-r = requests.post(f'{url}/api/v1/document', files=files)
-file_id = r.text
+with open("res.json") as myf:
+    j = json.load(myf)
 
-r2 = requests.get(f'{url}/api/v1/queue/{file_id}')
-json_url = r2.json()['json']
 
-r3 = requests.get(f'{url}{json_url}')
+def get_words(elements) -> list:
+    words = []
+    for element in elements:
+        if element is None:
+            continue
+        if "content" not in element:
+            continue
+        if isinstance(element["content"], list):
+            words.extend(get_words(element["content"]))
+        else:
+            words.append(
+                {
+                    # "id": element["id"],
+                    # "type": element["type"],
+                    "content": element["content"],
+                    "font": element["font"],
+                }
+            )
+    return words
+
+
+all_words = []
+for page in j["pages"]:
+    page_elements = page["elements"]
+    all_words.extend(get_words(page_elements))
+
+# with open('res2.json', 'w') as myf2:
+#     myf2.write(json.dumps(all_words))
+
+# Keep unique words, ranked by importance
+unique_words = []
+seen = {}
+for word_obj in all_words:
+    word = word_obj["content"]
+    font = word_obj["font"]
+    if word in seen:
+        if font >= seen[word]:
+            # seen it already and it's less important
+            continue
+        # else, get rid of our old entry
+        unique_words.remove({"content": word, "font": seen[word]})
+    unique_words.append(word_obj)
+    seen[word] = font
+
+with open('res3.json', 'w') as myf3:
+    myf3.write(json.dumps(unique_words))
+
+# Distribution
+# import numpy as np
+# import matplotlib.mlab as mlab
+# import matplotlib.pyplot as plt
+
+# num_bins = 5
+# x=[w["font"] for w in unique_words]
+# n, bins, patches = plt.hist(x, num_bins, facecolor='blue', alpha=0.5)
+# plt.show()
