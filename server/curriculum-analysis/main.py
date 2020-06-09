@@ -1,6 +1,8 @@
 # Main file
 from parsr import Parsr
 import json
+import string
+import re
 
 # p = Parsr(config_file='curriculum-analysis/config.json')
 # with p:
@@ -14,6 +16,11 @@ with open("res.json") as myf:
     j = json.load(myf)
 
 
+def preprocess(old: str) -> str:
+    # strip non-alphabetical characters
+    pattern = re.compile('[^a-z]+', re.UNICODE|re.IGNORECASE)
+    return pattern.sub('', old).lower()
+
 def get_words(elements) -> list:
     words = []
     for element in elements:
@@ -24,11 +31,14 @@ def get_words(elements) -> list:
         if isinstance(element["content"], list):
             words.extend(get_words(element["content"]))
         else:
+            new_content = preprocess(element["content"])
+            if not new_content: # empty string
+                continue
             words.append(
                 {
                     # "id": element["id"],
                     # "type": element["type"],
-                    "content": element["content"],
+                    "content": new_content,
                     "font": element["font"],
                 }
             )
