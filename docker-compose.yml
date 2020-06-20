@@ -1,9 +1,10 @@
-# version: "3.2"
-# services: 
-#   postgres:
-#     ports:
-#       - "5432:5432"
-#     environment:
-#       - POSTGRES_USER=postgres
-#       - POSTGRES_DB=some_db
-#       - POSTGRES_PASSWORD=abcdef
+version: "3.2"
+services: 
+  db:
+    build: server/database/
+    ports:
+      - 5432:5432
+    volumes:
+      - ./db-data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_PASSWORD: abc

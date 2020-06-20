@@ -89,6 +89,8 @@ for word_obj in all_words:
     # font is kinda backwards with parsr
     c[word] += (highest_font - lowest_font) - font
 
+print("Top 5: ")
+print(c.most_common(5))
 # words_only = [i['content'] for i in all_words]
 # print(Counter(words_only).most_common(5))
 
@@ -114,4 +116,7 @@ ALL_CATEGORIES = set() # or Coutner
 for page in search_result:
     # wp_page = wikipedia.page(title=page)
     # cats
+    print("Page: ", page)
+    print("Categories: ")
     print(get_categories(page))
+    print("----")
