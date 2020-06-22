@@ -53,8 +53,8 @@ class Parsr:
                     ),
                 }
                 req = requests.post(f"{self.server}/api/v1/document", files=files)
-        except FileNotFoundError:
-            return None
+        except FileNotFoundError as e:
+            raise e
         else:
             return req.text if req.ok else None
 
@@ -71,10 +71,3 @@ class Parsr:
 
         result_req = requests.get(f"{self.server}/api/v1/json/{queueID}")
         return result_req.json()
-
-
-# p = Parsr("curriculum-analysis/config.json")
-# with p:
-#     qID = p.start_parsing_pdf("curriculum-analysis/file-management.pdf")
-#     j = p.get_parsed_json(qID)
-#     print(len(j))

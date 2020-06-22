@@ -19,3 +19,10 @@ import psycopg2
 # conn.close()
 
 
+def get_parsed_json(course, lecture):
+    # Check the DB to see if we've already got JSON parsed
+    return None
+
+def has_parsed_result(course, lecture) -> bool:
+    # check if keywords/wp-pages/categories
+    return False

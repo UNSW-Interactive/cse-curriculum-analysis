@@ -1,24 +1,20 @@
-# Main file
+# Main file - todo rename to analyse.py?
 from parsr import Parsr
 import json
 import string
 import re
 import urllib.parse
 import requests
-from nltk.corpus import words as nltk_words #nltk.download('words')
+from nltk.corpus import words as nltk_words  # nltk.download('words')
 from stopwords import STOPWORDS
+import argparse
+from my_wikipedia import get_categories, wp_search
+from validate import validate_course, validate_file, validate_lec_number
+import database
+import sys
+from collections import Counter
 
-# p = Parsr(config_file='curriculum-analysis/config.json')
-# with p:
-#     qID = p.start_parsing_pdf('curriculum-analysis/file-management.pdf')
-#     j = p.get_parsed_json(qID)
-# with open('res.json', 'w') as myf:
-#     myf.write(json.dumps(j))
-# print(len(j))
 english_words = set(nltk_words.words())
-with open("res.json") as myf:
-    j = json.load(myf)
-
 
 def preprocess(old: str) -> str:
     # strip non-alphabetical characters
@@ -50,73 +46,70 @@ def get_words(elements) -> list:
             )
     return words
 
+def main(lecture_file, course, lecture):
+    if (parsed_json := database.get_parsed_json(course, lecture) is None):
+        parsr = Parsr()
+        with parsr:
+            qID = parsr.start_parsing_pdf(lecture_file)
+            parsed_json = parsr.get_parsed_json(qID) 
+            # could maybe do something smarter here... threading, etc
+            # todo: scale with # of pages?
+    
+    # check if we've already parsed this lecture
+    # if we have, but we override, do CA again
+    if database.has_parsed_result(course, lecture) and not args.override:
+        print("Content has already been parsed")
+        sys.exit(0)
+    
+    all_words = []
+    for page in parsed_json["pages"]:
+        page_elements = page["elements"]
+        all_words.extend(get_words(page_elements))
 
-all_words = []
-for page in j["pages"]:
-    page_elements = page["elements"]
-    all_words.extend(get_words(page_elements))
+    c = Counter()
+    # We want to give weight to those with lower font
+    lowest_font = min(all_words, key=lambda x: x["font"])["font"]
+    highest_font = max(all_words, key=lambda x: x["font"])["font"]
+    for word_obj in all_words:
+        word = word_obj["content"]
+        font = word_obj["font"]
+        # font is kinda backwards with parsr
+        c[word] += (highest_font - lowest_font) - font
 
-# with open('res2.json', 'w') as myf2:
-#     myf2.write(json.dumps(all_words))
+    search_result = wp_search(*[i[0] for i in c.most_common(5)])
+    for page in search_result:
+        print(get_categories(page))
 
-# Keep unique words, ranked by importance
-######
-# unique_words = []
-# seen = {}
-# for word_obj in all_words:
-#     word = word_obj["content"]
-#     font = word_obj["font"]
-#     if word in seen:
-#         if font >= seen[word]:
-#             # seen it already and it's less important
-#             continue
-#         # else, get rid of our old entry
-#         unique_words.remove({"content": word, "font": seen[word]})
-#     unique_words.append(word_obj)
-#     seen[word] = font
 
-# with open("res3.json", "w") as myf3:
-#     myf3.write(json.dumps(unique_words))
-######
-from collections import Counter
-c = Counter()
-# We want to give weight to those with lower font
-lowest_font = min(all_words, key=lambda x: x["font"])["font"]
-highest_font = max(all_words, key=lambda x: x["font"])["font"]
-for word_obj in all_words:
-    word = word_obj["content"]
-    font = word_obj["font"]
-    # font is kinda backwards with parsr
-    c[word] += (highest_font - lowest_font) - font
+# TODO: Put in a file
+class Course:
+    def __init__(self, course):
+        self.course = course
 
-print("Top 5: ")
-print(c.most_common(5))
-# words_only = [i['content'] for i in all_words]
-# print(Counter(words_only).most_common(5))
 
-# Distribution
-# import numpy as np
-# import matplotlib.mlab as mlab
-# import matplotlib.pyplot as plt
+class Lecture:
+    def __init__(self, num):
+        self.num = num
 
-# num_bins = 5
-# x=[w["font"] for w in unique_words]
-# n, bins, patches = plt.hist(x, num_bins, facecolor='blue', alpha=0.5)
-# plt.show()
 
-# search wikipedia
-wp_api_url = "https://en.wikipedia.org/w/api.php?action=query&format=json&titles={}&prop=categories&clshow=!hidden"
-def get_categories(page_title):
-    j = requests.get(wp_api_url.format(urllib.parse.quote(page_title))).json()
-    return [cat["title"] for cat in list(j["query"]["pages"].values())[0]["categories"]]
-
-import wikipedia
-search_result = wikipedia.search(' '.join([i[0] for i in c.most_common(5)]), results=5)
-ALL_CATEGORIES = set() # or Coutner
-for page in search_result:
-    # wp_page = wikipedia.page(title=page)
-    # cats
-    print("Page: ", page)
-    print("Categories: ")
-    print(get_categories(page))
-    print("----")
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description="Parse a given lecture's slides.")
+    parser.add_argument(
+        "-f", "--file", help="The file to parse.", type=validate_file, required=True
+    )
+    parser.add_argument(
+        "-c", "--course", help="The course.", type=validate_course, required=True
+    )
+    parser.add_argument(
+        "-n",
+        "--num",
+        help="The lecture number.",
+        type=validate_lec_number,
+        required=True,
+    )
+    parser.add_argument(
+        "--override",
+        help="Run curriculum analysis on this lecture even if data for this lecture already exists.",
+    )
+    args = parser.parse_args()
+    main(args.file, Course(args.course), Lecture(args.num))

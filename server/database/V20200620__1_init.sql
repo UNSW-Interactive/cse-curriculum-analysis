@@ -19,6 +19,7 @@ create table lectures(
     wp_pages text[],
     categories text[],
     parsr_json json not null,
-    
+
+    unique (course_code, lecture_num),
     foreign key (course_code) references courses(course_code)
 );
