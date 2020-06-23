@@ -48,6 +48,7 @@ def get_words(elements) -> list:
 
 def main(lecture_file, course, lecture):
     if (parsed_json := database.get_parsed_json(course, lecture) is None):
+        print("Need to parse JSON...")
         parsr = Parsr()
         with parsr:
             qID = parsr.start_parsing_pdf(lecture_file)
@@ -55,10 +56,13 @@ def main(lecture_file, course, lecture):
             # could maybe do something smarter here... threading, etc
             # todo: scale with # of pages?
     
+        # Dump in DB
+        database.dump_parsr_result(course, lecture, json.dumps(parsed_json))
+
     # check if we've already parsed this lecture
     # if we have, but we override, do CA again
     if database.has_parsed_result(course, lecture) and not args.override:
-        print("Content has already been parsed")
+        print("Content has already been parsed.")
         sys.exit(0)
     
     all_words = []
@@ -76,15 +80,25 @@ def main(lecture_file, course, lecture):
         # font is kinda backwards with parsr
         c[word] += (highest_font - lowest_font) - font
 
-    search_result = wp_search(*[i[0] for i in c.most_common(5)])
-    for page in search_result:
-        print(get_categories(page))
+    keywords = [i[0] for i in c.most_common(5)]
+    wp_pages_search_result = wp_search(*keywords)
+    wp_categories = []
+    for page in wp_pages_search_result:
+        wp_categories.extend(get_categories(page))
+
+    print(f"{course.course} {lecture.num}")
+    print("Keywords: ", keywords)
+    print("WP Pages found by searching: ", wp_pages_search_result)
+    print("WP Categories: ", wp_categories)
+    database.put_in_db(course, lecture, keywords, wp_pages_search_result, wp_categories)
+    database.close_connection()
 
 
 # TODO: Put in a file
 class Course:
     def __init__(self, course):
         self.course = course
+
 
 
 class Lecture:

@@ -19,7 +19,7 @@ def get_categories(page_title):
         return []
     req_json = r.json()
     return [
-        cat["title"]
+        cat["title"][9:] # remove Category: prefix
         for cat in list(req_json["query"]["pages"].values())[0]["categories"]
     ]
 
