@@ -7,20 +7,6 @@ conn = psycopg2.connect(
     dbname="postgres", user="postgres", host="127.0.0.1", port=5432, password="abc"
 )
 
-# cursor = conn.cursor()
-# cursor.execute('''CREATE TABLE mytable(
-#     id int
-# );''')
-
-# cursor.execute('''insert into mytable values (4);''')
-# cursor.execute('''select * from mytable;''')
-# for i, record in enumerate(cursor):
-#     print ("\n", type(record))
-#     print ( record )
-# cursor.close()
-# conn.close()
-
-
 def put_in_db(course, lecture, keywords, wp_pages, categories):
     query = """update lectures set keywords=%s, wp_pages=%s, categories=%s
     where course_code=%s and lecture_num=%s;"""
@@ -43,12 +29,7 @@ def get_parsed_json(course, lecture):
     cursor.execute(query, (lecture.num, course.course))
     row = cursor.fetchone()
     cursor.close()
-    return row
-    # if cursor.rowcount == 0:
-    #     cursor.close()  # TODO: Do I close before fetching or after? after makes more sense tbh
-    #     return None
-    # cursor.close()  # TODO: Do I close before fetching or after? after makes more sense tbh
-    # return cursor.fetchone()[0]
+    return None if row is None else row[0] # todo: why compared to below func
 
 
 def has_parsed_result(course, lecture) -> bool:
@@ -64,4 +45,4 @@ def has_parsed_result(course, lecture) -> bool:
 
 def close_connection():
     conn.commit()
-    conn.close() # Probably need to wrap this ina  class. Instantiate just before calling db...
+    conn.close() # Probably need to wrap this ina  class. Instantiate just before calling db... 

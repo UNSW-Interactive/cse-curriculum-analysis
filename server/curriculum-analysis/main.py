@@ -34,12 +34,11 @@ def get_words(elements) -> list:
             words.extend(get_words(element["content"]))
         else:
             new_content = preprocess(element["content"])
-            if not new_content or new_content not in english_words:  # empty string
+            if not new_content or new_content not in english_words or len(new_content) == 1:
+                # Filter out one letter words, often used in maths/programming contexts
                 continue
             words.append(
                 {
-                    # "id": element["id"],
-                    # "type": element["type"],
                     "content": new_content,
                     "font": element["font"],
                 }
@@ -47,7 +46,7 @@ def get_words(elements) -> list:
     return words
 
 def main(lecture_file, course, lecture):
-    if (parsed_json := database.get_parsed_json(course, lecture) is None):
+    if ((parsed_json := database.get_parsed_json(course, lecture)) is None):
         print("Need to parse JSON...")
         parsr = Parsr()
         with parsr:
@@ -61,7 +60,7 @@ def main(lecture_file, course, lecture):
 
     # check if we've already parsed this lecture
     # if we have, but we override, do CA again
-    if database.has_parsed_result(course, lecture) and not args.override:
+    if not args.override and database.has_parsed_result(course, lecture):
         print("Content has already been parsed.")
         sys.exit(0)
     
@@ -123,6 +122,7 @@ if __name__ == "__main__":
     )
     parser.add_argument(
         "--override",
+        action='store_true',
         help="Run curriculum analysis on this lecture even if data for this lecture already exists.",
     )
     args = parser.parse_args()
