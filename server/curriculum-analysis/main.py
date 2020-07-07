@@ -45,7 +45,7 @@ def get_words(elements) -> list:
             )
     return words
 
-def main(lecture_file, course, lecture):
+def main(lecture_file, course, lecture, num_keywords=5, num_wp_pages=20):
     if ((parsed_json := database.get_parsed_json(course, lecture)) is None):
         print("Need to parse JSON...")
         parsr = Parsr()
@@ -79,8 +79,8 @@ def main(lecture_file, course, lecture):
         # font is kinda backwards with parsr
         c[word] += (highest_font - lowest_font) - font
 
-    keywords = [i[0] for i in c.most_common(5)]
-    wp_pages_search_result = wp_search(*keywords)
+    keywords = [i[0] for i in c.most_common(num_keywords)]
+    wp_pages_search_result = wp_search(*keywords, results=num_wp_pages)
     wp_categories = []
     for page in wp_pages_search_result:
         wp_categories.extend(get_categories(page))
