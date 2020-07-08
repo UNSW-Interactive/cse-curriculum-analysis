@@ -395,7 +395,19 @@ graph_data_keys.forEach(course => {
     });
   })
 });
-const subcategories = ['Algorithms and data structures', 'Computer architecture', 'Formal methods', 'Computer security', 'Artificial intelligence', 'Computational science', 'Computer graphics', 'Database theory', 'Concurrency (computer science)']
+
+// todo: this is not complete. just what we have from data
+const subcategories_colours = {
+  'Algorithms and data structures': '#e6194b', // red
+  'Computer architecture': '#f58231', //orange
+  'Formal methods': '#ffe119', //yellow 
+  'Computer security': '#3cb44b', // green 
+  'Artificial intelligence': '#4363d8', //blue
+  'Computational science': '#911eb4', // purp 
+  'Computer graphics': '#a9a9a9', //grey 
+  'Database theory': '#000000', //black
+  'Concurrency (computer science)': '#9a6324' //brown
+}
 // const edges = 
 
 console.log(elements);
@@ -418,21 +430,17 @@ let cy = cytoscape({
       selector: 'edge',
       style: {
         // 'width': 'mapData(weight, 0, 100, 1, 10)',
-        'width': 'mapData(weight, 0, 100, 1, 10)',
+        'width': 'mapData(weight, 0, 200, 1, 10)',
         'line-color': (ele) => {
-          console.log(ele.data('subcat'));
-          if (ele.data('subcat') === 'Formal methods') {
-            return '#eee';
-          }
-          return '#ccc'; 
+          return subcategories_colours[ele.data('subcat')]
         },
         'curve-style': 'bezier'
       }
     }
   ],
 
-  // layout: {
-  //   name: 'grid',
-  // }
+  layout: {
+    name: 'circle',
+  }
 
 });
