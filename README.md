@@ -9,6 +9,7 @@ Research Thesis 2020 - Terry Agapitos (z5162173)
 ```shell
 $ cd server
 $ pipenv shell
+$ cd api
 $ python3 manage.py run
 ```
 
