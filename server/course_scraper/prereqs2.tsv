@@ -1,0 +1,154 @@
+COMP2521	undergraduate	Prerequisite: COMP1511 or DPST1091 or COMP1917 or COMP1921	COMP1511
+COMP3331	undergraduate	Prerequisite: COMP1927 or COMP2521 or MTRN3500	COMP2521
+COMP3411	undergraduate	Prerequisite: COMP2521 or COMP1927	COMP2521
+COMP3511	undergraduate	Prerequisite: Completion of 48 UOC	
+COMP3901	undergraduate	Prerequisite: 80+ WAM in COMP, SENG or BINF courses, completion of all first and second year core requirements a CSE program, and agreement from a suitable CSE academic supervisor.	
+COMP6448	undergraduate	Prerequisite: COMP6841	COMP6841
+COMP6448	postgraduate	Prerequisite: COMP6841	COMP6841
+COMP6451	undergraduate	Pre-requisite: COMP2521 OR COMP9024	O COMP2521 COMP9024
+COMP6451	postgraduate	Pre-requisite: COMP2521 OR COMP9024	O COMP2521 COMP9024
+COMP9024	postgraduate	
+COMP9331	postgraduate	Corequisite: COMP9024.	C COMP9024
+COMP9414	postgraduate	Prerequisite: COMP9021	COMP9021
+COMP9511	postgraduate	
+COMP1511	undergraduate	
+COMP1531	undergraduate	Prerequisite: COMP1511 or DPST1091 or COMP1917 or COMP1921	COMP1511
+COMP1911	undergraduate	Prerequisite: Enrolment in a non-CSE major (no BINF, COMP, or SENG)	
+COMP2111	undergraduate	Prerequisite: MATH1081 AND (COMP1511 OR DPST1091 OR COMP1917 OR COMP1921)	A MATH1081 COMP1511
+COMP2121	undergraduate	Prerequisite: COMP1917 OR COMP1921 OR COMP1511 OR DPST1091 OR COMP1521 OR DPST1092 OR (COMP1911 AND MTRN2500)	O COMP1511 O COMP1521 COMP1911
+COMP3121	undergraduate	Prerequisite: COMP1927 or COMP2521	COMP2521
+COMP3131	undergraduate	Prerequisite: COMP2511 or COMP2911	COMP2511
+COMP3153	undergraduate	Pre-requisite: MATH1081	MATH1081
+COMP3211	undergraduate	Prerequisite: COMP3222 or ELEC2141.	COMP3222
+COMP3231	undergraduate	Prerequisite: (COMP1521 or DPST1092 or COMP2121 or ELEC2142) and (COMP2521 or COMP1927)	A COMP2521 O COMP1521 COMP2121
+COMP3311	undergraduate	Prerequisite: COMP2521 or COMP1927	COMP2521
+COMP3891	undergraduate	Prerequisite: (COMP1521 or DPST1092 or COMP2121) and (COMP2521 or COMP1927) and a WAM of at least 75	A COMP2521 O COMP1521 COMP2121
+COMP3900	undergraduate	Prerequisite: COMP1531, and COMP2521 or COMP1927, and enrolled in a BSc Computer Science major with completion of 102 uoc.	A COMP1531 COMP2521
+COMP3902	undergraduate	Prerequisite: 80+ WAM in COMP, SENG or BINF courses, completion of all first and second year core requirements a CSE program, and agreement from a suitable CSE academic supervisor.	
+COMP4141	undergraduate	Prerequisite: MATH1081, and COMP1927 or COMP2521	A MATH1081 COMP2521
+COMP4141	postgraduate	Prerequisite: COMP9020 and COMP9024	A COMP9020 COMP9024
+COMP4337	undergraduate	Prerequisite: COMP3331.	COMP3331
+COMP4601	undergraduate	Prerequisite: COMP3211 and COMP3601.	A COMP3211 COMP3601
+COMP4930	undergraduate	Prerequisite:  Enrolment in Bachelor of Science (Honours) program 4515, or 126 units of credit completed in BE Computer Engineering, BE Bioinformatics or Bioinformatics Engineering, or BE (Honours) Software Engineering.	
+COMP4931	undergraduate	Prerequisite: COMP4930.  Excluded: Program 4515.	COMP4930
+COMP4941	undergraduate	Prerequisite: COMP4930 and [75 WAM or enrolment in Computer Science Honours]	COMP4930
+COMP4951	undergraduate	Prerequisite: Enrolled in a CSE BE (Hons) programs, completion of 126 UOC and completion of 3rd year core.	
+COMP4961	undergraduate	Prerequisite: Students enrolled in program 4515 Bachelor of Computer Science (Hons) or program 3648.	
+COMP4962	undergraduate	
+COMP4962	Prerequisite: Students must successfully complete COMP4951	COMP4951
+COMP4963	undergraduate	
+COMP4963	Prerequisite: Student must successfully complete COMP4962	COMP4962
+COMP6324	undergraduate	Prerequisite: COMP1531 and COMP2041	A COMP1531 COMP2041
+COMP6324	postgraduate	Prerequisite: COMP9021 and COMP9311	A COMP9021 COMP9311
+COMP6443	undergraduate	Prerequisite: COMP6441 or COMP6841 or COMP3441	O COMP6441 O COMP6841 COMP3441
+COMP6443	postgraduate	Prerequisite: COMP6441 or COMP6841 or COMP9441	O COMP6441 O COMP6841 COMP9441
+COMP6452	undergraduate	Prerequisite: COMP1531 AND (COMP2521 OR COMP1927)	A COMP1531 COMP2521
+COMP6452	postgraduate	Prerequisite: COMP9024.	COMP9024
+COMP6843	undergraduate	Prerequisite: COMP6441 or COMP6841 or COMP3441	O COMP6441 O COMP6841 COMP3441
+COMP6843	postgraduate	Prerequisite: COMP6441 or COMP6841 or COMP9441	O COMP6441 O COMP6841 COMP9441
+COMP9020	postgraduate	
+COMP9021	postgraduate	
+COMP9101	postgraduate	Prerequisite: COMP9021	COMP9021
+COMP9102	postgraduate	Prerequisite: COMP9024.	COMP9024
+COMP9153	postgraduate	Pre-requisite: COMP9020	COMP9020
+COMP9201	postgraduate	Prerequisite: COMP9024 and COMP9032.	A COMP9024 COMP9032
+COMP9211	postgraduate	Prerequisite: COMP9222.	COMP9222
+COMP9283	postgraduate	Prerequisite: COMP9024 AND COMP9032 AND a WAM of at least 75	A COMP9024 COMP9032
+COMP9311	postgraduate	
+COMP9318	undergraduate	Prerequisite: (COMP2521 or COMP1927) and COMP3311 and MATH1081	A COMP3311 A MATH1081 COMP2521
+COMP9318	postgraduate	Prerequisite: COMP9020 and COMP9024 and COMP9311	A COMP9020 A COMP9024 COMP9311
+COMP9321	undergraduate	Prerequisite: (COMP1531 or COMP2041) and COMP3311	A COMP3311 O COMP1531 COMP2041
+COMP9321	postgraduate	Prerequisite: COMP9021 and COMP9311	A COMP9021 COMP9311
+COMP9322	undergraduate	Prerequisite: COMP9321.	COMP9321
+COMP9322	postgraduate	Prerequisite: COMP9321.	COMP9321
+COMP9334	undergraduate	Prerequisite: COMP1511 OR DPST1091 OR COMP1917 OR COMP1921	COMP1511
+COMP9334	postgraduate	Prerequisite: COMP9021	COMP9021
+COMP9337	postgraduate	Prerequisite: COMP9331.	COMP9331
+COMP9900	postgraduate	Prerequisite: Completion of at least 72 UOC towards MIT program 8543.  Students must be in their final semester of study.	
+COMP1000	undergraduate	
+COMP1521	undergraduate	Prerequisite: COMP1511 or DPST1091 or COMP1911 or COMP1917	O COMP1511 COMP1911
+COMP2041	undergraduate	Prerequisite: COMP1511 OR DPST1091 OR COMP1917 OR COMP1921	COMP1511
+COMP2511	undergraduate	Prerequisite: COMP1531 AND (COMP2521 OR COMP1927)	A COMP1531 COMP2521
+COMP3141	undergraduate	Prerequisite: COMP1927 or COMP2521	COMP2521
+COMP3151	undergraduate	Prerequisite: COMP1927 OR (COMP1521/DPST1092 AND COMP2521)	A COMP1521 COMP2521
+COMP3421	undergraduate	Prerequisite: COMP2511 or COMP2911	COMP2511
+COMP3821	undergraduate	Prerequisite: A mark of at least 65 in COMP1927 or COMP2521	COMP2521
+COMP4336	undergraduate	Prerequisite: COMP3331.	COMP3331
+COMP4511	undergraduate	Prerequisite: a mark of at least 70 in COMP3511 and a mark of at least 65 in COMP2511	A COMP3511 COMP2511
+COMP4511	postgraduate	Prerequisite: a mark of at least 70 in COMP9511 and a mark of at least 65 in COMP9021	A COMP9511 COMP9021
+COMP4952	undergraduate	Prerequisite: Completion of Research Thesis A (4951)	COMP4951
+COMP4953	undergraduate	Prerequisite: Completion of Research Thesis B (4952)	COMP4952
+COMP6441	undergraduate	Prerequisite: Completion of 48 UOC	
+COMP6441	postgraduate	
+COMP6447	undergraduate	Prerequisite: A mark of at least 65 in COMP6841, or a mark of at least 75 in COMP6441 or COMP3441.	O COMP6841 O COMP6441 COMP3441
+COMP6447	postgraduate	Prerequisite: A mark of at least 65 in COMP6841, or a mark of at least 75 in COMP6441 or COMP9441	O COMP6841 O COMP6441 COMP9441
+COMP6721	undergraduate	Pre-requisite: MATH1081 AND COMP2521 AND (not enrolled in SENGAH)	A MATH1081 COMP2521
+COMP6721	postgraduate	Prerequisite: COMP9020 and COMP9024	A COMP9020 COMP9024
+COMP6752	undergraduate	Pre-requisite: MATH1081	MATH1081
+COMP6752	postgraduate	Pre-requisite: COMP9020	COMP9020
+COMP6771	undergraduate	Prerequisite: COMP2511 or COMP2911	COMP2511
+COMP6771	postgraduate	Prerequisite: COMP9024.	COMP9024
+COMP6841	undergraduate	Prerequisite: Completion of 48 UOC, and COMP1927 or COMP2521	COMP2521
+COMP6841	postgraduate	Prerequisite: COMP9024.	COMP9024
+COMP9044	postgraduate	Prerequisite: COMP9021	COMP9021
+COMP9154	postgraduate	Prerequisite: COMP9024.	COMP9024
+COMP9242	undergraduate	Prerequisite: a mark of at least 75 in either COMP3231 or COMP3891.	O COMP3231 COMP3891
+COMP9242	postgraduate	Prerequisite: a mark of at least 75 in either COMP9201 or COMP9283.	O COMP9201 COMP9283
+COMP9301	undergraduate   (COMP6441 OR COMP6841) AND (6 UOC from  (COMP6443, COMP6843, COMP6445, COMP6845, COMP6447)) AND enrolled in final term of program	O COMP6441 O COMP6841 O COMP6443 O COMP6843 O COMP6445 O COMP6845 COMP6447
+COMP9301	postgraduate    (COMP6441 OR COMP6841) AND (6 UOC from  (COMP6443, COMP6843, COMP6445, COMP6845, COMP6447)) AND enrolled in final term of program	O COMP6441 O COMP6841 O COMP6443 O COMP6843 O COMP6445 O COMP6845 COMP6447
+COMP9302	undergraduate   (COMP6441 OR COMP6841) AND (12 UOC from (COMP6443, COMP6843, COMP6445, COMP6845, COMP6447)) AND enrolled in final term of program	O COMP6441 O COMP6841 O COMP6443 O COMP6843 O COMP6445 O COMP6845 COMP6447
+COMP9302	postgraduate    (COMP6441 OR COMP6841) AND (12 UOC from (COMP6443, COMP6843, COMP6445, COMP6845, COMP6447)) AND enrolled in final term of program	O COMP6441 O COMP6841 O COMP6443 O COMP6843 O COMP6445 O COMP6845 COMP6447
+COMP9313	undergraduate	Prerequisite: COMP1927 or COMP2521, and COMP3311	A COMP2521 COMP3311
+COMP9313	postgraduate	Prerequisite: COMP9024 and COMP9311	A COMP9024 COMP9311
+COMP9315	undergraduate	Prerequisite: COMP1927 or COMP2521, and COMP3311	A COMP2521 COMP3311
+COMP9315	postgraduate	Prerequisite: COMP9024 and COMP9311.	A COMP9024 COMP9311
+COMP9319	undergraduate	Prerequisite: COMP2521 or COMP1927	COMP2521
+COMP9319	postgraduate	Prerequisite: COMP9024.	COMP9024
+COMP9332	undergraduate	Prerequisite: COMP3331.	COMP3331
+COMP9332	postgraduate	Prerequisite: COMP9331.	COMP9331
+COMP9336	postgraduate	Prerequisite: COMP9331.	COMP9331
+COMP9415	postgraduate	Prerequisite: COMP9024.	COMP9024
+COMP9417	undergraduate	Prerequisite: (MATH1081 and (COMP1531 or COMP2041)) or (COMP1927 or COMP2521)	O COMP2521 A MATH1081 O COMP1531 COMP2041
+COMP9417	postgraduate	Prerequisite: COMP9020 and COMP9024	A COMP9020 COMP9024
+COMP9517	undergraduate	Prerequisite: COMP2521 or COMP1927	COMP2521
+COMP9517	postgraduate	Prerequisite: COMP9024.	COMP9024
+COMP9801	postgraduate	Prerequisite: a mark of at least 70 in COMP9024.	COMP9024
+COMP1400	undergraduate	Prerequisite: Enrolment in a non-CSE major (no BINF, COMP, or SENG)	
+COMP3161	undergraduate	Prerequisite: COMP2521 or COMP1927	COMP2521
+COMP3222	undergraduate	Prerequisite: COMP2121 OR COMP1521 OR DPST1092	O COMP2121 COMP1521
+COMP3431	undergraduate	Prerequisite: COMP2521 or COMP1927, and a WAM of at least 70	COMP2521
+COMP3601	undergraduate	Prerequisite: COMP2121 OR DESN2000	COMP2121
+COMP4121	undergraduate	Prerequisite: COMP3121 or  COMP3821.	O COMP3121 COMP3821
+COMP4121	postgraduate	Prerequisite: COMP9101 or COMP9801.	O COMP9101 COMP9801
+COMP4128	undergraduate	Pre-requisite: COMP3821, or (COMP3121 and a 75WAM)	O COMP3821 COMP3121
+COMP4161	undergraduate	Prerequisite: Completion of 48 UOC	
+COMP4161	postgraduate	Prerequisite: Completion of 48 UOC	
+COMP4418	undergraduate	Prerequisite: COMP3411	COMP3411
+COMP4418	postgraduate	Prerequisite: COMP9414 or COMP9814	O COMP9414 COMP9814
+COMP4920	undergraduate	Prerequisite: (COMP2511 or COMP2911) and completion of 96 UOC in Computer Science.	COMP2511
+COMP6445	undergraduate	Prerequisite: COMP3441 or COMP6441 or COMP6841, and COMP3231 or COMP3891	A O COMP3231 COMP3891 O COMP3441 O COMP6441 COMP6841
+COMP6445	postgraduate	Prerequisite: COMP6441 or COMP6841 or COMP9441, and COMP9201 or COMP9283	A O COMP9201 COMP9283 O COMP6441 O COMP6841 COMP9441
+COMP6714	undergraduate	Prerequisite: (MATH1081 and (COMP1531 or COMP2041)) or (COMP1927 or COMP2521)	O COMP2521 A MATH1081 O COMP1531 COMP2041
+COMP6714	postgraduate	Prerequisite: COMP9020 and COMP9024	A COMP9020 COMP9024
+COMP6733	undergraduate	Prerequisite: 65 WAM and COMP3331	COMP3331
+COMP6733	postgraduate	Prerequisite: 65 WAM and COMP9331	COMP9331
+COMP6741	undergraduate	Prerequisite: COMP3121 or  COMP3821.	O COMP3121 COMP3821
+COMP6741	postgraduate	Prerequisite: COMP9101 or COMP9801.	O COMP9101 COMP9801
+COMP6845	undergraduate	Prerequisite: COMP3441 or COMP6441 or COMP6841, and COMP3231 or COMP3891	A O COMP3231 COMP3891 O COMP3441 O COMP6441 COMP6841
+COMP6845	postgraduate	Prerequisite: COMP6441 or COMP6841 or COMP9441, and COMP9201 or COMP9283	A O COMP9201 COMP9283 O COMP6441 O COMP6841 COMP9441
+COMP9032	postgraduate	Corequisite:  COMP9021.	C COMP9021
+COMP9164	postgraduate	Prerequisite: COMP9024.	COMP9024
+COMP9222	postgraduate	Prerequisite: COMP9032.	COMP9032
+COMP9243	undergraduate	Prerequisite: [COMP3231 or COMP3891] and [COMP3331 or TELE3018].	A COMP3331 O COMP3231 COMP3891
+COMP9243	postgraduate	Prerequisite: COMP9201 or COMP9283, and COMP9331.	A COMP9331 O COMP9201 COMP9283
+COMP9323	undergraduate	Prerequisite: (COMP1531 or COMP2041) and COMP3311 and >65WAM	A COMP3311 O COMP1531 COMP2041
+COMP9323	postgraduate	Prerequisite: COMP9021 and COMP9311 and > 65 WAM	A COMP9021 COMP9311
+COMP9418	undergraduate	Prerequisite: COMP9417.	COMP9417
+COMP9418	postgraduate	Prerequisite: COMP9417.	COMP9417
+COMP9434	postgraduate	Prerequisite: 70 WAM and COMP9024.	COMP9024
+COMP9444	undergraduate	Prerequisite: COMP1927 or COMP2521 or MTRN3500	COMP2521
+COMP9444	postgraduate	Prerequisite: COMP9024.	COMP9024
+SENG2021	undergraduate	Prerequisite:  SENG1031 or COMP1531, and enrolment in a BE or BE(Hons) Software Engineering major.	O SENG1031 COMP1531
+SENG3011	undergraduate	Prerequisite: SENG2021	SENG2021
+SENG2011	undergraduate	Pre-requisite: MATH1081	MATH1081
+SENG4920	undergraduate	Prerequisite: SENG3011 and completion of 144 UOC in SENGAH	SENG3011
