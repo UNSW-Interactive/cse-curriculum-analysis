@@ -31,7 +31,6 @@ def get_parsed_json(course, lecture):
     cursor.close()
     return None if row is None else row[0] # todo: why compared to below func
 
-
 def has_parsed_result(course, lecture) -> bool:
     # check if keywords/wp-pages/categories
     query = (

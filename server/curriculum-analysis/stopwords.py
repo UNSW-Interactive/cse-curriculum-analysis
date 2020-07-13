@@ -1,3 +1,5 @@
+# TODO: Move under utils
+
 STOPWORDS = set([
     "i",
     "me",
