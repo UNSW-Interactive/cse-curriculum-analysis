@@ -21,11 +21,10 @@ def generate_maps_to_courses(all_courses):
     return subcats_to_courses, cats_to_courses
 
 
-def build_graph(all_courses, cats_to_subcats, subcats_to_courses, cats_to_courses):
-    all_course_names = list(map(lambda x: x[0], all_courses))
+def build_graph(all_courses, all_courses_names, cats_to_subcats, subcats_to_courses, cats_to_courses):
     adj_matrix = {
-        i: {j: collections.defaultdict(int) for j in all_course_names if j != i}
-        for i in all_course_names
+        i: {j: collections.defaultdict(int) for j in all_courses_names if j != i}
+        for i in all_courses_names
     }
 
     for name, _, cats in all_courses:
@@ -70,14 +69,19 @@ def remove_dupe_links(graph):
 class Graph(Resource):
     def get(self):
         all_courses = get_all_courses_lectures_categories()
+        all_course_names = list(set(map(lambda x: x[0], all_courses)))
         subcats_to_courses, cats_to_courses = generate_maps_to_courses(all_courses)
         graph = build_graph(
-            all_courses, cats_to_subcats, subcats_to_courses, cats_to_courses
+            all_courses, all_course_names, cats_to_subcats, subcats_to_courses, cats_to_courses
         )
 
         # Need to remove duplicated links since it's an undirected graph
+        # TODO: This makes it a directed graph :)
         undirected_graph = remove_dupe_links(graph)
-        return jsonify(undirected_graph)
+        return jsonify({
+            'nodes': all_course_names,
+            'edges': undirected_graph
+        })
 
     def post(self):
         pass
