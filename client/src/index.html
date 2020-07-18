@@ -9,30 +9,49 @@
 </head>
 
 <body>
-    <section class="section">
-        <div class="columns">
-            <div class="column is-one-fifth">
-                <div class="container">
-                    <h3 class="title">
-                        Legend
-                    </h3>
-                    <ul class="ordering">
-                        <li><span style="background: #e6194b;"></span>Algorithms and data structures</li>
-                        <li><span style="background: #f58231;"></span>Computer architecture</li>
-                        <li><span style="background: #ffe119;"></span>Formal methods</li>
-                        <li><span style="background: #3cb44b;"></span>Computer security</li>
-                        <li><span style="background: #4363d8;"></span>Artificial intelligence</li>
-                        <li><span style="background: #911eb4;"></span>Computational science</li>
-                        <li><span style="background: #a9a9a9;"></span>Computer graphics</li>
-                        <li><span style="background: #000000;"></span>Database theory</li>
-                        <li><span style="background: #9a6324;"></span>Concurrency</li>
-                    </ul>
-                </div>
+    <nav class="navbar" role="navigation" style="border-bottom: 2px solid black;" aria-label="main navigation">
+        <div class="navbar-brand">
+            <h1 class="navbar-item" href="/">
+                Course Buddy
+            </h1>
+        </div>
+        <div class="navbar-start">
+            <button id="showSimilarity" class="navbar-item button is-light is-small" style="margin-top: 10px; margin-right: 20px;" href="/">
+                    Show course similarity
+                </button>
+            <button id="showPrereqs" class="navbar-item button is-light is-small" style="margin-top: 10px;" href="/">
+                    Show prerequisite graph
+                </button>
+        </div>
+    </nav>
+    <!-- <section class="section"> -->
+    <div style="display:flex; width: 100%; height:100%; flex-direction: row; flex-wrap:wrap">
+        <div style="display:flex; flex-direction: column; z-index: 1; flex-basis: 100%; flex: 4;">
+            <div style="">
+                <div id="cy-similarity" style="display:block"></div>
+                <div id="cy-prereqs" style="display:block"></div>
             </div>
         </div>
+        <div style="display:flex; background-color: white; padding-left: 5px; align-items:center; border-left: 2px solid black;  flex-direction: column; flex-basis: 100%; z-index: 2; flex: 1;">
+            <div id='legend'>
+                <h3 class="title">
+                    Legend
+                </h3>
+                <ul class="ordering">
+                    <li><span style="background: #e6194b;"></span>Algorithms and data structures</li>
+                    <li><span style="background: #f58231;"></span>Computer architecture</li>
+                    <li><span style="background: #ffe119;"></span>Formal methods</li>
+                    <li><span style="background: #3cb44b;"></span>Computer security</li>
+                    <li><span style="background: #4363d8;"></span>Artificial intelligence</li>
+                    <li><span style="background: #911eb4;"></span>Computational science</li>
+                    <li><span style="background: #a9a9a9;"></span>Computer graphics</li>
+                    <li><span style="background: #000000;"></span>Database theory</li>
+                    <li><span style="background: #9a6324;"></span>Concurrency</li>
+                </ul>
+            </div>
         </div>
-    </section>
-    <div id="cy"></div>
+    </div>
+
     <script src="index.js"></script>
 </body>
 

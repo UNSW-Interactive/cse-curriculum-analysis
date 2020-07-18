@@ -1,9 +1,23 @@
-#cy {
-    width: 100%;
+html,
+body {
     height: 100%;
-    position: absolute;
-    top: 0px;
-    left: 0px;
+    overflow-y: hidden;
+}
+
+
+/* canvas {
+
+} */
+
+#cy-similarity,
+#cy-prereqs {
+    width: 80%;
+    /* flexbox 4: 1
+    height:95 temp soln until bottom navbar?
+    */
+    height: 95%;
+    display: block;
+    position: fixed;
 }
 
 
