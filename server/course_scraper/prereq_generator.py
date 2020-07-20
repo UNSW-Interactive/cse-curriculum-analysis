@@ -15,7 +15,6 @@ with open('course_scraper/courses_nodupes.json') as myf:
         }
 
 def scrape_handbook():
-
     handbook_url = 'https://www.handbook.unsw.edu.au/{}/courses/2020/{}/' # undergraduate, code
     for course in j:
         course_name = course['code']

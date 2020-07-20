@@ -6,5 +6,5 @@ COPY *.sql /docker-entrypoint-initdb.d/
 #docker exec -t 29ae72100ab4 pg_dumpall -c -U postgres > dump.sql
 ## maybe don't need... but maybe would need if want to run locally someone else
 
-# docker exec -it 75cf269d7963 bash
+# docker exec -it 312bec8036f6 bash
 # psql -U postgres

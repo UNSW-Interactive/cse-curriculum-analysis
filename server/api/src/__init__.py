@@ -5,6 +5,7 @@ from flask_cors import CORS
 from src.routes.index import Index
 from src.routes.graph import Graph
 from src.routes.prereqs import Prereqs
+from src.routes.course import Course
 
 app = Flask(__name__)
 # Access-Control-Allow-Origin header
@@ -14,3 +15,4 @@ api = Api(app)
 api.add_resource(Index, "/")
 api.add_resource(Graph, "/graph")
 api.add_resource(Prereqs, "/prereqs")
+api.add_resource(Course, "/course/<string:course>")

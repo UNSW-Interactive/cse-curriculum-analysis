@@ -12,6 +12,7 @@ def get_all_courses_lectures_categories():
     cursor.execute(query)
     for record in cursor:
         res.append(record) # (course_code, lecture_num, categories)
+    cursor.close()
     return res
 
 def get_prereqs(courses):
@@ -24,6 +25,7 @@ def get_prereqs(courses):
             'handbook_prereqs': record[1],
             'prereqs': record[2]
         }
+    cursor.close()
     return res
 
 def get_all_prereqs():
@@ -36,4 +38,13 @@ def get_all_prereqs():
             'handbook_prereqs': record[1],
             'prereqs': record[2]
         }
+    cursor.close()
     return res
+
+def get_course_information(course_code):
+    query = """select course_name, host_url, handbook_summary, grad_level, handbook_prereqs from courses where course_code = %s;"""
+    cursor = conn.cursor()
+    cursor.execute(query, (course_code,))
+    row = cursor.fetchone()
+    cursor.close()
+    return row

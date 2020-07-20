@@ -99,7 +99,7 @@ WP_CATEGORIES = {
     ],
     "OpenStreetMap templates": [
         "Algorithms and data structures",
-        "Concurrency (computer science)"
+        "Concurrency"
     ],
     "Free GIS software": [
         "Algorithms and data structures"
@@ -112,7 +112,7 @@ WP_CATEGORIES = {
     ],
     "Sites using OpenStreetMap data": [
         "Algorithms and data structures",
-        "Concurrency (computer science)"
+        "Concurrency"
     ],
     "Bioinformatics algorithms": [
         "Algorithms and data structures"
@@ -217,7 +217,7 @@ WP_CATEGORIES = {
     ],
     "OpenStreetMap people": [
         "Algorithms and data structures",
-        "Concurrency (computer science)"
+        "Concurrency"
     ],
     "3D printers": [
         "Algorithms and data structures"
@@ -297,7 +297,7 @@ WP_CATEGORIES = {
     ],
     "OpenStreetMap": [
         "Algorithms and data structures",
-        "Concurrency (computer science)"
+        "Concurrency"
     ],
     "MacOS computer-aided design software": [
         "Algorithms and data structures"
@@ -459,7 +459,7 @@ WP_CATEGORIES = {
     ],
     "OpenStreetMap maps": [
         "Algorithms and data structures",
-        "Concurrency (computer science)"
+        "Concurrency"
     ],
     "Geographic information systems organizations": [
         "Algorithms and data structures"
@@ -4579,7 +4579,7 @@ WP_CATEGORIES = {
     ],
     "Remote procedure call": [
         "Computer architecture",
-        "Concurrency (computer science)"
+        "Concurrency"
     ],
     "Macintosh stubs": [
         "Computer architecture"
@@ -4697,7 +4697,7 @@ WP_CATEGORIES = {
     ],
     "Blockchain people": [
         "Computer architecture",
-        "Concurrency (computer science)"
+        "Concurrency"
     ],
     "Commodore 64 Peripheral Manufacturers": [
         "Computer architecture"
@@ -4722,7 +4722,7 @@ WP_CATEGORIES = {
     ],
     "Inter-process communication": [
         "Computer architecture",
-        "Concurrency (computer science)"
+        "Concurrency"
     ],
     "Electronic toll collection": [
         "Computer architecture",
@@ -4761,7 +4761,7 @@ WP_CATEGORIES = {
     ],
     "Unix signals": [
         "Computer architecture",
-        "Concurrency (computer science)"
+        "Concurrency"
     ],
     "Apple Inc. mobile processors": [
         "Computer architecture"
@@ -4973,7 +4973,7 @@ WP_CATEGORIES = {
     ],
     "Network socket": [
         "Computer architecture",
-        "Concurrency (computer science)"
+        "Concurrency"
     ],
     "Browser engine comparisons": [
         "Computer architecture"
@@ -5019,7 +5019,7 @@ WP_CATEGORIES = {
     ],
     "Blockchain entities": [
         "Computer architecture",
-        "Concurrency (computer science)"
+        "Concurrency"
     ],
     "Cloud clients": [
         "Computer architecture"
@@ -5122,7 +5122,7 @@ WP_CATEGORIES = {
     ],
     "Blockchains": [
         "Computer architecture",
-        "Concurrency (computer science)"
+        "Concurrency"
     ],
     "Binary logic": [
         "Computer architecture"
@@ -5172,7 +5172,7 @@ WP_CATEGORIES = {
     ],
     "Blockchain games": [
         "Computer architecture",
-        "Concurrency (computer science)"
+        "Concurrency"
     ],
     "IPv6 transition technologies": [
         "Computer architecture"
@@ -5217,7 +5217,7 @@ WP_CATEGORIES = {
     ],
     "Blockchain art": [
         "Computer architecture",
-        "Concurrency (computer science)"
+        "Concurrency"
     ],
     "Microprocessors by instruction set architecture": [
         "Computer architecture"
@@ -6276,7 +6276,7 @@ WP_CATEGORIES = {
     ],
     "Data synchronization": [
         "Computer security",
-        "Concurrency (computer science)"
+        "Concurrency"
     ],
     "Integer factorization algorithms": [
         "Computer security"
@@ -6325,7 +6325,7 @@ WP_CATEGORIES = {
     ],
     "People associated with Ethereum": [
         "Computer security",
-        "Concurrency (computer science)"
+        "Concurrency"
     ],
     "Storage virtualization": [
         "Computer security"
@@ -6605,7 +6605,7 @@ WP_CATEGORIES = {
     ],
     "Bitcoin mixer": [
         "Computer security",
-        "Concurrency (computer science)"
+        "Concurrency"
     ],
     "Cylinder and impression seals in archaeology": [
         "Computer security"
@@ -7095,7 +7095,7 @@ WP_CATEGORIES = {
     ],
     "People associated with Bitcoin": [
         "Computer security",
-        "Concurrency (computer science)"
+        "Concurrency"
     ],
     "French graphologists": [
         "Computer security"
@@ -7144,7 +7144,7 @@ WP_CATEGORIES = {
     ],
     "Music streaming services": [
         "Computer security",
-        "Concurrency (computer science)"
+        "Concurrency"
     ],
     "Overlay networks": [
         "Computer security"
@@ -7193,7 +7193,7 @@ WP_CATEGORIES = {
     ],
     "People associated with cryptocurrency": [
         "Computer security",
-        "Concurrency (computer science)"
+        "Concurrency"
     ],
     "Death indexes": [
         "Computer security"
@@ -7245,7 +7245,7 @@ WP_CATEGORIES = {
     ],
     "SyncML": [
         "Computer security",
-        "Concurrency (computer science)"
+        "Concurrency"
     ],
     "Filmation people": [
         "Computer security"
@@ -7324,7 +7324,7 @@ WP_CATEGORIES = {
     ],
     "Bitcoin organizations": [
         "Computer security",
-        "Concurrency (computer science)"
+        "Concurrency"
     ],
     "Online music stores of Australia": [
         "Computer security"
@@ -7406,7 +7406,7 @@ WP_CATEGORIES = {
     ],
     "Cryptocurrencies": [
         "Computer security",
-        "Concurrency (computer science)"
+        "Concurrency"
     ],
     "Linux malware": [
         "Computer security"
@@ -7446,7 +7446,7 @@ WP_CATEGORIES = {
     ],
     "Bitcoin exchanges": [
         "Computer security",
-        "Concurrency (computer science)"
+        "Concurrency"
     ],
     "Yahoo! litigation": [
         "Computer security"
@@ -7639,7 +7639,7 @@ WP_CATEGORIES = {
     ],
     "Cryptocurrency stubs": [
         "Computer security",
-        "Concurrency (computer science)"
+        "Concurrency"
     ],
     "NIST hash function competition": [
         "Computer security"
@@ -7784,7 +7784,7 @@ WP_CATEGORIES = {
     ],
     "Cryptocurrency tumblers": [
         "Computer security",
-        "Concurrency (computer science)"
+        "Concurrency"
     ],
     "Films about identity theft": [
         "Computer security"
@@ -8187,7 +8187,7 @@ WP_CATEGORIES = {
     ],
     "Bitcoin": [
         "Computer security",
-        "Concurrency (computer science)"
+        "Concurrency"
     ],
     "Hash functions": [
         "Computer security"
@@ -8203,7 +8203,7 @@ WP_CATEGORIES = {
     ],
     "Ethereum tokens": [
         "Computer security",
-        "Concurrency (computer science)"
+        "Concurrency"
     ],
     "WikiLeaks": [
         "Computer security"
@@ -8318,7 +8318,7 @@ WP_CATEGORIES = {
     ],
     "Ethereum": [
         "Computer security",
-        "Concurrency (computer science)"
+        "Concurrency"
     ],
     "Seals of Philippine provinces": [
         "Computer security"
@@ -8520,7 +8520,7 @@ WP_CATEGORIES = {
     ],
     "Ripple payment network": [
         "Computer security",
-        "Concurrency (computer science)"
+        "Concurrency"
     ],
     "Lists by name": [
         "Computer security"
@@ -8575,7 +8575,7 @@ WP_CATEGORIES = {
     ],
     "Bitcoin theft": [
         "Computer security",
-        "Concurrency (computer science)"
+        "Concurrency"
     ],
     "Cryptographers": [
         "Computer security"
@@ -9059,7 +9059,7 @@ WP_CATEGORIES = {
     ],
     "Speculative execution security vulnerabilities": [
         "Computer security",
-        "Concurrency (computer science)"
+        "Concurrency"
     ],
     "Bundled products or services": [
         "Computer security"
@@ -9131,404 +9131,404 @@ WP_CATEGORIES = {
         "Computer security"
     ],
     "Task managers": [
-        "Concurrency (computer science)"
+        "Concurrency"
     ],
     "Distributed computing": [
-        "Concurrency (computer science)"
+        "Concurrency"
     ],
     "Java (programming language) libraries": [
-        "Concurrency (computer science)"
+        "Concurrency"
     ],
     "BitTorrent websites": [
-        "Concurrency (computer science)"
+        "Concurrency"
     ],
     "Process calculi": [
-        "Concurrency (computer science)"
+        "Concurrency"
     ],
     "WWE Network": [
-        "Concurrency (computer science)"
+        "Concurrency"
     ],
     "Ada programming language family": [
-        "Concurrency (computer science)"
+        "Concurrency"
     ],
     "Instanced Massively multiplayer online role-playing games": [
-        "Concurrency (computer science)"
+        "Concurrency"
     ],
     "Inactive massively multiplayer online games": [
-        "Concurrency (computer science)"
+        "Concurrency"
     ],
     "MapleStory": [
-        "Concurrency (computer science)"
+        "Concurrency"
     ],
     "MacOS MMORPGs": [
-        "Concurrency (computer science)"
+        "Concurrency"
     ],
     "Domain theory": [
-        "Concurrency (computer science)"
+        "Concurrency"
     ],
     "Free software programmed in Erlang": [
-        "Concurrency (computer science)"
+        "Concurrency"
     ],
     "MMORPGs by topic": [
-        "Concurrency (computer science)"
+        "Concurrency"
     ],
     "Video on demand series": [
-        "Concurrency (computer science)"
+        "Concurrency"
     ],
     "Distributed computing conferences": [
-        "Concurrency (computer science)"
+        "Concurrency"
     ],
     "Streaming media systems": [
-        "Concurrency (computer science)"
+        "Concurrency"
     ],
     "Massively parallel computers": [
-        "Concurrency (computer science)"
+        "Concurrency"
     ],
     "Video on demand services": [
-        "Concurrency (computer science)"
+        "Concurrency"
     ],
     "Upcoming MMORPGs": [
-        "Concurrency (computer science)"
+        "Concurrency"
     ],
     "Second Life": [
-        "Concurrency (computer science)"
+        "Concurrency"
     ],
     "Distributed data storage": [
-        "Concurrency (computer science)"
+        "Concurrency"
     ],
     "Internet radio stations": [
-        "Concurrency (computer science)"
+        "Concurrency"
     ],
     "Manycore processors": [
-        "Concurrency (computer science)"
+        "Concurrency"
     ],
     "Java APIs": [
-        "Concurrency (computer science)"
+        "Concurrency"
     ],
     "American web producers": [
-        "Concurrency (computer science)"
+        "Concurrency"
     ],
     "Former Bitcoin exchanges": [
-        "Concurrency (computer science)"
+        "Concurrency"
     ],
     "Speculative execution": [
-        "Concurrency (computer science)"
+        "Concurrency"
     ],
     "Direct Connect network": [
-        "Concurrency (computer science)"
+        "Concurrency"
     ],
     "Distributed computing projects": [
-        "Concurrency (computer science)"
+        "Concurrency"
     ],
     "Software programmed in Rust": [
-        "Concurrency (computer science)"
+        "Concurrency"
     ],
     "Denotational semantics": [
-        "Concurrency (computer science)"
+        "Concurrency"
     ],
     "Internet television by country": [
-        "Concurrency (computer science)"
+        "Concurrency"
     ],
     "Unix process- and task-management-related software": [
-        "Concurrency (computer science)"
+        "Concurrency"
     ],
     "Guild Wars": [
-        "Concurrency (computer science)"
+        "Concurrency"
     ],
     "Distributed computing problems": [
-        "Concurrency (computer science)"
+        "Concurrency"
     ],
     "Process.h": [
-        "Concurrency (computer science)"
+        "Concurrency"
     ],
     "Streaming-only albums": [
-        "Concurrency (computer science)"
+        "Concurrency"
     ],
     "Distributed data stores": [
-        "Concurrency (computer science)"
+        "Concurrency"
     ],
     "Java (programming language)": [
-        "Concurrency (computer science)"
+        "Concurrency"
     ],
     "Video on demand": [
-        "Concurrency (computer science)"
+        "Concurrency"
     ],
     "Streaming": [
-        "Concurrency (computer science)"
+        "Concurrency"
     ],
     "Concurrent computing": [
-        "Concurrency (computer science)"
+        "Concurrency"
     ],
     "OS/2 environment variables": [
-        "Concurrency (computer science)"
+        "Concurrency"
     ],
     "Distributed data storage systems": [
-        "Concurrency (computer science)"
+        "Concurrency"
     ],
     "Temporal logic": [
-        "Concurrency (computer science)"
+        "Concurrency"
     ],
     "File sharing networks": [
-        "Concurrency (computer science)"
+        "Concurrency"
     ],
     "Internet radio by country": [
-        "Concurrency (computer science)"
+        "Concurrency"
     ],
     "Concurrent programming languages": [
-        "Concurrency (computer science)"
+        "Concurrency"
     ],
     "Massively multiplayer online first-person shooter games": [
-        "Concurrency (computer science)"
+        "Concurrency"
     ],
     "Windows services": [
-        "Concurrency (computer science)"
+        "Concurrency"
     ],
     "Linux process- and task-management-related software": [
-        "Concurrency (computer science)"
+        "Concurrency"
     ],
     "Internet streaming services": [
-        "Concurrency (computer science)"
+        "Concurrency"
     ],
     "Concurrency control": [
-        "Concurrency (computer science)"
+        "Concurrency"
     ],
     "Massively multiplayer online role-playing games": [
-        "Concurrency (computer science)"
+        "Concurrency"
     ],
     "Virtual reality communities": [
-        "Concurrency (computer science)"
+        "Concurrency"
     ],
     "Massively multiplayer online real-time strategy games": [
-        "Concurrency (computer science)"
+        "Concurrency"
     ],
     "Free software programmed in Go": [
-        "Concurrency (computer science)"
+        "Concurrency"
     ],
     "Internet television channels": [
-        "Concurrency (computer science)"
+        "Concurrency"
     ],
     "Transaction processing": [
-        "Concurrency (computer science)"
+        "Concurrency"
     ],
     "Termination algorithms": [
-        "Concurrency (computer science)"
+        "Concurrency"
     ],
     "Bitcoin companies": [
-        "Concurrency (computer science)"
+        "Concurrency"
     ],
     "Actor model (computer science)": [
-        "Concurrency (computer science)"
+        "Concurrency"
     ],
     "Java API for XML": [
-        "Concurrency (computer science)",
+        "Concurrency",
         "Formal methods"
     ],
     "Cloud storage": [
-        "Concurrency (computer science)"
+        "Concurrency"
     ],
     "Concurrency control algorithms": [
-        "Concurrency (computer science)"
+        "Concurrency"
     ],
     "Free software programmed in Java (programming language)": [
-        "Concurrency (computer science)"
+        "Concurrency"
     ],
     "Domain decomposition methods": [
-        "Concurrency (computer science)"
+        "Concurrency"
     ],
     "BitTorrent tracker": [
-        "Concurrency (computer science)"
+        "Concurrency"
     ],
     "City of Heroes": [
-        "Concurrency (computer science)"
+        "Concurrency"
     ],
     "Researchers in distributed computing": [
-        "Concurrency (computer science)"
+        "Concurrency"
     ],
     "Internet television software": [
-        "Concurrency (computer science)"
+        "Concurrency"
     ],
     "Australian streaming companies": [
-        "Concurrency (computer science)"
+        "Concurrency"
     ],
     "Netsukuku": [
-        "Concurrency (computer science)"
+        "Concurrency"
     ],
     "Agreement algorithms": [
-        "Concurrency (computer science)"
+        "Concurrency"
     ],
     "Go (programming language)": [
-        "Concurrency (computer science)"
+        "Concurrency"
     ],
     "Gnutella2": [
-        "Concurrency (computer science)"
+        "Concurrency"
     ],
     "Process (computing)": [
-        "Concurrency (computer science)"
+        "Concurrency"
     ],
     "Professional wrestling streaming services": [
-        "Concurrency (computer science)"
+        "Concurrency"
     ],
     "Internet radio": [
-        "Concurrency (computer science)"
+        "Concurrency"
     ],
     "Massively multiplayer online games": [
-        "Concurrency (computer science)"
+        "Concurrency"
     ],
     "Screenshots of vodcasts": [
-        "Concurrency (computer science)"
+        "Concurrency"
     ],
     "Transactional memory": [
-        "Concurrency (computer science)"
+        "Concurrency"
     ],
     "Eclipse technology": [
-        "Concurrency (computer science)"
+        "Concurrency"
     ],
     "Process termination functions": [
-        "Concurrency (computer science)"
+        "Concurrency"
     ],
     "Metaplace": [
-        "Concurrency (computer science)"
+        "Concurrency"
     ],
     "Berkeley Open Infrastructure for Network Computing projects": [
-        "Concurrency (computer science)"
+        "Concurrency"
     ],
     "The Lord of the Rings Online": [
-        "Concurrency (computer science)"
+        "Concurrency"
     ],
     "Petri nets": [
-        "Concurrency (computer science)"
+        "Concurrency"
     ],
     "Erlang (programming language)": [
-        "Concurrency (computer science)"
+        "Concurrency"
     ],
     "Logical clock algorithms": [
-        "Concurrency (computer science)"
+        "Concurrency"
     ],
     "Free software BOINC projects": [
-        "Concurrency (computer science)"
+        "Concurrency"
     ],
     "Distributed bug tracking systems": [
-        "Concurrency (computer science)"
+        "Concurrency"
     ],
     "Video game streaming services": [
-        "Concurrency (computer science)"
+        "Concurrency"
     ],
     "Browser-based multiplayer online games": [
-        "Concurrency (computer science)"
+        "Concurrency"
     ],
     "Great Internet Mersenne Prime Search": [
-        "Concurrency (computer science)"
+        "Concurrency"
     ],
     "Internet television": [
-        "Concurrency (computer science)"
+        "Concurrency"
     ],
     "DOS environment variables": [
-        "Concurrency (computer science)"
+        "Concurrency"
     ],
     "Streaming software": [
-        "Concurrency (computer science)"
+        "Concurrency"
     ],
     "Parallel computing": [
-        "Concurrency (computer science)"
+        "Concurrency"
     ],
     "Environment variables": [
-        "Concurrency (computer science)"
+        "Concurrency"
     ],
     "Free software programmed in Ada": [
-        "Concurrency (computer science)"
+        "Concurrency"
     ],
     "Massively multiplayer online games by status": [
-        "Concurrency (computer science)"
+        "Concurrency"
     ],
     "Cloud storage gateways": [
-        "Concurrency (computer science)"
+        "Concurrency"
     ],
     "JavaServer Faces": [
-        "Concurrency (computer science)"
+        "Concurrency"
     ],
     "Concurrent programming libraries": [
-        "Concurrency (computer science)"
+        "Concurrency"
     ],
     "Eclipse (software)": [
-        "Concurrency (computer science)"
+        "Concurrency"
     ],
     "MUD games": [
-        "Concurrency (computer science)"
+        "Concurrency"
     ],
     "Internet audio players": [
-        "Concurrency (computer science)"
+        "Concurrency"
     ],
     "Internet radio software": [
-        "Concurrency (computer science)"
+        "Concurrency"
     ],
     "Eclipse software": [
-        "Concurrency (computer science)"
+        "Concurrency"
     ],
     "MMORPGs in fiction": [
-        "Concurrency (computer science)"
+        "Concurrency"
     ],
     "SR programming language family": [
-        "Concurrency (computer science)"
+        "Concurrency"
     ],
     "Live streaming services": [
-        "Concurrency (computer science)"
+        "Concurrency"
     ],
     "Java specification requests": [
-        "Concurrency (computer science)"
+        "Concurrency"
     ],
     "Active massively multiplayer online games": [
-        "Concurrency (computer science)"
+        "Concurrency"
     ],
     "Windows environment variables": [
-        "Concurrency (computer science)"
+        "Concurrency"
     ],
     "Go software": [
-        "Concurrency (computer science)"
+        "Concurrency"
     ],
     "Software programmed in Java (programming language)": [
-        "Concurrency (computer science)"
+        "Concurrency"
     ],
     "Rust (programming language)": [
-        "Concurrency (computer science)"
+        "Concurrency"
     ],
     "Massively multiplayer online turn-based strategy games": [
-        "Concurrency (computer science)"
+        "Concurrency"
     ],
     "Text-based multiplayer online games": [
-        "Concurrency (computer science)"
+        "Concurrency"
     ],
     "Applications of distributed computing": [
-        "Concurrency (computer science)"
+        "Concurrency"
     ],
     "Java compilers": [
-        "Concurrency (computer science)"
+        "Concurrency"
     ],
     "BitTorrent": [
-        "Concurrency (computer science)"
+        "Concurrency"
     ],
     "Gnutella": [
-        "Concurrency (computer science)"
+        "Concurrency"
     ],
     "Concurrent algorithms": [
-        "Concurrency (computer science)"
+        "Concurrency"
     ],
     "Distributed algorithms": [
-        "Concurrency (computer science)"
+        "Concurrency"
     ],
     "Internet broadcasting stubs": [
-        "Concurrency (computer science)"
+        "Concurrency"
     ],
     "Ada (programming language)": [
-        "Concurrency (computer science)"
+        "Concurrency"
     ],
     "Original programming": [
-        "Concurrency (computer science)"
+        "Concurrency"
     ],
     "Twitch (service) streamers": [
-        "Concurrency (computer science)"
+        "Concurrency"
     ],
     "Peercasting": [
-        "Concurrency (computer science)"
+        "Concurrency"
     ],
     "Entity\u2013relationship model": [
         "Database theory"
