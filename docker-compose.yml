@@ -1,10 +1,29 @@
 version: "3.2"
 services: 
   db:
-    build: server/database/
+    image: postgres
     ports:
       - 5432:5432
     volumes:
       - ./db-data:/var/lib/postgresql/data
     environment:
       POSTGRES_PASSWORD: abc
+  dbrestore:
+    image: postgres
+    volumes:
+      - ./db-data:/var/lib/postgresql/data
+    entrypoint:  # could prob make this a bash file with extra checks
+      ['gunzip', '-c', 'db-dumps/dump.gz', '|', 'psql', '-U', 'postgres']
+    depends_on: 
+      - db
+  api:
+    build: server/api/
+    expose: 5000
+    depends_on: 
+      - db
+  nginx:
+    build: client/
+    ports:
+      - ${NGINX_PORT}:80
+    depends_on:
+      - api
