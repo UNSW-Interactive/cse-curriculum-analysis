@@ -1,4 +1,5 @@
 set -xeu
-currdate=`date +%d-%m-%Y"_"%H_%M_%S`
-filename="dump_$currdate.sql"
-docker exec -t cse-curriculum-analysis_db_1 pg_dumpall -c -U postgres > "$filename"
+currdate=`date +%Y%m%d"-"%H_%M_%S`
+filename="db-dumps/dump_$currdate.gz"
+touch "$filename"
+docker exec -t cse-curriculum-analysis_db_1 pg_dumpall -c -U postgres | gzip > "$filename"

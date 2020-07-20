@@ -1,3 +1,4 @@
+# make sure you're in cd server, pipenv shell
 for course in ~/Desktop/UNSW/Honours\ 2020\ Terry\ -\ Dataset\ -\ Documents/Dataset/DATASET_PDF_CSE/*; do
     course_name=`basename "$course"`
     if [ "${course_name:0:1}" = "i" ]; then
@@ -11,8 +12,7 @@ for course in ~/Desktop/UNSW/Honours\ 2020\ Terry\ -\ Dataset\ -\ Documents/Data
         python3 curriculum-analysis/main.py \
             -f "$lec" \
             -c $course_name \
-            -n $lec_num \
-            --override
+            -n $lec_num 
         ((lec_num++))
     done
 done
