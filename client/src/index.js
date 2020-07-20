@@ -18,6 +18,14 @@ function getPrereqs() {
     )
 }
 
+function getCourseInfo(course_code) {
+    return fetch(url + '/course/' + course_code).then(
+        resp => {
+            return resp.json();
+        }
+    )
+}
+
 
 function generateGraphElements() {
     return getGraphData().then(
@@ -61,64 +69,6 @@ function generateGraphElements() {
     )
 }
 
-function getPrereqSrc(prereq) {
-    if (typeof prereq === 'object') {
-        // no more operation
-        return Object.keys(prereq)[0];
-    }
-
-    const operation = prereq[0];
-
-}
-
-function createEdge(dest, prereqs, i) {
-    const all_edges = [];
-    const operation = prereqs[i];
-    if (operation === 'AND') {
-        if (typeof prereqs[i + 1] === 'object' && typeof prereqs[i + 2] === 'object') {
-            const c1 = Object.keys(prereqs[i + 1])[0];
-            const c2 = Object.keys(prereqs[i + 2])[0];
-            all_edges.push({
-                data: {
-                    id: dest + c1,
-                    source: c1,
-                    target: dest,
-                    wam_req: prereqs[neighbour],
-                    handbook_prereq: handbook_prereqs
-                }
-            }, {
-                data: {
-                    id: dest + c2,
-                    source: c2,
-                    target: dest,
-                    wam_req: prereqs[neighbour],
-                    handbook_prereq: handbook_prereqs
-                }
-            })
-        }
-    } else if (operation === 'OR') {
-        // need to create OR node
-        const or_node = {
-            data: {
-                id: 'or' //same
-            }
-        }
-        const or_to_course = {
-            data: {
-                id: 'or' + dest,
-                source: 'or', //same
-                target: dest
-            }
-        }
-        const courses_to_or = {
-            data: {
-                id: 'toor',
-
-            }
-        }
-    }
-}
-
 function getSrc(prereqs) {
     if (prereqs.length === 0) {
         console.log('shouldnt reach here');
@@ -135,167 +85,71 @@ function getSrc(prereqs) {
     return null;
 }
 
+function buildEdge(id, source, target) {
+    return {
+        data: {
+            id: id,
+            source: source,
+            target: target
+        }
+    }
+}
+
+function buildNode(id, or_node = false) {
+    return {
+        data: {
+            id: id,
+            or_node: or_node
+        }
+    }
+}
+
 function parsePrereqs(main_course, handbook_prereqs, prereqs) {
-    // debugger;
     if (!Array.isArray(prereqs)) {
         // just 1 prereq
         const neighbour = Object.keys(prereqs)[0];
-        return [{
-            data: {
-                id: neighbour + main_course,
-                source: neighbour,
-                target: main_course,
-                wam_req: prereqs[neighbour],
-                handbook_prereq: handbook_prereqs
-            }
-        }];
+        return [buildEdge(neighbour + main_course, neighbour, main_course)];
     }
 
     const operation = prereqs[0];
     if (operation === 'AND') {
         const c1 = parsePrereqs(main_course, handbook_prereqs, prereqs[1]);
         const c2 = parsePrereqs(main_course, handbook_prereqs, prereqs[2]);
-
-        // then a function that takes in c1 --> returns the src
-
         const c1_src = getSrc(c1);
         const c2_src = getSrc(c2);
-        const c1_to_main = [{
-            data: {
-                id: main_course + c1_src,
-                source: c1_src,
-                target: main_course,
-                wam_req: prereqs[c1], // no
-                handbook_prereq: handbook_prereqs
-            }
-        }];
-        const c2_to_main = [{
-            data: {
-                id: main_course + c2_src,
-                source: c2_src,
-                target: main_course,
-                wam_req: prereqs[c1], // no
-                handbook_prereq: handbook_prereqs
-            }
-        }];
+        const c1_to_main = buildEdge(main_course + c1_src, c1_src, main_course);
+        const c2_to_main = buildEdge(main_course + c2_src, c2_src, main_course);
         return [
-            ...(c1_src !== null ? c1_to_main : []),
-            ...(c2_src !== null ? c2_to_main : []),
+            ...(c1_src !== null ? [c1_to_main] : []),
+            ...(c2_src !== null ? [c2_to_main] : []),
             ...c1, ...c2
         ];
     } else if (operation === 'OR') {
-        // create new "OR" node
-        // UNLESS one already exists
+        // create new "OR" node if doesn't exist
         if (main_course.slice(main_course.length - 2) !== 'or') {
             const or_node_id = main_course + 'or';
-            const or_node = {
-                data: {
-                    id: or_node_id, //prob not dynamic
-                    or_node: true
-                }
-            };
-            const or_node_edge_to_main = {
-                    data: {
-                        id: or_node_id + main_course,
-                        source: or_node_id,
-                        target: main_course,
-                        wam_req: prereqs[c1], // no
-                        handbook_prereq: handbook_prereqs
-                    }
-                }
-                // const parent =
+            const or_node = buildNode(or_node_id, true);
+            const or_node_edge_to_main = buildEdge(or_node_id + main_course, or_node_id, main_course);
             const c1 = parsePrereqs(or_node_id, handbook_prereqs, prereqs[1]);
             const c2 = parsePrereqs(or_node_id, handbook_prereqs, prereqs[2]);
-            const c1_src = getSrc(c1);
-            const c2_src = getSrc(c2);
-            // if either c1 or c2 is an OR (both can't be true I'm pretty sure), then merge
-            //todo: no items?
-            if (c1[0].data.or_node) {
-                // c2 could be AND or standalone
-                // debugger;
-                const new_c2 = c2.map(c22 => {
-                    return {
-                        data: {
-                            id: c22.data.id,
-                            source: c22.data.source,
-                            target: c1[0].data.id,
-                            wam_req: c22.data.wam_req, // no
-                            handbook_prereq: c22.data.handbook_prereq
-                        }
-                    };
-                });
-                return [...c1, ...new_c2];
-            } else if (c2[0].data.or_node) {
-                console.log(" i don't think this is ever reached");
-                // c2 could be AND or standalone
-                const new_c1 = c1.map(c11 => {
-                    return {
-                        data: {
-                            id: c11.data.id,
-                            source: c11.data.source,
-                            target: c2[0].data.id,
-                            wam_req: c11.data.wam_req, // no
-                            handbook_prereq: c11.data.handbook_prereq
-                        }
-                    };
-                });
-                return [...c2, ...new_c1];
-            } else {
-                // create the or node, two edges towards it, an edge out of it
-                console.log('c1:', c1);
-                console.log('c2:', c2);
-                return [or_node, or_node_edge_to_main, ...c1, ...c2];
-            }
+            return [or_node, or_node_edge_to_main, ...c1, ...c2];
         } else {
             // or node already exists
             const c1 = parsePrereqs(main_course, handbook_prereqs, prereqs[1]);
-            console.log(c1);
             const c2 = parsePrereqs(main_course, handbook_prereqs, prereqs[2]);
-            const c1_src = getSrc(c1);
-            const c2_src = getSrc(c2);
-            // todo: func to build data point
             const new_c1 = c1.map(c11 => {
-                return {
-                    data: {
-                        id: c11.data.id,
-                        source: c11.data.source,
-                        target: main_course,
-                        wam_req: c11.data.wam_req, // no
-                        handbook_prereq: c11.data.handbook_prereq
-                    }
-                };
+                return buildEdge(c11.data.id, c11.data.source, main_course);
             });
             const new_c2 = c2.map(c22 => {
-                return {
-                    data: {
-                        id: c22.data.id,
-                        source: c22.data.source,
-                        target: main_course,
-                        wam_req: c22.data.wam_req, // no
-                        handbook_prereq: c22.data.handbook_prereq
-                    }
-                };
+                return buildEdge(c22.data.id, c22.data.source, main_course);
             });
             return [...new_c1, ...new_c2, ...c1, ...c2];
         }
-        // const or_node_id = main_course.slice(main_course.length - 2) === 'or' ? main_course : main_course + 'or';
-        // const or_node_id = main_course + 'or';
-
-
-
     } else if (operation === 'WITH') {
         const c1 = parsePrereqs(main_course, handbook_prereqs, prereqs[1]);
         // todo: not extensible if coreq is an OR/AND
-        const new_c1 = {
-            data: {
-                id: c1[0].id,
-                source: c1[0].source,
-                target: main_course,
-                wam_req: c1[0].wam_req,
-                handbook_prereq: c1[0].handbook_prereq
-            }
-        };
-        return [new_c1];
+        const new_c1 = buildEdge(c1[0].data.id, c1[0].data.source, main_course);
+        return [new_c1, ...c1];
     }
 }
 
@@ -309,7 +163,6 @@ function generatePrereqGraphElements() {
                 }
             }
         });
-        console.log(elements.length, courses.length);
         courses.forEach(course => {
             const handbook_prereqs = graph_data[course]['handbook_prereqs'];
             const prereqs = graph_data[course]['prereqs'] ? graph_data[course]['prereqs'] : {};
@@ -318,53 +171,99 @@ function generatePrereqGraphElements() {
                 return;
             }
 
-            console.log('------');
-            console.log(course, prereqs);
-            // debugger;
             elements = [...elements, ...parsePrereqs(course, handbook_prereqs, prereqs)];
-            console.log(elements);
-            console.log('******');
         });
-        console.log(elements);
         return elements;
     })
 }
 
-function showCourseSimilarity() {
+function showCourseSimilarity(subcategories) {
     const similarityGraph = document.getElementById('cy-similarity');
     const prereqGraph = document.getElementById('cy-prereqs');
     prereqGraph.style.display = "none";
     similarityGraph.style.display = "block";
+    showLegend(subcategories)
 }
 
 
-function showPrereqs() {
+function showPrereqs(course_legend) {
     const similarityGraph = document.getElementById('cy-similarity');
     const prereqGraph = document.getElementById('cy-prereqs');
     similarityGraph.style.display = "none";
     prereqGraph.style.display = "block";
+    showLegend(course_legend)
 }
 
+function showLegend(items) {
+    const legend = document.getElementById('legend-list');
+    while (legend.lastElementChild) {
+        legend.removeChild(legend.lastElementChild);
+    }
+
+    items.forEach(item => {
+        const li = document.createElement('li');
+        li.classList.add('legend');
+        const colour_block = document.createElement('span');
+        colour_block.style['background'] = item[1];
+        li.appendChild(colour_block);
+        li.appendChild(document.createTextNode(item[0]));
+        legend.appendChild(li);
+    })
+}
+
+function OrNodeOrNot(a, b) {
+    return (ele) => {
+        return ele.data('or_node') ? a : b;
+    };
+}
+
+function displayInfo(course_code) {
+    getCourseInfo(course_code).then(course_info => {
+        const h_course_title = document.getElementById('course-title');
+        const h_course_subtitle = document.getElementById('course-subtitle');
+        const span_prereqs = document.getElementById('course-prerequisites');
+        const p_handbook_summary = document.getElementById('course-handbook-summary');
+        const a_host_url = document.getElementById('course-host-url');
+        const a_handbook_url = document.getElementById('course-handbook-url');
+        h_course_title.innerText = course_code;
+        h_course_subtitle.innerText = course_info['course_name'];
+        span_prereqs.innerText = course_info['handbook_prereqs'].length > 0 ? course_info['handbook_prereqs'] : 'None';
+        p_handbook_summary.innerText = course_info['handbook_summary'];
+        a_host_url.setAttribute('href', course_info['host_url']); // todo: any we coudln't get?
+        a_handbook_url.setAttribute('href', `https://www.handbook.unsw.edu.au/${course_info['grad_level']}/courses/2020/${course_code}`);
+
+        // show the compononent
+        document.getElementById('course-info').style.display = 'block';
+    })
+}
 
 (function main() {
+    const subcategories_colours = [
+        ['Algorithms and data structures', '#e6194b'], // red
+        ['Computer architecture', '#f58231'], //orange
+        ['Formal methods', '#ffe119'], //yellow 
+        ['Computer security', '#3cb44b'], // green 
+        ['Artificial intelligence', '#4363d8'], //blue
+        ['Computational science', '#911eb4'], // purp 
+        ['Computer graphics', '#a9a9a9'], //grey 
+        ['Database theory', '#000000'], //black
+        ['Concurrency', '#9a6324'] //brown
+    ];
+    const course_level_colours = [
+        ['Level 1 course', '#3cb44b'],
+        ['Level 2 course', '#4363d8'],
+        ['Level 3 course', '#ffe119'],
+        ['Level 4 course', '#f58231'],
+        ['Level 6 course', '#e6194b'],
+        ['Level 9 course', '#911eb4'],
+    ]
     const showCourseSimilarityButton = document.getElementById('showSimilarity');
     const showPrereqsButton = document.getElementById('showPrereqs');
-    showCourseSimilarityButton.addEventListener('click', showCourseSimilarity, false);
-    showPrereqsButton.addEventListener('click', showPrereqs, false);
-    const subcategories_colours = {
-        'Algorithms and data structures': '#e6194b', // red
-        'Computer architecture': '#f58231', //orange
-        'Formal methods': '#ffe119', //yellow 
-        'Computer security': '#3cb44b', // green 
-        'Artificial intelligence': '#4363d8', //blue
-        'Computational science': '#911eb4', // purp 
-        'Computer graphics': '#a9a9a9', //grey 
-        'Database theory': '#000000', //black
-        'Concurrency (computer science)': '#9a6324' //brown
-    }
+    showCourseSimilarityButton.addEventListener('click', _ => showCourseSimilarity(subcategories_colours), false);
+    showPrereqsButton.addEventListener('click', _ => showPrereqs(course_level_colours), false);
+
     Promise.all([generateGraphElements(), generatePrereqGraphElements()]).then(graphs_elements => {
-        console.log(graphs_elements[1]);
-        cytoscape({
+        const similarityGraph = cytoscape({
             container: document.getElementById('cy-similarity'),
             elements: graphs_elements[0],
             style: [ // the stylesheet for the graph
@@ -380,9 +279,7 @@ function showPrereqs() {
                     style: {
                         // 'width': 'mapData(weight, 0, 100, 1, 10)',
                         'width': 'mapData(weight, 0, 200, 1, 10)',
-                        'line-color': (ele) => {
-                            return subcategories_colours[ele.data('subcat')]
-                        },
+                        'line-color': ele => subcategories_colours.find(ele2 => ele2[0] == ele.data('subcat'))[1],
                         'curve-style': 'bezier'
                     }
                 }
@@ -391,15 +288,29 @@ function showPrereqs() {
                 name: 'circle',
             }
         });
-        cytoscape({
+
+        const prereqsGraph = cytoscape({
             container: document.getElementById('cy-prereqs'),
             elements: graphs_elements[1],
             style: [ // the stylesheet for the graph
                 {
                     selector: 'node',
                     style: {
-                        'background-color': '#333',
-                        'label': 'data(id)'
+                        'background-color': ele => {
+                            return ele.data('or_node') ? 'black' :
+                                course_level_colours.find(lvl => 'Level ' + ele.data('id').charAt(4) + ' course' === lvl[0])[1];
+                        },
+                        'label': ele => ele.data('or_node') ? '' : ele.data('id').slice(0, 4) + '\n' + ele.data('id').slice(4, 8),
+                        'width': OrNodeOrNot('15px', '80px'),
+                        'height': OrNodeOrNot('15px', '80px'),
+                        'shape': OrNodeOrNot('round-diamond', 'ellipse'),
+                        "text-valign": "center",
+                        "text-halign": "center",
+                        "text-wrap": "wrap",
+                        "color": ele => {
+                            // return ele.data('or_node') ? '#000000' : '#' + ('000000' + (('0xffffff' ^ course_level_colours[ele.data('id').charAt(4)]).toString(16))).slice(-6)
+                            return "#ffffff"; // todo: complement colour of bg colour
+                        }
                     }
                 },
                 {
@@ -408,7 +319,21 @@ function showPrereqs() {
                         // 'width': 'mapData(weight, 0, 100, 1, 10)',
                         'width': '3px',
                         'curve-style': 'straight',
-                        'target-arrow-shape': 'triangle'
+                        'target-arrow-shape': 'vee',
+                        'target-arrow-color': ele => {
+                            // ele.data('to_or_node') ? '#000000' : 'grey',
+                            if (ele.data('target').slice(ele.data('target').length - 2) === 'or') {
+                                return 'silver';
+                            }
+                            return '#202020';
+                        },
+                        'line-color': ele => {
+                            // ele.data('to_or_node') ? '#000000' : 'grey',
+                            if (ele.data('target').slice(ele.data('target').length - 2) === 'or') {
+                                return 'silver';
+                            }
+                            return '#202020';
+                        }
                     }
                 }
             ],
@@ -416,6 +341,11 @@ function showPrereqs() {
                 name: 'breadthfirst',
             }
         });
-        showCourseSimilarity();
+        // todo: wanna do this for both
+        prereqsGraph.nodes().on('click', node => {
+            const targetNode = node.target;
+            displayInfo(targetNode._private.data.id)
+        })
+        showPrereqs(course_level_colours);
     })
 })()
