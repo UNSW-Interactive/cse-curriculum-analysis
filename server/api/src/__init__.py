@@ -10,10 +10,17 @@ from src.routes.prereqs import api_get_all_prereqs
 from src.routes.course import get_course_info
 
 # TODO: config file for below... (these lines will prob go after app = , where u pass uin config)
-# connection = psycopg2.connect(
-#     dbname="postgres", user="postgres", host="0.0.0.0", port=5432, password="abc"
-# )
-connection = None
+while True:
+    try:
+        #host="db" is the name of the docker container
+        connection = psycopg2.connect(
+            dbname="postgres", user="postgres", host="db", port=5432, password="abc"
+        )
+        break
+    except:
+        print("retrying...")
+        time.sleep(1)
+# connection = None
 
 app = Flask(__name__)
 # Access-Control-Allow-Origin header

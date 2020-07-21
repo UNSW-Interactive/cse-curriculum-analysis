@@ -13,6 +13,7 @@ then
     echo "PostgreSQL started"
 fi
 
-gunicorn -b 0.0.0.0:8000 manage:app
+pipenv run gunicorn -b 0.0.0.0:8000 manage:app
+# gunicorn -b 0.0.0.0:8000 manage:app
 
-# exec "$@"
+exec "$@"
