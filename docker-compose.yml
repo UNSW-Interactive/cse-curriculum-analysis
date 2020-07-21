@@ -2,25 +2,28 @@ version: "3.2"
 services: 
   db:
     image: postgres
-    ports:
-      - 5432:5432
+    expose:
+      - 5432
     volumes:
       - ./db-data:/var/lib/postgresql/data
-    environment:
+    environment: 
       POSTGRES_PASSWORD: abc
-  dbrestore:
-    image: postgres
-    volumes:
-      - ./db-data:/var/lib/postgresql/data
-    entrypoint:  # could prob make this a bash file with extra checks
-      ['gunzip', '-c', 'db-dumps/dump.gz', '|', 'psql', '-U', 'postgres']
-    depends_on: 
-      - db
+  # dbrestore:
+  #   image: postgres
+  #   volumes:
+  #     - ./db-data:/var/lib/postgresql/data
+  #   entrypoint:  # could prob make this a bash file with extra checks
+  #     ['gunzip', '-c', 'db-dumps/dump.gz', '|', 'psql', '-U', 'postgres']
+  #   depends_on: 
+  #     - db
   api:
-    build: server/api/
-    expose: 5000
+    build: server/
+    expose: 
+      - 8000
     depends_on: 
       - db
+    env_file: 
+      - ./.env
   nginx:
     build: client/
     ports:

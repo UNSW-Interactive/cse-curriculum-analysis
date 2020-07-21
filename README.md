@@ -20,3 +20,9 @@ $ cd client
 $ npm install
 $ npm run dev # development
 ```
+
+## Running everything locally
+
+```shell
+$ docker-compose up --build
+```

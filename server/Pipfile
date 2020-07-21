@@ -20,6 +20,7 @@ parsr-client = "*"
 matplotlib = "*"
 nltk = "*"
 wikipedia = "*"
+gunicorn = "*"
 
 [requires]
 python_version = "3.8"

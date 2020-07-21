@@ -1,11 +1,7 @@
 import psycopg2
 
 # docker run --name some-postgres -e POSTGRES_PASSWORD=mysecretpassword -p 5432:5432 -d postgres
-conn = psycopg2.connect(
-    dbname="postgres", user="postgres", host="127.0.0.1", port=5432, password="abc"
-)
-
-def get_all_courses_lectures_categories():
+def get_all_courses_lectures_categories(conn):
     res = []
     query = """select course_code, lecture_num, categories from lectures;"""
     cursor = conn.cursor()
@@ -15,7 +11,7 @@ def get_all_courses_lectures_categories():
     cursor.close()
     return res
 
-def get_prereqs(courses):
+def get_prereqs(conn, courses):
     res = {}
     query = """select course_code, handbook_prereqs, prereqs from courses where course_code = ANY(%s);"""
     cursor = conn.cursor()
@@ -28,7 +24,7 @@ def get_prereqs(courses):
     cursor.close()
     return res
 
-def get_all_prereqs():
+def get_all_prereqs(conn):
     res = {}
     query = """select course_code, handbook_prereqs, prereqs from courses"""
     cursor = conn.cursor()
@@ -41,7 +37,7 @@ def get_all_prereqs():
     cursor.close()
     return res
 
-def get_course_information(course_code):
+def get_course_information(conn, course_code):
     query = """select course_name, host_url, handbook_summary, grad_level, handbook_prereqs from courses where course_code = %s;"""
     cursor = conn.cursor()
     cursor.execute(query, (course_code,))
