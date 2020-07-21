@@ -13,6 +13,13 @@ $ cd api
 $ python3 manage.py run
 ```
 
+```shell
+$ cd server
+$ pipenv shell
+$ cd api
+$ gunicorn -b 0.0.0.0:8000 manage:app
+```
+
 ## Client
 
 ```shell

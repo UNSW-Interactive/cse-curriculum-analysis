@@ -8,3 +8,14 @@
 
 # docker exec -it 312bec8036f6 bash
 # psql -U postgres
+FROM postgres:latest
+
+# VOLUME [ "/db-data:/var/lib/postgresql/data" ]
+ENV POSTGRES_PASSWORD=abc
+
+EXPOSE 5432
+
+
+# to build:
+# docker build -t postgresdb:mypostgresdb .
+# docker run -p 5432:5432  postgresdb:mypostgresdb

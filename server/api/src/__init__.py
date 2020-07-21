@@ -1,6 +1,6 @@
 from flask import Flask
 from flask_restful import Api
-from flask_cors import CORS
+from flask_cors import CORS, cross_origin
 import psycopg2
 import time
 import sys
@@ -40,8 +40,8 @@ def prereqs():
     return api_get_all_prereqs(connection)
 
 @app.route('/course/<string:course>')
-def course(course_name):
-    return get_course_info(connection, course_name)
+def api_course(course):
+    return get_course_info(connection, course)
 
 # api.add_resource(Index, "/", connection=connection)
 # api.add_resource(Graph, "/graph")
