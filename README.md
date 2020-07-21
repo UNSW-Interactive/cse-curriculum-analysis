@@ -4,23 +4,15 @@ Research Thesis 2020 - Terry Agapitos (z5162173)
 
 # Running
 
-## Server
+### Running everything locally
 
 ```shell
-$ cd server
-$ pipenv shell
-$ cd api
-$ python3 manage.py run
+$ docker-compose up --build
 ```
 
-```shell
-$ cd server
-$ pipenv shell
-$ cd api
-$ gunicorn -b 0.0.0.0:8000 manage:app
-```
+### For development (hotloading)
 
-## Client
+Make sure ports are exposed in docker-compose.yml (5432:5432, 8000:8000). Then `docker-compose up --build`, then run:
 
 ```shell
 $ cd client
@@ -28,8 +20,3 @@ $ npm install
 $ npm run dev # development
 ```
 
-## Running everything locally
-
-```shell
-$ docker-compose up --build
-```
