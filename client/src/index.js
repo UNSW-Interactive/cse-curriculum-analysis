@@ -227,13 +227,14 @@ function displayInfo(course_code) {
         const a_handbook_url = document.getElementById('course-handbook-url');
         h_course_title.innerText = course_code;
         h_course_subtitle.innerText = course_info['course_name'];
-        span_prereqs.innerText = course_info['handbook_prereqs'].length > 0 ? course_info['handbook_prereqs'] : 'None';
+        span_prereqs.innerText = course_info['handbook_prereqs'] && course_info['handbook_prereqs'].length > 0 ? course_info['handbook_prereqs'] : 'None';
         p_handbook_summary.innerText = course_info['handbook_summary'];
         a_host_url.setAttribute('href', course_info['host_url']); // todo: any we coudln't get?
         a_handbook_url.setAttribute('href', `https://www.handbook.unsw.edu.au/${course_info['grad_level']}/courses/2020/${course_code}`);
 
         // show the compononent
         document.getElementById('course-info').style.display = 'block';
+        document.getElementById('legend-divider').style.display = 'block';
     })
 }
 
@@ -257,28 +258,52 @@ function displayInfo(course_code) {
         ['Level 6 course', '#e6194b'],
         ['Level 9 course', '#911eb4'],
     ]
+    const edge_weight_threshold = 30;
     const showCourseSimilarityButton = document.getElementById('showSimilarity');
     const showPrereqsButton = document.getElementById('showPrereqs');
+
     showCourseSimilarityButton.addEventListener('click', _ => showCourseSimilarity(subcategories_colours), false);
     showPrereqsButton.addEventListener('click', _ => showPrereqs(course_level_colours), false);
+    toggleSidebar.addEventListener('click', () => {
+        const sidebar = document.getElementById('sidebar');
+        if (sidebar.style.display === 'flex') {
+            sidebar.style.zIndex = 0;
+            sidebar.style.display = 'none';
+        } else {
+            sidebar.style.zIndex = 2;
+            sidebar.style.display = 'flex';
+        }
 
+    })
+    const showCourseInfo = node => {
+        const targetNode = node.target;
+        displayInfo(targetNode._private.data.id);
+    }
     Promise.all([generateGraphElements(), generatePrereqGraphElements()]).then(graphs_elements => {
+        const similarityGraphElements = graphs_elements[0].filter(ele => !ele.data.weight || ele.data.weight > edge_weight_threshold);
+        console.log(similarityGraphElements);
         const similarityGraph = cytoscape({
             container: document.getElementById('cy-similarity'),
-            elements: graphs_elements[0],
+            elements: similarityGraphElements,
             style: [ // the stylesheet for the graph
                 {
                     selector: 'node',
                     style: {
-                        'background-color': '#666',
-                        'label': 'data(id)'
+                        'background-color': '#a4a4a4',
+                        'color': 'black',
+                        'label': ele => ele.data('id').slice(0, 4) + '\n' + ele.data('id').slice(4, 8),
+                        'width': '60px',
+                        'height': '60px',
+                        "text-valign": "center",
+                        "text-halign": "center",
+                        "text-wrap": "wrap",
                     }
                 },
                 {
                     selector: 'edge',
                     style: {
                         // 'width': 'mapData(weight, 0, 100, 1, 10)',
-                        'width': 'mapData(weight, 0, 200, 1, 10)',
+                        'width': `mapData(weight, ${edge_weight_threshold}, 200, 1, 10)`,
                         'line-color': ele => subcategories_colours.find(ele2 => ele2[0] == ele.data('subcat'))[1],
                         'curve-style': 'bezier'
                     }
@@ -288,6 +313,7 @@ function displayInfo(course_code) {
                 name: 'circle',
             }
         });
+        similarityGraph.nodes().on('click', showCourseInfo);
 
         const prereqsGraph = cytoscape({
             container: document.getElementById('cy-prereqs'),
@@ -341,11 +367,10 @@ function displayInfo(course_code) {
                 name: 'breadthfirst',
             }
         });
-        // todo: wanna do this for both
-        prereqsGraph.nodes().on('click', node => {
-            const targetNode = node.target;
-            displayInfo(targetNode._private.data.id)
-        })
-        showPrereqs(course_level_colours);
+
+
+        prereqsGraph.nodes().on('click', showCourseInfo);
+        showCourseSimilarity(subcategories_colours);
+        // showPrereqs(course_level_colours);
     })
 })()
