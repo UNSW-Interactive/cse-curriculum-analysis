@@ -4,9 +4,9 @@ class Config:
     SECRET_KEY = ...
     DEBUG = False
 
-class TestConfig(Config):
+class DevelopmentConfig(Config):
     DEBUG = True
 
 class ProductionConfig(Config):
     # TODO: Database, etc
-    pass
+    DEBUG = False

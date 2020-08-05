@@ -14,7 +14,22 @@ Then navigate to http://localhost:80
 
 ### For development (hotloading)
 
-Make sure ports are exposed in docker-compose.yml (5432:5432, 8000:8000). Then `docker-compose up --build`, then run the front end separately:
+#### db
+
+`docker-compose -f docker-compose-local.yml up --build` to boot up the database.
+
+#### server
+
+```shell
+$ cd server
+$ pipenv shell
+$ cd api
+$ flask run
+```
+
+#### front end
+
+Change URL in index.js
 
 ```shell
 $ cd client

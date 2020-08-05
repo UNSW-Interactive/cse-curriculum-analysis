@@ -1,9 +1,11 @@
 from flask import Flask
 from flask_script import Manager
+import sys, signal
+# print("QWERT")
 from src import app
-from config import ProductionConfig
 from flask.cli import FlaskGroup
-
+# from dotenv import load_dotenv
+# load_dotenv()
 # from flask_sqlalchemy import SQLAlchemy
 # from flask_bcrypt import Bcrypt
 
@@ -19,6 +21,8 @@ from flask.cli import FlaskGroup
 # @manager.command
 # def run():
 #     app.run(host='0.0.0.0', port=8000) # TODO: Not debug=True, do better (config)
+
+## This is used in production ##
 cli = FlaskGroup(app)
 
 if __name__ == "__main__":

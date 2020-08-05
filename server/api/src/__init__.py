@@ -1,31 +1,35 @@
-from flask import Flask
+from flask import Flask, g
 from flask_restful import Api
 from flask_cors import CORS, cross_origin
 import psycopg2
 import time
 import sys
+import signal
 from src.routes.index import Index
 from src.routes.graph import generate_graph
 from src.routes.prereqs import api_get_all_prereqs
 from src.routes.course import get_course_info
-
-# TODO: config file for below... (these lines will prob go after app = , where u pass uin config)
-while True:
-    try:
-        #host="db" is the name of the docker container
-        connection = psycopg2.connect(
-            dbname="postgres", user="postgres", host="db", port=5432, password="abc"
-        )
-        break
-    except:
-        print("retrying...")
-        time.sleep(1)
-# connection = None
+from src.routes.search import search_courses
 
 app = Flask(__name__)
 # Access-Control-Allow-Origin header
 CORS(app)
-api = Api(app)
+# api = Api(app)
+
+# could go in separate file
+def connect_to_db():
+    connection = psycopg2.connect("") # "" to use env vars
+    return connection
+
+def get_db():
+    if not hasattr(g, 'postgres_db'):
+        g.postgres_db = connect_to_db()
+    return g.postgres_db
+
+@app.teardown_appcontext
+def close_db(error):
+    if hasattr(g, 'postgres_db'):
+        g.postgres_db.close()
 
 @app.route('/')
 def index():
@@ -33,17 +37,16 @@ def index():
 
 @app.route('/graph')
 def graph():
-    return generate_graph(connection)
+    return generate_graph(get_db())
 
 @app.route('/prereqs')
 def prereqs():
-    return api_get_all_prereqs(connection)
+    return api_get_all_prereqs(get_db())
 
 @app.route('/course/<string:course>')
 def api_course(course):
-    return get_course_info(connection, course)
+    return get_course_info(get_db(), course)
 
-# api.add_resource(Index, "/", connection=connection)
-# api.add_resource(Graph, "/graph")
-# api.add_resource(Prereqs, "/prereqs")
-# api.add_resource(Course, "/course/<string:course>", connection=conn)
+@app.route('/search/<string:keyword>')
+def search_keyword(keyword):
+    return search_courses(keyword)

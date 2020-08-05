@@ -43,6 +43,7 @@ def build_graph(all_courses, all_courses_names, cats_to_subcats, subcats_to_cour
                     continue
                 subcats = cats_to_subcats[cat]
                 for subcat in subcats:
+                    print(subcat)
                     linked_subjs = subcats_to_courses[subcat]
                     for linked_subj in linked_subjs:
                         if linked_subj == name:
@@ -80,10 +81,13 @@ def generate_graph(connection):
 
     # Need to remove duplicated links since it's an undirected graph
     # TODO: This makes it a directed graph :)
+    subcats = list(set([i for j in cats_to_subcats.values() for i in j]))
+    subcats.remove('Human-based computation') # no course has this
     undirected_graph = remove_dupe_links(graph)
     return jsonify({
         'nodes': all_course_names,
-        'edges': undirected_graph
+        'edges': undirected_graph,
+        'subcategories': subcats
     })
 
     # def post(self):

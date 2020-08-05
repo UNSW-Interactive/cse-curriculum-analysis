@@ -1,6 +1,7 @@
 import cytoscape from 'cytoscape';
 
-const url = 'http://localhost/api';
+const url = 'http://127.0.0.1:5000';
+// const url = 'http://localhost/api';
 
 function getGraphData() {
     return fetch(url + '/graph').then(
@@ -39,6 +40,13 @@ function generateGraphElements() {
                     }
                 }
             });
+            const colour_course = {};
+            courses.forEach(c => {
+                colour_course[c] = {}
+                graph_data.subcategories.forEach(s => {
+                    colour_course[c][s] = 0;
+                })
+            })
             courses.forEach(
                 (course) => {
                     if (course in edges) {
@@ -55,6 +63,8 @@ function generateGraphElements() {
                                                 weight: edges[course][neighbour][subcategory]
                                             }
                                         };
+                                        colour_course[course][subcategory] += edges[course][neighbour][subcategory];
+                                        colour_course[neighbour][subcategory] += edges[course][neighbour][subcategory];
                                         elements.push(edge);
                                     }
                                 )
@@ -64,7 +74,7 @@ function generateGraphElements() {
 
                 }
             )
-            return elements;
+            return [elements, colour_course];
         }
     )
 }
@@ -177,21 +187,23 @@ function generatePrereqGraphElements() {
     })
 }
 
-function showCourseSimilarity(subcategories) {
+function showCourseSimilarity(subcategories, cy) {
     const similarityGraph = document.getElementById('cy-similarity');
     const prereqGraph = document.getElementById('cy-prereqs');
     prereqGraph.style.display = "none";
     similarityGraph.style.display = "block";
     showLegend(subcategories)
+    currGraph = cy;
 }
 
 
-function showPrereqs(course_legend) {
+function showPrereqs(course_legend, cy) {
     const similarityGraph = document.getElementById('cy-similarity');
     const prereqGraph = document.getElementById('cy-prereqs');
     similarityGraph.style.display = "none";
     prereqGraph.style.display = "block";
     showLegend(course_legend)
+    currGraph = cy;
 }
 
 function showLegend(items) {
@@ -238,6 +250,13 @@ function displayInfo(course_code) {
     })
 }
 
+function highlightCourse(courseNode, cy) {
+    // when a course is typed in, light it up!
+    // cy.elements().not(courseNode).addClass('semitransp').addClass('semitransp');
+    courseNode.addClass('highlight');
+}
+
+var currGraph;
 (function main() {
     const subcategories_colours = [
         ['Algorithms and data structures', '#e6194b'], // red
@@ -262,8 +281,6 @@ function displayInfo(course_code) {
     const showCourseSimilarityButton = document.getElementById('showSimilarity');
     const showPrereqsButton = document.getElementById('showPrereqs');
 
-    showCourseSimilarityButton.addEventListener('click', _ => showCourseSimilarity(subcategories_colours), false);
-    showPrereqsButton.addEventListener('click', _ => showPrereqs(course_level_colours), false);
     toggleSidebar.addEventListener('click', () => {
         const sidebar = document.getElementById('sidebar');
         if (sidebar.style.display === 'flex') {
@@ -280,8 +297,9 @@ function displayInfo(course_code) {
         displayInfo(targetNode._private.data.id);
     }
     Promise.all([generateGraphElements(), generatePrereqGraphElements()]).then(graphs_elements => {
-        const similarityGraphElements = graphs_elements[0].filter(ele => !ele.data.weight || ele.data.weight > edge_weight_threshold);
-        console.log(similarityGraphElements);
+
+        const similarityGraphElements = graphs_elements[0][0].filter(ele => !ele.data.weight || ele.data.weight > edge_weight_threshold);
+        const similarityGraphColouredNodes = graphs_elements[0][1];
         const similarityGraph = cytoscape({
             container: document.getElementById('cy-similarity'),
             elements: similarityGraphElements,
@@ -289,8 +307,12 @@ function displayInfo(course_code) {
                 {
                     selector: 'node',
                     style: {
-                        'background-color': '#a4a4a4',
-                        'color': 'black',
+                        'background-color': ele => {
+                            const courseLinks = similarityGraphColouredNodes[ele.data('id')]
+                            const highest_subcat = Object.keys(courseLinks).reduce((a, b) => courseLinks[a] > courseLinks[b] ? a : b);
+                            return subcategories_colours.find(ele => ele[0] === highest_subcat)[1];
+                        },
+                        'color': 'white',
                         'label': ele => ele.data('id').slice(0, 4) + '\n' + ele.data('id').slice(4, 8),
                         'width': '60px',
                         'height': '60px',
@@ -298,6 +320,17 @@ function displayInfo(course_code) {
                         "text-halign": "center",
                         "text-wrap": "wrap",
                     }
+                },
+                {
+                    selector: 'node.highlight',
+                    style: {
+                        'border-color': 'black',
+                        'border-width': '2px'
+                    }
+                },
+                {
+                    selector: 'node.semitransp',
+                    style: { 'opacity': '0.5' }
                 },
                 {
                     selector: 'edge',
@@ -314,6 +347,14 @@ function displayInfo(course_code) {
             }
         });
         similarityGraph.nodes().on('click', showCourseInfo);
+        similarityGraph.on('mouseover', 'node', function(e) {
+            highlightCourse(e.target, similarityGraph);
+        });
+        similarityGraph.on('mouseout', 'node', function(e) {
+            var sel = e.target;
+            similarityGraph.elements().removeClass('semitransp');
+            sel.removeClass('highlight');
+        });
 
         const prereqsGraph = cytoscape({
             container: document.getElementById('cy-prereqs'),
@@ -338,6 +379,17 @@ function displayInfo(course_code) {
                             return "#ffffff"; // todo: complement colour of bg colour
                         }
                     }
+                },
+                {
+                    selector: 'node.highlight',
+                    style: {
+                        'border-color': 'black',
+                        'border-width': '2px'
+                    }
+                },
+                {
+                    selector: 'node.semitransp',
+                    style: { 'opacity': '0.5' }
                 },
                 {
                     selector: 'edge',
@@ -368,9 +420,31 @@ function displayInfo(course_code) {
             }
         });
 
-
+        // TODO: Easy way of sharing these events for both graphs
+        prereqsGraph.on('mouseover', 'node', function(e) {
+            highlightCourse(e.target, prereqsGraph);
+        });
+        prereqsGraph.on('mouseout', 'node', function(e) {
+            var sel = e.target;
+            prereqsGraph.elements().removeClass('semitransp');
+            sel.removeClass('highlight');
+        });
         prereqsGraph.nodes().on('click', showCourseInfo);
-        showCourseSimilarity(subcategories_colours);
-        // showPrereqs(course_level_colours);
+
+        showCourseSimilarity(subcategories_colours, similarityGraph);
+        document.getElementById('graphSearch').addEventListener('keyup', (event) => {
+            if (event.target.value.length === 8) {
+                const courseNode = currGraph.getElementById(event.target.value.toUpperCase());
+                if (courseNode.empty()) {
+                    return;
+                }
+                // console.log(courseNode);
+                highlightCourse(courseNode, currGraph);
+                currGraph.elements().not(courseNode).addClass('semitransp').addClass('semitransp');
+            }
+        });
+
+        showCourseSimilarityButton.addEventListener('click', _ => showCourseSimilarity(subcategories_colours, similarityGraph), false);
+        showPrereqsButton.addEventListener('click', _ => showPrereqs(course_level_colours, prereqsGraph), false);
     })
 })()

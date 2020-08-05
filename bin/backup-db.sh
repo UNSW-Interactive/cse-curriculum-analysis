@@ -1,3 +1,5 @@
+# should take a few seconds
+# freezing? quit the API...
 set -xeu
 currdate=`date +%Y%m%d"-"%H_%M_%S`
 filename="db-dumps/dump_$currdate.gz"

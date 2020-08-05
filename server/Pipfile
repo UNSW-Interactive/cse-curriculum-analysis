@@ -21,6 +21,7 @@ matplotlib = "*"
 nltk = "*"
 wikipedia = "*"
 gunicorn = "*"
+python-dotenv = "*"
 
 [requires]
 python_version = "3.8"
