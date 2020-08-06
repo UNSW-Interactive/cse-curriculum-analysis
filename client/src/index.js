@@ -1,7 +1,7 @@
 import cytoscape from 'cytoscape';
 
-const url = 'http://127.0.0.1:5000';
-// const url = 'http://localhost/api';
+// const url = 'http://127.0.0.1:5000';
+const url = 'http://localhost/api';
 
 function getGraphData() {
     return fetch(url + '/graph').then(
