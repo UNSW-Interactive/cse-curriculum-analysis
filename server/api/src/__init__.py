@@ -1,4 +1,4 @@
-from flask import Flask, g
+from flask import Flask, g, request
 from flask_restful import Api
 from flask_cors import CORS, cross_origin
 import psycopg2
@@ -10,6 +10,7 @@ from src.routes.graph import generate_graph
 from src.routes.prereqs import api_get_all_prereqs
 from src.routes.course import get_course_info
 from src.routes.search import search_courses
+from src.routes.relationship import get_course_relationship
 
 app = Flask(__name__)
 # Access-Control-Allow-Origin header
@@ -47,6 +48,11 @@ def prereqs():
 def api_course(course):
     return get_course_info(get_db(), course)
 
-@app.route('/search/<string:keyword>')
-def search_keyword(keyword):
-    return search_courses(keyword)
+@app.route('/search')
+def search_keyword():
+    phrase = request.args.get("phrase").split(',')
+    return search_courses(get_db(), phrase)
+
+@app.route('/relationship/<string:course_a>/<string:course_b>')
+def relationship(course_a, course_b):
+    return get_course_relationship(get_db(), course_a, course_b)

@@ -47,7 +47,12 @@ def get_words(elements) -> list:
 
 def main(lecture_file, course, lecture, num_keywords=5, num_wp_pages=20):
     if ((parsed_json := database.get_parsed_json(course, lecture)) is None):
-        print("Need to parse JSON...")
+        if lecture_file is None:
+            # We need to parse a file, but one hasn't been passed in
+            print("-f not supplied but a file can't be found in the database for given lecture/course.")
+            sys.exit(0)
+
+        print("Parsing PDF")
         parsr = Parsr()
         with parsr:
             qID = parsr.start_parsing_pdf(lecture_file)
@@ -64,6 +69,7 @@ def main(lecture_file, course, lecture, num_keywords=5, num_wp_pages=20):
         print("Content has already been parsed.")
         sys.exit(0)
     
+    print("Performing Curriculum Analysis")
     all_words = []
     for page in parsed_json["pages"]:
         page_elements = page["elements"]
@@ -79,17 +85,16 @@ def main(lecture_file, course, lecture, num_keywords=5, num_wp_pages=20):
         # font is kinda backwards with parsr
         c[word] += (highest_font - lowest_font) - font
 
+    database.insert_keywords_occurrences(course, lecture, c.items())
+
     keywords = [i[0] for i in c.most_common(num_keywords)]
     wp_pages_search_result = wp_search(*keywords, results=num_wp_pages)
     wp_categories = []
     for page in wp_pages_search_result:
         wp_categories.extend(get_categories(page))
 
-    print(f"{course.course} {lecture.num}")
-    print("Keywords: ", keywords)
-    print("WP Pages found by searching: ", wp_pages_search_result)
-    print("WP Categories: ", wp_categories)
     database.put_in_db(course, lecture, keywords, wp_pages_search_result, wp_categories)
+    print(f"{course.course} {lecture.num} parsed and added to db")
     database.close_connection()
 
 
@@ -108,7 +113,7 @@ class Lecture:
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Parse a given lecture's slides.")
     parser.add_argument(
-        "-f", "--file", help="The file to parse.", type=validate_file, required=True
+        "-f", "--file", help="The file to parse.", type=validate_file, required=False
     )
     parser.add_argument(
         "-c", "--course", help="The course.", type=validate_course, required=True

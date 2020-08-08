@@ -48,15 +48,17 @@
 
         </div>
         <div id="sidebar" style="display:flex; background-color: white; padding-left: 5px;padding-right: 5px;  border-left: 1px solid rgb(34, 34, 34);  flex-direction: column; flex-basis: 100%; z-index: 2; flex: 1;">
-            <div id='course-info' style="display: none;">
-                <!-- <p id='instructions'>
-                    Click on a node for course information!
-                </p> -->
-                <!-- toggles between up/down-->
-                <h3 id='course-title' class='title'>
+            <!-- Legend here at first, the "default" one (can be returned to at any point) -->
+            <!-- <div id='legend'>
+                <h3 class="title">
+                    Legend
                 </h3>
-                <h3 id='course-subtitle' class='subtitle'>
-                </h3>
+                <ul id='legend-list' class="ordering">
+                </ul>
+            </div> -->
+            <!-- <div id='course-info' style="display: none;">
+                <h3 id='course-title' class='title'></h3>
+                <h3 id='course-subtitle' class='subtitle'></h3>
                 <p style="font-size: small;">
                     <b>Prerequisites:</b>
                     <span id='course-prerequisites'></span>
@@ -69,14 +71,19 @@
                     <li class="external-link"><a id='course-host-url' href="">Course Website</a></li>
                     <li class="external-link"><a id='course-handbook-url' href="">UNSW Handbook</a></li>
                 </ul>
-            </div>
-            <hr id="legend-divider" style='display:none'>
-            <div id='legend'>
+            </div> -->
+            <!-- <hr id="legend-divider" style='display:none'> -->
+            <div id='search-results' style="display: none;">
                 <h3 class="title">
-                    Legend
+                    Results
                 </h3>
-                <ul id='legend-list' class="ordering">
-                </ul>
+                <p style="font-size: small;">
+                    Courses that relate to <b id='search-term'></b> most:
+                    <ul style="margin-left: 30px;">
+                        <li class="external-link">COMP1111</li>
+                        <li class="external-link">COMP2222</li>
+                    </ul>
+                </p>
             </div>
         </div>
     </div>

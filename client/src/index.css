@@ -42,3 +42,39 @@ ul.ordering li span {
     display: inline-block;
     margin-right: 6px;
 }
+
+details summary.ads::-webkit-details-marker {
+    color: #e6194b
+}
+
+details summary.comparch::-webkit-details-marker {
+    color: #f58231
+}
+
+details summary.fm::-webkit-details-marker {
+    color: #ffe119
+}
+
+details summary.sec::-webkit-details-marker {
+    color: #3cb44b
+}
+
+details summary.ai::-webkit-details-marker {
+    color: #4363d8
+}
+
+details summary.cs::-webkit-details-marker {
+    color: #911eb4
+}
+
+details summary.graphics::-webkit-details-marker {
+    color: #a9a9a9
+}
+
+details summary.db::-webkit-details-marker {
+    color: #000000
+}
+
+details summary.conc::-webkit-details-marker {
+    color: #9a6324
+}

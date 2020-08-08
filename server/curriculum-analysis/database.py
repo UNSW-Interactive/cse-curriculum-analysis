@@ -1,6 +1,7 @@
 # File for talking to database
 #
 import psycopg2
+import psycopg2.extras
 
 # docker run --name some-postgres -e POSTGRES_PASSWORD=mysecretpassword -p 5432:5432 -d postgres
 conn = psycopg2.connect(
@@ -12,6 +13,15 @@ def put_in_db(course, lecture, keywords, wp_pages, categories):
     where course_code=%s and lecture_num=%s;"""
     cursor = conn.cursor()
     cursor.execute(query, (keywords, wp_pages, categories, course.course, lecture.num))
+    cursor.close()
+
+
+def insert_keywords_occurrences(course, lecture, keywords):
+    # keywords: [('keyword', occurrence: int)]
+    keywords = map(lambda x: (x[0], lecture.num, course.course, x[1]), keywords)
+    query = """insert into words values %s on conflict do nothing;""" # todo: we should override if override=true
+    cursor = conn.cursor()
+    psycopg2.extras.execute_values(cursor, query, list(keywords))
     cursor.close()
 
 

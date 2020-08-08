@@ -11,6 +11,16 @@ def get_all_courses_lectures_categories(conn):
     cursor.close()
     return res
 
+def search_keyword(conn, keyword, limit=5):
+    res = []
+    query = """select course_code, sum(occurrences) from words where word=%s group by course_code order by sum desc limit %s;"""
+    cursor = conn.cursor()
+    cursor.execute(query, (keyword, limit))
+    for record in cursor:
+        res.append(record)
+    cursor.close()
+    return res
+
 def get_prereqs(conn, courses):
     res = {}
     query = """select course_code, handbook_prereqs, prereqs from courses where course_code = ANY(%s);"""
