@@ -78,7 +78,7 @@ var currGraph;
 
     const displayEdgeInfoSidebar = edge => {
         const targetEdge = edge.target;
-        console.log(edge.target._private);
+        console.log(edge.target._private.data);
         const courseA = targetEdge._private.data.source;
         const courseB = targetEdge._private.data.target;
         getRelation(courseA, courseB).then(relationship_info => {
