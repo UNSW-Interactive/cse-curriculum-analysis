@@ -78,3 +78,8 @@ details summary.db::-webkit-details-marker {
 details summary.conc::-webkit-details-marker {
     color: #9a6324
 }
+
+
+/* .fas {
+    pointer-events: initial
+} */

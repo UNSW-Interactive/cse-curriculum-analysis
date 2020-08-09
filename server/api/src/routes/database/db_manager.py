@@ -54,3 +54,46 @@ def get_course_information(conn, course_code):
     row = cursor.fetchone()
     cursor.close()
     return row
+
+def upvote(conn, course_a, course_b):
+    a, b = sorted([course_a, course_b])
+    print(a, b)
+    query = """insert into votes values (%s, %s, 1, 0) on conflict (course_a, course_b) do update set likes = votes.likes + 1;"""
+    # query = """update votes set likes = likes + 1 where (course_a = %s and course_b = %s) or (course_b = %s and course_a = %s);"""
+    cursor = conn.cursor()
+    cursor.execute(query, (a, b))
+    conn.commit()
+    cursor.close()
+
+def remove_upvote(conn, course_a, course_b):
+    a, b = sorted([course_a, course_b])
+    query = """update votes set likes = likes - 1 where (course_a = %s and course_b = %s);"""
+    cursor = conn.cursor()
+    cursor.execute(query, (a, b))
+    conn.commit()
+    cursor.close()
+
+def downvote(conn, course_a, course_b):
+    a, b = sorted([course_a, course_b])
+    query = """insert into votes values (%s, %s, 0, 1) on conflict (course_a, course_b) do update set dislikes = votes.dislikes + 1;"""
+    cursor = conn.cursor()
+    cursor.execute(query, (a, b))
+    conn.commit()
+    cursor.close()
+
+def remove_downvote(conn, course_a, course_b):
+    a, b = sorted([course_a, course_b])
+    query = """update votes set dislikes = dislikes - 1 where (course_a = %s and course_b = %s);"""
+    cursor = conn.cursor()
+    cursor.execute(query, (a, b))
+    conn.commit()
+    cursor.close()
+
+
+def get_votes(conn, course_a, course_b):
+    query = """select likes, dislikes from votes where (course_a = %s and course_b = %s) or (course_b = %s and course_a = %s);"""
+    cursor = conn.cursor()
+    cursor.execute(query, (course_a, course_b, course_a, course_b))
+    row = cursor.fetchone()
+    cursor.close()
+    return row

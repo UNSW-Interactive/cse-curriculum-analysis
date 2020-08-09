@@ -1,7 +1,7 @@
 from flask import jsonify
 from collections import Counter, defaultdict
 
-from src.routes.database.db_manager import get_all_courses_lectures_categories
+from src.routes.database.db_manager import get_all_courses_lectures_categories, get_votes
 from src.routes.graph import generate_maps_to_courses, build_graph
 from src.routes.utils.constants import WP_CATEGORIES as cats_to_subcats
 
@@ -30,5 +30,10 @@ def get_course_relationship(connection, course_a, course_b):
             'percentage': relationship[subcat] / total,
             'wp_categories': list(result[subcat])
         }
+
+    # also get votes
+    votes = get_votes(connection, course_a, course_b)
+    api_result['likes'] = votes[0] if votes is not None else 0
+    api_result['dislikes'] = votes[1] if votes is not None else 0
     return jsonify(api_result)
 

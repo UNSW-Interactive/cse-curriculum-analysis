@@ -1,3 +1,6 @@
+import { currGraphLegend } from './index.js';
+import { unlikeRelation, undislikeRelation, likeRelation, dislikeRelation } from './api.js';
+
 export function showLegend(items) {
     clearSidebar();
 
@@ -19,7 +22,7 @@ export function showLegend(items) {
 
     divLegend.appendChild(h3Legend);
     divLegend.appendChild(ulLegend);
-    addToSidebar(divLegend);
+    addToSidebar(divLegend, false);
 }
 
 export function showCourseInfo(course_info) {
@@ -103,21 +106,25 @@ export function showSearchResults(search_term, search_results) {
 
 };
 
-export function showCourseRelationship(course_a, course_b, relationship_info, subcategories_colours) {
+export function showCourseRelationship(course_a, course_b, relationship_info, subcategories_colours, edgeName) {
     clearSidebar();
     const div = document.createElement('div');
     const h3 = document.createElement('h3');
     h3.classList.add('title');
     h3.innerText = 'Similarity';
     const p = document.createElement('p');
-    p.style.fontSize = 'small';
+    // p.style.fontSize = 'small';
     p.innerHTML = `<b>${course_a}</b> and <b>${course_b}</b> have these similarities:`;
+    p.appendChild(document.createElement('br'));
+    p.appendChild(document.createElement('br'));
     const subcats = Object.keys(relationship_info);
     subcats.forEach(subcat => {
+        if (subcat === 'likes' || subcat === 'dislikes') {
+            return; //not subcats
+        }
         const details = document.createElement('details');
         const summary = document.createElement('summary');
         const percentage = (parseFloat(relationship_info[subcat]['percentage']) * 100).toFixed(2);
-        // summary.setAttribute('style', `--arrowColour: ${subcategories_colours.find(ele => ele[0] === subcat)[1]};`);
         summary.classList.add(`${subcategories_colours.find(ele => ele[0] === subcat)[2]}`);
         summary.appendChild(document.createTextNode(subcat + ` (${percentage}%)`));
         const ul = document.createElement('ul');
@@ -134,17 +141,111 @@ export function showCourseRelationship(course_a, course_b, relationship_info, su
         details.appendChild(summary);
         details.appendChild(ul);
         p.appendChild(details);
+
     });
+
+    const createButton = (icon, num) => {
+        const likeButton = document.createElement('button');
+        likeButton.classList.add('button', 'is-small');
+        const likeSpan = document.createElement('span');
+        likeSpan.classList.add('icon', 'is-small');
+        const likeI = document.createElement('i');
+        likeI.classList.add('fas', icon);
+        const likeSpan2 = document.createElement('span');
+        likeSpan2.id = icon === 'fa-thumbs-up' ? 'numUpvotes' : 'numDownvotes';
+        likeSpan2.innerText = num; // num likes
+        likeSpan.appendChild(likeI);
+        likeButton.appendChild(likeSpan);
+        likeButton.appendChild(likeSpan2);
+        return likeButton;
+    }
+
+    const vote = (button, button2, colour, action, unAction, a, b, voteDir, unAction2, textID, textID2) => {
+
+        if (button2.classList.contains('is-selected')) {
+            // we swap from upvote to downvote (or down to up)
+            // need to unvote
+            const numVotes = document.getElementById(textID2);
+            const old = parseInt(numVotes.innerText);
+            numVotes.innerText = (old - 1).toString();
+            unAction2(a, b);
+        }
+        button2.classList.remove('is-success', 'is-danger', 'is-selected');
+        if (button.classList.contains(colour)) {
+            // remove the vote
+
+            unAction(a, b);
+            const numVotes2 = document.getElementById(textID);
+            const old2 = parseInt(numVotes2.innerText);
+            numVotes2.innerText = (old2 - 1).toString();
+            localStorage.setItem(edgeName, 0);
+        } else {
+            // add the vote
+            action(a, b);
+            const numVotes2 = document.getElementById(textID);
+            const old2 = parseInt(numVotes2.innerText);
+            numVotes2.innerText = (old2 + 1).toString();
+            localStorage.setItem(edgeName, voteDir);
+        }
+        button.classList.toggle(colour);
+        button.classList.toggle('is-selected');
+    };
+
+    const likeDislike = document.createElement('div');
+    likeDislike.style.textAlign = 'center';
+    const likeDislikeP = document.createElement('p');
+    likeDislikeP.fontSize = 'small';
+    likeDislikeP.innerText = 'Is this similarity useful?';
+    const buttons = document.createElement('div');
+    buttons.classList.add('buttons', 'has-addons', 'is-centered');
+
+    const likeButton = createButton('fa-thumbs-up', relationship_info['likes']);
+    const dislikeButton = createButton('fa-thumbs-down', relationship_info['dislikes']);
+
+    // check to see if user has already voted
+    const hasVoted = localStorage.getItem(edgeName);
+    if (hasVoted === '1') {
+        // pos vote
+        likeButton.classList.add('is-success', 'is-selected');
+    } else if (hasVoted === '-1') {
+        // neg
+        dislikeButton.classList.add('is-danger', 'is-selected');
+    }
+
+    likeButton.addEventListener('click', (e) => {
+        vote(likeButton, dislikeButton, 'is-success', likeRelation, unlikeRelation, course_a, course_b, 1, undislikeRelation, 'numUpvotes', 'numDownvotes');
+    });
+    dislikeButton.addEventListener('click', (e) => {
+        vote(dislikeButton, likeButton, 'is-danger', dislikeRelation, undislikeRelation, course_a, course_b, -1, unlikeRelation, 'numDownvotes', 'numUpvotes');
+    });
+    buttons.appendChild(likeButton);
+    buttons.appendChild(dislikeButton);
+    likeDislike.appendChild(likeDislikeP);
+    likeDislike.appendChild(buttons);
+
     div.appendChild(h3);
     div.appendChild(p);
-
+    div.appendChild(document.createElement('br'));
+    div.appendChild(document.createElement('br'));
+    div.appendChild(likeDislike);
 
     addToSidebar(div);
 }
 
 
-function addToSidebar(node) {
+function addToSidebar(node, go_back = true) {
     const sidebar = document.getElementById('sidebar');
+    if (go_back) {
+        const goBackNode = document.createElement('a');
+        goBackNode.classList.add('delete');
+        goBackNode.style.marginTop = '10px';
+        goBackNode.style.marginLeft = '10px';
+        goBackNode.addEventListener('click', () => {
+            showLegend(currGraphLegend);
+        })
+        node.querySelector('h3').appendChild(goBackNode);
+        // sidebar.appendChild(goBackNode);
+    }
     sidebar.appendChild(node);
 }
 

@@ -8,8 +8,9 @@ function showCourseSimilarity(subcategories, cy) {
     const prereqGraph = document.getElementById('cy-prereqs');
     prereqGraph.style.display = "none";
     similarityGraph.style.display = "block";
-    showLegend(subcategories)
+    showLegend(subcategories);
     currGraph = cy;
+    currGraphLegend = subcategories;
 }
 
 function showPrereqs(course_legend, cy) {
@@ -17,8 +18,9 @@ function showPrereqs(course_legend, cy) {
     const prereqGraph = document.getElementById('cy-prereqs');
     similarityGraph.style.display = "none";
     prereqGraph.style.display = "block";
-    showLegend(course_legend)
+    showLegend(course_legend);
     currGraph = cy;
+    currGraphLegend = course_legend;
 }
 
 function OrNodeOrNot(a, b) {
@@ -34,6 +36,7 @@ function highlightCourse(courseNode, cy) {
 }
 
 var currGraph;
+export var currGraphLegend;
 (function main() {
     const subcategories_colours = [
         ['Algorithms and data structures', '#e6194b', 'ads'], // red
@@ -79,10 +82,11 @@ var currGraph;
     const displayEdgeInfoSidebar = edge => {
         const targetEdge = edge.target;
         console.log(edge.target._private.data);
+        const edgeName = edge.target._private.data.id.slice(0, 16);
         const courseA = targetEdge._private.data.source;
         const courseB = targetEdge._private.data.target;
         getRelation(courseA, courseB).then(relationship_info => {
-            showCourseRelationship(courseA, courseB, relationship_info, subcategories_colours);
+            showCourseRelationship(courseA, courseB, relationship_info, subcategories_colours, edgeName);
         })
     }
 

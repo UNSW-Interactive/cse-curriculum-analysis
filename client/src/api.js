@@ -40,3 +40,31 @@ export function getRelation(course_a, course_b) {
         }
     )
 }
+
+function createRelationVoteRequest(a, b, action) {
+    return {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            course_a: a,
+            course_b: b,
+            action: action
+        })
+    }
+}
+
+export function likeRelation(a, b) {
+    return fetch(url + '/vote', createRelationVoteRequest(a, b, 'like'));
+}
+
+export function unlikeRelation(a, b) {
+    return fetch(url + '/vote', createRelationVoteRequest(a, b, 'unlike'));
+}
+export function dislikeRelation(a, b) {
+    return fetch(url + '/vote', createRelationVoteRequest(a, b, 'dislike'));
+}
+export function undislikeRelation(a, b) {
+    return fetch(url + '/vote', createRelationVoteRequest(a, b, 'undislike'));
+}
