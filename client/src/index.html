@@ -3,10 +3,12 @@
 
 <head>
     <link rel="stylesheet" href="index.css">
+    <link rel="icon" type="image/png" href="./favicon.ico" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/cytoscape/2.7.10/cytoscape.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Course Buddy</title>
 </head>
 
 <body>
@@ -33,14 +35,6 @@
                 </button>
         </div>
     </div>
-
-    <!-- <button id="showSimilarity" class="navbar-item button is-light is-small" style="margin-top: 10px; margin-right: 20px;" href="/">
-        Show course similarity
-    </button>
-    <button id="showPrereqs" class="navbar-item button is-light is-small" style="margin-top: 10px;" href="/">
-        Show prerequisite graph
-    </button> -->
-    <!-- <section class="section"> -->
     <div style="display:flex; flex-grow: 1; flex-direction: row; flex-wrap:wrap">
         <div style="display:flex; flex-direction: column;  z-index: 1; flex-basis: 100%; flex: 4;">
 
@@ -49,39 +43,6 @@
 
         </div>
         <div id="sidebar" style="display:flex; background-color: white; padding-left: 5px;padding-right: 5px;  border-left: 1px solid rgb(34, 34, 34);  flex-direction: column; flex-basis: 100%; z-index: 2; flex: 1;">
-            <!-- Legend here at first, the "default" one (can be returned to at any point) -->
-            <!-- <div id='legend'>
-                <h3 class="title">
-                    Legend
-                </h3>
-                <div id='likedislike' style="text-align:center">
-                    <p>Is this similarity useful?</p>
-                    <button class="button is-small is-success">
-                        <span class="icon is-small">
-                          <i class="fas fa-thumbs-up"></i>
-                        </span>
-                        <span>123</span>
-                      </button>
-                    <button class="button is-small is-danger">
-                        <span class="icon is-small">
-                          <i class="fas fa-thumbs-down"></i>
-                        </span>
-                        <span>123</span>
-                      </button>
-                </div>
-            </div>
-            <div id='search-results' style="display: none;">
-                <h3 class="title">
-                    Results
-                </h3>
-                <p style="font-size: small;">
-                    Courses that relate to <b id='search-term'></b> most:
-                    <ul style="margin-left: 30px;">
-                        <li class="external-link">COMP1111</li>
-                        <li class="external-link">COMP2222</li>
-                    </ul>
-                </p>
-            </div> -->
         </div>
     </div>
 

@@ -1,7 +1,10 @@
 import cytoscape from 'cytoscape';
+import dagre from 'cytoscape-dagre';
+cytoscape.use(dagre);
+
 import { generateGraphElements, generatePrereqGraphElements } from './graph.js';
 import { getCourseInfo, search, getRelation } from './api.js';
-import { showLegend, showCourseInfo, showSearchResults, showCourseRelationship } from './sidebar.js';
+import { showLegend, showCourseInfo, showSearchResults, showCourseRelationship, hideShowSidebar } from './sidebar.js';
 
 function showCourseSimilarity(subcategories, cy) {
     const similarityGraph = document.getElementById('cy-similarity');
@@ -32,7 +35,13 @@ function OrNodeOrNot(a, b) {
 function highlightCourse(courseNode, cy) {
     // when a course is typed in, light it up!
     // cy.elements().not(courseNode).addClass('semitransp').addClass('semitransp');
-    courseNode.addClass('highlight');
+    // console.log('dsf');
+    // courseNode.addClass('highlight');
+    courseNode.animate({
+        style: { 'border-width': '2px', 'border-color': 'black' },
+    }, {
+        duration: 0
+    })
 }
 
 var currGraph;
@@ -61,17 +70,7 @@ export var currGraphLegend;
     const showCourseSimilarityButton = document.getElementById('showSimilarity');
     const showPrereqsButton = document.getElementById('showPrereqs');
 
-    toggleSidebar.addEventListener('click', () => {
-        const sidebar = document.getElementById('sidebar');
-        if (sidebar.style.display === 'flex') {
-            sidebar.style.zIndex = 0;
-            sidebar.style.display = 'none';
-        } else {
-            sidebar.style.zIndex = 2;
-            sidebar.style.display = 'flex';
-        }
-
-    })
+    toggleSidebar.addEventListener('click', hideShowSidebar)
     const displayCourseInfoSidebar = node => {
         const targetNode = node.target;
         getCourseInfo(targetNode._private.data.id).then(course_info => {
@@ -148,7 +147,11 @@ export var currGraphLegend;
         similarityGraph.on('mouseout', 'node', function(e) {
             var sel = e.target;
             similarityGraph.elements().removeClass('semitransp');
-            sel.removeClass('highlight');
+            sel.animate({
+                style: { 'border-width': '0px', 'border-color': 'black' },
+            }, {
+                duration: 0
+            });
         });
 
         const prereqsGraph = cytoscape({
@@ -211,18 +214,47 @@ export var currGraphLegend;
                 }
             ],
             layout: {
-                name: 'breadthfirst',
+                name: 'breadthfirst'
             }
         });
 
         // TODO: Easy way of sharing these events for both graphs
         prereqsGraph.on('mouseover', 'node', function(e) {
             highlightCourse(e.target, prereqsGraph);
+            e.target.predecessors().animate({
+                style: {
+                    lineColor: 'red',
+                    'target-arrow-color': 'red',
+                    'border-color': 'brown',
+                    'border-width': '5px'
+                },
+
+            });
         });
         prereqsGraph.on('mouseout', 'node', function(e) {
             var sel = e.target;
             prereqsGraph.elements().removeClass('semitransp');
-            sel.removeClass('highlight');
+            sel.animate({
+                style: { 'border-width': '0px', 'border-color': 'black' },
+            }, {
+                duration: 0
+            });
+
+            e.target.predecessors().forEach((edge) => {
+                if (edge.isEdge()) {
+                    const orig_colour = (edge.data('target').slice(edge.data('target').length - 2) === 'or') ? 'silver' : '#202020';
+                    edge.animate({
+                        style: { lineColor: orig_colour, 'target-arrow-color': orig_colour },
+                    });
+                } else {
+                    edge.animate({
+                        style: { 'border-width': '0px', 'border-color': 'black' },
+                    });
+                }
+
+            })
+
+
         });
         prereqsGraph.nodes().on('click', displayCourseInfoSidebar);
 
@@ -230,22 +262,37 @@ export var currGraphLegend;
         const searchField = document.getElementById('graphSearch');
         searchField.addEventListener('keyup', (event) => {
             if (event.key === 'Enter') {
-                const searchKey = searchField.value.split(" ").join(",");
-                search(searchKey).then(
-                    search_response => {
-                        showSearchResults(searchField.value, search_response);
+                if (event.target.value.length === 8) {
+                    const courseNode = currGraph.getElementById(event.target.value.toUpperCase());
+                    if (courseNode.empty()) {
+                        return;
                     }
-                )
-            }
-            if (event.target.value.length === 8) {
-                const courseNode = currGraph.getElementById(event.target.value.toUpperCase());
-                if (courseNode.empty()) {
-                    return;
+
+
+                    console.log(courseNode);
+                    highlightCourse(courseNode, currGraph);
+                    currGraph.elements().not(courseNode).addClass('semitransp').addClass('semitransp');
+                    // currGraph.zoom({
+                    //     level: 2.0, // the zoom level
+                    //     renderedPosition: { x: 100, y: 100 }
+                    // });
+                    console.log(courseNode._private.position)
+                    currGraph.animate({
+                        zoom: {
+                            level: 1.0,
+                            position: courseNode.position()
+                        }
+                    });
+                } else {
+                    const searchKey = searchField.value.split(" ").join(",");
+                    search(searchKey).then(
+                        search_response => {
+                            showSearchResults(searchField.value, search_response);
+                        }
+                    )
                 }
-                // console.log(courseNode);
-                highlightCourse(courseNode, currGraph);
-                currGraph.elements().not(courseNode).addClass('semitransp').addClass('semitransp');
             }
+
         });
 
         showCourseSimilarityButton.addEventListener('click', _ => showCourseSimilarity(subcategories_colours, similarityGraph), false);

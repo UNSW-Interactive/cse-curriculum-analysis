@@ -232,6 +232,16 @@ export function showCourseRelationship(course_a, course_b, relationship_info, su
     addToSidebar(div);
 }
 
+export function hideShowSidebar() {
+    const sidebar = document.getElementById('sidebar');
+    if (sidebar.style.display === 'flex') {
+        sidebar.style.zIndex = 0;
+        sidebar.style.display = 'none';
+    } else {
+        sidebar.style.zIndex = 2;
+        sidebar.style.display = 'flex';
+    }
+}
 
 function addToSidebar(node, go_back = true) {
     const sidebar = document.getElementById('sidebar');
@@ -247,6 +257,9 @@ function addToSidebar(node, go_back = true) {
         // sidebar.appendChild(goBackNode);
     }
     sidebar.appendChild(node);
+    if (sidebar.style.display !== 'flex') {
+        hideShowSidebar();
+    }
 }
 
 function clearSidebar() {

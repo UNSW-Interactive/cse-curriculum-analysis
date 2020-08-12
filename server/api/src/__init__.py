@@ -61,9 +61,6 @@ def relationship(course_a, course_b):
 @app.route('/vote', methods=['PUT'])
 def vote_on_relationship():
     body = request.get_json()
-    print("-----")
-    print(body)
-    print("-----")
     keys = ('course_a', 'course_b', 'action')
     if any(i not in body for i in keys):
         return Response("Body requires JSON with 'course_a'/'course_b'/'action' keys.", status=400)
