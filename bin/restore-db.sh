@@ -2,7 +2,7 @@
 # freezing? quit the API...
 set -xeu
 latest_backup=$(ls db-dumps/ | tail -n 1)
-gunzip -k "db-dumps/$latest_backup" | docker exec -t cse-curriculum-analysis_db_1 psql -U postgres
+gunzip -k "db-dumps/$latest_backup" | psql -U postgres
 
 
 # will fail if first time since the container doesn't exist...

@@ -1,21 +1,32 @@
 version: "3.2"
 services: 
+  # db:
+  #   image: postgres
+  #   expose: 
+  #     - 5432
+  #   volumes:
+  #     - ./db-data:/var/lib/postgresql/data
+  #     - ./db-dumps:/dump
+  #   env_file:
+  #     - ./.env.prod
   db:
-    image: postgres
-    expose: 
+    build: server/database/
+    expose:
       - 5432
     volumes:
       - ./db-data:/var/lib/postgresql/data
+      # - ./db-dumps:/dump
     env_file:
       - ./.env.prod
   # dbrestore:
   #   image: postgres
   #   volumes:
-  #     - ./db-data:/var/lib/postgresql/data
+  #     - ./db-dumps:/dump
   #   entrypoint:  # could prob make this a bash file with extra checks
-  #     ['gunzip', '-c', 'db-dumps/dump.gz', '|', 'psql', '-U', 'postgres']
+  #     ['bash', './bin/restore-db.sh']
   #   depends_on: 
   #     - db
+  #   restart: on-failure:3
   api:
     build: server/
     expose: 
