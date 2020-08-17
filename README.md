@@ -37,3 +37,16 @@ $ npm install
 $ npm run dev # development
 ```
 
+### For development
+
+Get `dump.pgdata` and put it in the `server/database` directory.
+
+Then from the root directory, run:
+
+```shell
+$ docker-compose up --build
+# and in another terminal shell
+$ docker exec cse-curriculum-analysis_db_1 sh -c "pg_restore -C -d postgres dump.pgdata"
+```
+
+This only needs to be done once
