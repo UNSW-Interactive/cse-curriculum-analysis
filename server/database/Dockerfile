@@ -10,17 +10,11 @@
 # psql -U postgres
 FROM postgres:latest
 
-WORKDIR /
+COPY dump.pgdata ./
 
-COPY restore-db.sh ./
-COPY /db-dumps/dump_20200816-20_39_45.gz ./
 
-# VOLUME [ "/db-data:/var/lib/postgresql/data" ]
-# ENV POSTGRES_PASSWORD=abc
-
-# EXPOSE 5432
-
-ENTRYPOINT [ "./restore-db.sh" ]
+# then run
+# docker exec cse-curriculum-analysis_db_1 sh -c "pg_restore -C -d postgres dump.pgdata"
 
 # to build:
 # docker build -t postgresdb:mypostgresdb .
