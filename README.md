@@ -45,7 +45,8 @@ Then from the root directory, run:
 
 ```shell
 $ docker-compose up --build
-# and in another terminal shell
+# Then, in another terminal shell, run the following command.
+# this command will populate the database.
 $ docker exec cse-curriculum-analysis_db_1 sh -c "pg_restore -C -d postgres dump.pgdata"
 ```
 
