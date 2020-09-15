@@ -37,9 +37,9 @@ $ npm install
 $ npm run dev # development
 ```
 
-### For development
+### For deployment
 
-Get `dump.pgdata` and put it in the `server/database` directory.
+Get `dump.pgdata` and put it in the `server/database` directory. Also, get `.env.prod` and put it in the root directory.
 
 Then from the root directory, run:
 
