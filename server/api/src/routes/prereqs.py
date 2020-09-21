@@ -21,10 +21,10 @@ def api_get_all_prereqs(connection):
     #     }
     # )
     d = get_all_prereqs(connection)
-    d["MATH1081"] = {"handbook_prereqs": "", "prereqs": []} # put in db prob
-    d["COMP9814"] = {"handbook_prereqs": "", "prereqs": {"COMP9024": ""}} # put in db
-    d["COMP9441"] = {"handbook_prereqs": "", "prereqs": []} # TODO: Remove references of this in db (reparse everything). course doesn't exist
-    d["SENG1031"] = {"handbook_prereqs": "", "prereqs": []} # TODO: Remove references of this in db (reparse everything). course doesn't exist
+    # d["MATH1081"] = {"handbook_prereqs": "", "prereqs": []} # put in db prob
+    # d["COMP9814"] = {"handbook_prereqs": "", "prereqs": {"COMP9024": ""}} # put in db
+    # d["COMP9441"] = {"handbook_prereqs": "", "prereqs": []} # TODO: Remove references of this in db (reparse everything). course doesn't exist
+    # d["SENG1031"] = {"handbook_prereqs": "", "prereqs": []} # TODO: Remove references of this in db (reparse everything). course doesn't exist
     return jsonify(d)
 
 def get_some_prereqs(connection):

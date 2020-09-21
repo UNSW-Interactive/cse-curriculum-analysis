@@ -9,9 +9,13 @@ import { showLegend, showCourseInfo, showSearchResults, showCourseRelationship, 
 function showCourseSimilarity(subcategories, cy) {
     const similarityGraph = document.getElementById('cy-similarity');
     const prereqGraph = document.getElementById('cy-prereqs');
+    const courseSimButton = document.getElementById('showSimilarity');
+    const coursePrereqsButton = document.getElementById('showPrereqs');
+    coursePrereqsButton.classList.remove('is-info');
+    courseSimButton.classList.add('is-info');
     prereqGraph.style.display = "none";
     similarityGraph.style.display = "block";
-    showLegend(subcategories);
+    showLegend(subcategories, cy);
     currGraph = cy;
     currGraphLegend = subcategories;
 }
@@ -19,9 +23,13 @@ function showCourseSimilarity(subcategories, cy) {
 function showPrereqs(course_legend, cy) {
     const similarityGraph = document.getElementById('cy-similarity');
     const prereqGraph = document.getElementById('cy-prereqs');
+    const courseSimButton = document.getElementById('showSimilarity');
+    const coursePrereqsButton = document.getElementById('showPrereqs');
+    coursePrereqsButton.classList.add('is-info');
+    courseSimButton.classList.remove('is-info');
     similarityGraph.style.display = "none";
     prereqGraph.style.display = "block";
-    showLegend(course_legend);
+    showLegend(course_legend, cy);
     currGraph = cy;
     currGraphLegend = course_legend;
 }
@@ -71,12 +79,7 @@ export var currGraphLegend;
     const showPrereqsButton = document.getElementById('showPrereqs');
 
     toggleSidebar.addEventListener('click', hideShowSidebar)
-    const displayCourseInfoSidebar = node => {
-        const targetNode = node.target;
-        getCourseInfo(targetNode._private.data.id).then(course_info => {
-            showCourseInfo(course_info);
-        })
-    };
+
 
     const displayEdgeInfoSidebar = edge => {
         const targetEdge = edge.target;
@@ -85,7 +88,7 @@ export var currGraphLegend;
         const courseA = targetEdge._private.data.source;
         const courseB = targetEdge._private.data.target;
         getRelation(courseA, courseB).then(relationship_info => {
-            showCourseRelationship(courseA, courseB, relationship_info, subcategories_colours, edgeName);
+            showCourseRelationship(courseA, courseB, relationship_info, subcategories_colours, edgeName, currGraph);
         })
     }
 
@@ -139,6 +142,15 @@ export var currGraphLegend;
                 name: 'circle',
             }
         });
+
+        currGraph = similarityGraph;
+        const displayCourseInfoSidebar = node => {
+            const targetNode = node.target;
+            getCourseInfo(targetNode._private.data.id).then(course_info => {
+                showCourseInfo(course_info, currGraph);
+            })
+        };
+
         similarityGraph.nodes().on('click', displayCourseInfoSidebar);
         similarityGraph.edges().on('click', displayEdgeInfoSidebar);
         similarityGraph.on('mouseover', 'node', function(e) {
@@ -287,7 +299,7 @@ export var currGraphLegend;
                     const searchKey = searchField.value.split(" ").join(",");
                     search(searchKey).then(
                         search_response => {
-                            showSearchResults(searchField.value, search_response);
+                            showSearchResults(searchField.value, search_response, currGraph);
                         }
                     )
                 }

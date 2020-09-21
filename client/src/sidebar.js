@@ -1,5 +1,5 @@
 import { currGraphLegend } from './index.js';
-import { unlikeRelation, undislikeRelation, likeRelation, dislikeRelation } from './api.js';
+import { unlikeRelation, undislikeRelation, likeRelation, dislikeRelation, getCoursesInfo } from './api.js';
 
 export function showLegend(items) {
     clearSidebar();
@@ -22,10 +22,12 @@ export function showLegend(items) {
 
     divLegend.appendChild(h3Legend);
     divLegend.appendChild(ulLegend);
-    addToSidebar(divLegend, false);
+    addToSidebar(divLegend, false, null);
+    addToSidebar(document.createElement('hr'), false, null);
+    showFilteringOptions();
 }
 
-export function showCourseInfo(course_info) {
+export function showCourseInfo(course_info, currGraph) {
     clearSidebar();
 
     const divCI = document.createElement('div');
@@ -72,10 +74,10 @@ export function showCourseInfo(course_info) {
     divCI.appendChild(handbookSummary);
     divCI.appendChild(br2);
     divCI.appendChild(ulCI);
-    addToSidebar(divCI);
+    addToSidebar(divCI, true, currGraph);
 }
 
-export function showSearchResults(search_term, search_results) {
+export function showSearchResults(search_term, search_results, currGraph) {
     clearSidebar();
     const div = document.createElement('div');
     const h3 = document.createElement('h3');
@@ -102,11 +104,11 @@ export function showSearchResults(search_term, search_results) {
     div.appendChild(h3);
     div.appendChild(p);
 
-    addToSidebar(div);
+    addToSidebar(div, true, currGraph);
 
 };
 
-export function showCourseRelationship(course_a, course_b, relationship_info, subcategories_colours, edgeName) {
+export function showCourseRelationship(course_a, course_b, relationship_info, subcategories_colours, edgeName, currGraph) {
     clearSidebar();
     const div = document.createElement('div');
     const h3 = document.createElement('h3');
@@ -229,7 +231,7 @@ export function showCourseRelationship(course_a, course_b, relationship_info, su
     div.appendChild(document.createElement('br'));
     div.appendChild(likeDislike);
 
-    addToSidebar(div);
+    addToSidebar(div, true, currGraph);
 }
 
 export function hideShowSidebar() {
@@ -243,7 +245,53 @@ export function hideShowSidebar() {
     }
 }
 
-function addToSidebar(node, go_back = true) {
+export function showFilteringOptions() {
+    const div = document.createElement('div');
+    const filterTitle = document.createElement('h3');
+    filterTitle.innerText = 'Filter';
+    filterTitle.classList.add('title');
+    const classes = ['Undergraduate', 'Postgraduate', 'Both'];
+    div.appendChild(filterTitle);
+    const radioDiv = document.createElement('div');
+    classes.forEach(class_ => {
+        const input = document.createElement('input');
+        input.type = 'radio';
+        input.id = class_;
+        input.name = 'classes';
+        input.value = class_;
+        const label = document.createElement('label');
+        label.for = class_;
+        label.innerText = class_;
+        radioDiv.appendChild(input);
+        radioDiv.appendChild(label);
+        input.addEventListener('click', () => {
+            // unhide all
+            // currGraph.nodes().style("display", "");
+            const course_codes = currGraph.nodes().map(ele => {
+                return ele._private.data.id;
+            });
+
+            getCoursesInfo(course_codes).then(grad_courses => {
+                if (class_ === 'Undergraduate') {
+                    currGraph.filter(ele => grad_courses['undergraduate'].includes(ele.data('id'))).style('display', '')
+                    currGraph.filter(ele => grad_courses['postgraduate'].includes(ele.data('id'))).style('display', 'none')
+                } else if (class_ === 'Postgraduate') {
+                    currGraph.filter(ele => grad_courses['postgraduate'].includes(ele.data('id'))).style('display', '')
+                    currGraph.filter(ele => grad_courses['undergraduate'].includes(ele.data('id'))).style('display', 'none')
+                } else {
+                    // unhide all
+                    currGraph.nodes().style("display", "");
+                }
+            });
+        })
+    })
+    radioDiv.childNodes[radioDiv.childNodes.length - 2].checked = true;
+    div.appendChild(radioDiv)
+
+    addToSidebar(div, false, null);
+}
+
+function addToSidebar(node, go_back = true, currGraph) {
     const sidebar = document.getElementById('sidebar');
     if (go_back) {
         const goBackNode = document.createElement('a');
@@ -251,7 +299,7 @@ function addToSidebar(node, go_back = true) {
         goBackNode.style.marginTop = '10px';
         goBackNode.style.marginLeft = '10px';
         goBackNode.addEventListener('click', () => {
-            showLegend(currGraphLegend);
+            showLegend(currGraphLegend, currGraph);
         })
         node.querySelector('h3').appendChild(goBackNode);
         // sidebar.appendChild(goBackNode);

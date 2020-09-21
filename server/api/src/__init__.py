@@ -8,7 +8,7 @@ import signal
 from src.routes.index import Index
 from src.routes.graph import generate_graph
 from src.routes.prereqs import api_get_all_prereqs
-from src.routes.course import get_course_info
+from src.routes.course import get_course_info, get_many_course_info
 from src.routes.search import search_courses
 from src.routes.relationship import get_course_relationship
 from src.routes.vote import like, dislike, unlike, undislike
@@ -44,6 +44,15 @@ def graph():
 @app.route('/prereqs', methods=['GET'])
 def prereqs():
     return api_get_all_prereqs(get_db())
+
+@app.route('/course', methods=['POST'])
+def api_courses():
+    body = request.get_json()
+    keys = ('courses',)
+    print(body)
+    if any(i not in body for i in keys):
+        return Response("Body required JSON with 'courses' keys.", status=400)
+    return get_many_course_info(get_db(), body)
 
 @app.route('/course/<string:course>', methods=['GET'])
 def api_course(course):

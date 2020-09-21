@@ -7,7 +7,7 @@
 ## maybe don't need... but maybe would need if want to run locally someone else
 
 # docker exec -it 312bec8036f6 bash
-# psql -U postgres
+# psql -d cse-curriculum-analysis -U postgres
 FROM postgres:latest
 
 COPY dump.pgdata ./
