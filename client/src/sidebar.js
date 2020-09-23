@@ -1,7 +1,7 @@
 import { currGraphLegend } from './index.js';
 import { unlikeRelation, undislikeRelation, likeRelation, dislikeRelation, getCoursesInfo } from './api.js';
 
-export function showLegend(items) {
+export function showLegend(items, currGraph) {
     clearSidebar();
 
     const divLegend = document.createElement('div');
@@ -24,7 +24,7 @@ export function showLegend(items) {
     divLegend.appendChild(ulLegend);
     addToSidebar(divLegend, false, null);
     addToSidebar(document.createElement('hr'), false, null);
-    showFilteringOptions();
+    showFilteringOptions(currGraph);
 }
 
 export function showCourseInfo(course_info, currGraph) {
@@ -245,7 +245,7 @@ export function hideShowSidebar() {
     }
 }
 
-export function showFilteringOptions() {
+export function showFilteringOptions(currGraph) {
     const div = document.createElement('div');
     const filterTitle = document.createElement('h3');
     filterTitle.innerText = 'Filter';
