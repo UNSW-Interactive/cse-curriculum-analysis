@@ -1,5 +1,5 @@
 import { currGraphLegend } from './index.js';
-import { unlikeRelation, undislikeRelation, likeRelation, dislikeRelation, getCoursesInfo } from './api.js';
+import { unlikeRelation, undislikeRelation, likeRelation, dislikeRelation, getCoursesInfo, logg } from './api.js';
 
 export function showLegend(items, currGraph) {
     clearSidebar();
@@ -270,7 +270,7 @@ export function showFilteringOptions(currGraph) {
             const course_codes = currGraph.nodes().map(ele => {
                 return ele._private.data.id;
             });
-
+            logg(`Filtering by ${class_} in graph ${(currGraph._private.elements.length > 200) ? "prerequisites" : "similarity"}.`);
             getCoursesInfo(course_codes).then(grad_courses => {
                 if (class_ === 'Undergraduate') {
                     currGraph.filter(ele => grad_courses['undergraduate'].includes(ele.data('id'))).style('display', '')

@@ -82,3 +82,15 @@ export function dislikeRelation(a, b) {
 export function undislikeRelation(a, b) {
     return fetch(url + '/vote', createRelationVoteRequest(a, b, 'undislike'));
 }
+
+export function logg(msg) {
+    return fetch(url + '/log', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            msg: msg
+        })
+    })
+}

@@ -6,3 +6,4 @@ db-data/
 db-dumps/
 .env.prod*
 *.pgdata
+logs/

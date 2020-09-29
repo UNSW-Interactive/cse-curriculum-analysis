@@ -1,10 +1,12 @@
 from flask import Flask, g, request, Response
+from flask.logging import create_logger
 from flask_restful import Api
 from flask_cors import CORS, cross_origin
 import psycopg2
 import time
 import sys
 import signal
+import logging
 from src.routes.index import Index
 from src.routes.graph import generate_graph
 from src.routes.prereqs import api_get_all_prereqs
@@ -14,6 +16,8 @@ from src.routes.relationship import get_course_relationship
 from src.routes.vote import like, dislike, unlike, undislike
 
 app = Flask(__name__)
+logger = create_logger(app)
+logger.setLevel(logging.INFO) # Set debugging 
 # Access-Control-Allow-Origin header
 CORS(app)
 # api = Api(app)
@@ -49,7 +53,6 @@ def prereqs():
 def api_courses():
     body = request.get_json()
     keys = ('courses',)
-    print(body)
     if any(i not in body for i in keys):
         return Response("Body required JSON with 'courses' keys.", status=400)
     return get_many_course_info(get_db(), body)
@@ -90,3 +93,11 @@ def vote_on_relationship():
         return Response("'action' must be either 'like'/'dislike'/'unlike'/'undislike'", 400)
     return Response("success", 202)
         
+@app.route('/log', methods=['POST'])
+def log():
+    body = request.get_json()
+    if 'msg' not in body:
+        return Response(status=400)
+    
+    logger.info(body['msg'])
+    return Response("success", 200)

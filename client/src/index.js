@@ -3,7 +3,7 @@ import dagre from 'cytoscape-dagre';
 cytoscape.use(dagre);
 
 import { generateGraphElements, generatePrereqGraphElements } from './graph.js';
-import { getCourseInfo, search, getRelation } from './api.js';
+import { getCourseInfo, search, getRelation, logg } from './api.js';
 import { showLegend, showCourseInfo, showSearchResults, showCourseRelationship, hideShowSidebar } from './sidebar.js';
 
 function showCourseSimilarity(subcategories, cy) {
@@ -52,8 +52,18 @@ function highlightCourse(courseNode, cy) {
     })
 }
 
+
+
 var currGraph;
 export var currGraphLegend;
+
+function getCurrGraphName() {
+    if (currGraph._private.elements.length > 200) {
+        return "prerequisites";
+    }
+    return "similarity";
+}
+
 (function main() {
     const subcategories_colours = [
         ['Algorithms and data structures', '#e6194b', 'ads'], // red
@@ -83,11 +93,11 @@ export var currGraphLegend;
 
     const displayEdgeInfoSidebar = edge => {
         const targetEdge = edge.target;
-        console.log(edge.target._private.data);
         const edgeName = edge.target._private.data.id.slice(0, 16);
         const courseA = targetEdge._private.data.source;
         const courseB = targetEdge._private.data.target;
         getRelation(courseA, courseB).then(relationship_info => {
+            logg(`Showing course relation between ${courseA} and ${courseB}.`);
             showCourseRelationship(courseA, courseB, relationship_info, subcategories_colours, edgeName, currGraph);
         })
     }
@@ -145,6 +155,7 @@ export var currGraphLegend;
 
         currGraph = similarityGraph;
         const displayCourseInfoSidebar = node => {
+            logg(`Clicked on graph node in graph ${getCurrGraphName()}`);
             const targetNode = node.target;
             getCourseInfo(targetNode._private.data.id).then(course_info => {
                 showCourseInfo(course_info, currGraph);
@@ -233,6 +244,7 @@ export var currGraphLegend;
         // TODO: Easy way of sharing these events for both graphs
         prereqsGraph.on('mouseover', 'node', function(e) {
             highlightCourse(e.target, prereqsGraph);
+            logg(`Highlighted course prerequisites.`);
             e.target.predecessors().animate({
                 style: {
                     lineColor: 'red',
@@ -277,18 +289,19 @@ export var currGraphLegend;
                 if (event.target.value.length === 8) {
                     const courseNode = currGraph.getElementById(event.target.value.toUpperCase());
                     if (courseNode.empty()) {
+
                         return;
                     }
+                    logg(`Searched for course ${event.target.value.length} in graph ${getCurrGraphName()}`);
 
-
-                    console.log(courseNode);
+                    // console.log(courseNode);
                     highlightCourse(courseNode, currGraph);
                     currGraph.elements().not(courseNode).addClass('semitransp').addClass('semitransp');
                     // currGraph.zoom({
                     //     level: 2.0, // the zoom level
                     //     renderedPosition: { x: 100, y: 100 }
                     // });
-                    console.log(courseNode._private.position)
+                    // console.log(courseNode._private.position)
                     currGraph.animate({
                         zoom: {
                             level: 1.0,
@@ -299,6 +312,7 @@ export var currGraphLegend;
                     const searchKey = searchField.value.split(" ").join(",");
                     search(searchKey).then(
                         search_response => {
+                            logg(`Searching for: ${searchKey} in graph ${getCurrGraphName()}.`);
                             showSearchResults(searchField.value, search_response, currGraph);
                         }
                     )
@@ -307,7 +321,13 @@ export var currGraphLegend;
 
         });
 
-        showCourseSimilarityButton.addEventListener('click', _ => showCourseSimilarity(subcategories_colours, similarityGraph), false);
-        showPrereqsButton.addEventListener('click', _ => showPrereqs(course_level_colours, prereqsGraph), false);
+        showCourseSimilarityButton.addEventListener('click', _ => {
+            logg("Clicked on course similarity button");
+            showCourseSimilarity(subcategories_colours, similarityGraph);
+        }, false);
+        showPrereqsButton.addEventListener('click', _ => {
+            logg("Clicked on prereq graph button");
+            showPrereqs(course_level_colours, prereqsGraph);
+        }, false);
     })
 })()
