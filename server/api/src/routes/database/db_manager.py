@@ -48,7 +48,7 @@ def get_all_prereqs(conn):
     return res
 
 def get_courses_information(conn, courses):
-    res = {'postgraduate':[], 'undergraduate':[]}
+    res = {'postgraduate':[], 'undergraduate':[], 'both':[]}
     query = """select course_code, course_name, host_url, handbook_summary, grad_level, handbook_prereqs from courses where course_code = ANY(%s);"""
     cursor = conn.cursor()
     cursor.execute(query, (courses,))

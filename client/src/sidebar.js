@@ -38,15 +38,13 @@ export function showCourseInfo(course_info, currGraph) {
     h3subtitleCI.innerText = course_info['course_name'];
     h3subtitleCI.classList.add('subtitle');
     const pCI = document.createElement('p');
-    pCI.style.fontSize = 'small';
     const bCI = document.createElement('b');
     bCI.innerText = 'Prerequisites: '
     const spanCI = document.createElement('span');
     spanCI.innerText = course_info['handbook_prereqs'] && course_info['handbook_prereqs'].length > 0 ? course_info['handbook_prereqs'] : 'None';
     const br1 = document.createElement('br');
-    const handbookSummary = document.createElement('div', { 'style': 'font-size: small' });
+    const handbookSummary = document.createElement('div');
     handbookSummary.innerText = course_info['handbook_summary'];
-    handbookSummary.style.fontSize = 'small';
     const br2 = document.createElement('br');
     const ulCI = document.createElement('ul');
     ulCI.style.marginLeft = '30px';
@@ -84,7 +82,6 @@ export function showSearchResults(search_term, search_results, currGraph) {
     h3.classList.add('title');
     h3.innerText = 'Results';
     const p = document.createElement('p');
-    p.style.fontSize = 'small';
     const b = document.createElement('b');
     b.appendChild(document.createTextNode(search_term));
 
@@ -115,7 +112,6 @@ export function showCourseRelationship(course_a, course_b, relationship_info, su
     h3.classList.add('title');
     h3.innerText = 'Similarity';
     const p = document.createElement('p');
-    // p.style.fontSize = 'small';
     p.innerHTML = `<b>${course_a}</b> and <b>${course_b}</b> have these similarities:`;
     p.appendChild(document.createElement('br'));
     p.appendChild(document.createElement('br'));
@@ -275,9 +271,11 @@ export function showFilteringOptions(currGraph) {
                 if (class_ === 'Undergraduate') {
                     currGraph.filter(ele => grad_courses['undergraduate'].includes(ele.data('id'))).style('display', '')
                     currGraph.filter(ele => grad_courses['postgraduate'].includes(ele.data('id'))).style('display', 'none')
+                    currGraph.filter(ele => ele.data('or_node') && ele.isNode() && ele.degree() < 1).style('display', 'none')
                 } else if (class_ === 'Postgraduate') {
                     currGraph.filter(ele => grad_courses['postgraduate'].includes(ele.data('id'))).style('display', '')
                     currGraph.filter(ele => grad_courses['undergraduate'].includes(ele.data('id'))).style('display', 'none')
+                    currGraph.filter(ele => ele.data('or_node') && ele.isNode() && ele.degree() < 1).style('display', 'none')
                 } else {
                     // unhide all
                     currGraph.nodes().style("display", "");
