@@ -41,7 +41,7 @@ export function getCoursesInfo(course_codes) {
 }
 
 export function search(search_term) {
-    return fetch(url + '/search?phrase=' + search_term).then(
+    return fetch(url + '/search?phrase=' + search_term.toLowerCase()).then(
         resp => {
             return resp.json();
         }
