@@ -271,11 +271,11 @@ export function showFilteringOptions(currGraph) {
                 if (class_ === 'Undergraduate') {
                     currGraph.filter(ele => grad_courses['undergraduate'].includes(ele.data('id'))).style('display', '')
                     currGraph.filter(ele => grad_courses['postgraduate'].includes(ele.data('id'))).style('display', 'none')
-                    currGraph.filter(ele => ele.data('or_node') && ele.isNode() && ele.degree() < 1).style('display', 'none')
+                    currGraph.filter(ele => ele.data('or_node') && ele.isNode() && ele.incomers(":visible").length === 0).style('display', 'none')
                 } else if (class_ === 'Postgraduate') {
                     currGraph.filter(ele => grad_courses['postgraduate'].includes(ele.data('id'))).style('display', '')
                     currGraph.filter(ele => grad_courses['undergraduate'].includes(ele.data('id'))).style('display', 'none')
-                    currGraph.filter(ele => ele.data('or_node') && ele.isNode() && ele.degree() < 1).style('display', 'none')
+                    currGraph.filter(ele => ele.data('or_node') && ele.isNode() && ele.incomers(":visible").length === 0).style('display', 'none')
                 } else {
                     // unhide all
                     currGraph.nodes().style("display", "");

@@ -286,10 +286,11 @@ function getCurrGraphName() {
         const searchField = document.getElementById('graphSearch');
         searchField.addEventListener('keyup', (event) => {
             if (event.key === 'Enter') {
-                if (event.target.value.length === 8) {
-                    const courseNode = currGraph.getElementById(event.target.value.toUpperCase());
+                const reg = /([A-Z]{4}[0-9]{4})/;
+                const courseSearch = reg.exec(event.target.value);
+                if (courseSearch) {
+                    const courseNode = currGraph.getElementById(courseSearch[0].toUpperCase());
                     if (courseNode.empty()) {
-
                         return;
                     }
                     logg(`Searched for course ${event.target.value.length} in graph ${getCurrGraphName()}`);
