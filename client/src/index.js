@@ -74,12 +74,12 @@ function getCurrGraphName() {
         ['Concurrency', '#9a6324', 'conc'] //brown
     ];
     const course_level_colours = [
-        ['Level 1 course', '#3cb44b'],
-        ['Level 2 course', '#4363d8'],
-        ['Level 3 course', '#ffe119'],
-        ['Level 4 course', '#f58231'],
-        ['Level 6 course', '#e6194b'],
-        ['Level 9 course', '#911eb4'],
+        ['Level 1 course', '#4ea259'],
+        ['Level 2 course', '#546dc7'],
+        ['Level 3 course', '#ffde05'],
+        ['Level 4 course', '#e48542'],
+        ['Level 6 course', '#d22d55'],
+        ['Level 9 course', '#761892'],
     ]
     const edge_weight_threshold = 0;
     const showCourseSimilarityButton = document.getElementById('showSimilarity');
