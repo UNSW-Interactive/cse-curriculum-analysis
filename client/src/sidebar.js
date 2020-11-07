@@ -1,6 +1,10 @@
 import { currGraphLegend } from './index.js';
 import { unlikeRelation, undislikeRelation, likeRelation, dislikeRelation, getCoursesInfo, logg } from './api.js';
 
+function getCurrGraphName(currGraph) {
+    return currGraph._private.data.name;
+}
+
 export function showLegend(items, currGraph) {
     clearSidebar();
 
@@ -8,6 +12,9 @@ export function showLegend(items, currGraph) {
     const h3Legend = document.createElement('h3');
     h3Legend.classList.add('title');
     h3Legend.appendChild(document.createTextNode('Legend'));
+    const h5Legend = document.createElement('h5');
+    h5Legend.innerHTML = '<b>Click on the squares to filter:</b>';
+
     const ulLegend = document.createElement('ul');
     ulLegend.classList.add('ordering');
 
@@ -15,13 +22,71 @@ export function showLegend(items, currGraph) {
         const li = document.createElement('li');
         const colour_block = document.createElement('span');
         colour_block.style['background'] = item[1];
+        colour_block.addEventListener('click', () => {
+            if (getCurrGraphName(currGraph) === 'similarity') {
+                // currGraph.filter(ele => !(ele._private.data.subcat !== item[0])).style('display', '');
+                // currGraph.filter(ele => !ele.isNode() && ele._private.data.subcat !== item[0]).style('display', 'none');
+                const currThreshold = parseInt(document.querySelector('#slider-output').innerText)
+                currGraph.edges().filter((e) => {
+                    return e._private.data.subcat === item[0] && e.width() * 10 >= currThreshold;
+                }).style('display', '');
+                currGraph.edges().filter((e) => {
+                    return !(e._private.data.subcat === item[0] && e.width() * 10 >= currThreshold);
+                }).style('display', 'none');
+
+            }
+        })
         li.appendChild(colour_block);
         li.appendChild(document.createTextNode(item[0]));
         ulLegend.appendChild(li);
     });
 
     divLegend.appendChild(h3Legend);
+    if (getCurrGraphName(currGraph) === 'similarity') {
+        divLegend.appendChild(h5Legend);
+    }
+
+    const slider = document.createElement('div');
+    slider.classList.add('buttons', 'is-centered');
+    slider.style.marginBottom = '0px';
+    const theSlider = document.createElement('input');
+    theSlider.id = 'threshold-slider';
+    theSlider.classList.add('slider', 'has-output', 'is-fullwidth')
+    const defaultVal = '25';
+    theSlider.min = '0';
+    theSlider.max = '100';
+    theSlider.value = defaultVal;
+    theSlider.step = '1';
+    theSlider.type = 'range';
+    slider.appendChild(theSlider);
+    const sliderRes = document.createElement('output');
+    sliderRes.id = 'slider-output';
+    sliderRes.innerText = defaultVal;
+    slider.addEventListener('input', () => {
+        sliderRes.innerText = theSlider.value;
+        if (getCurrGraphName(currGraph) === 'similarity') {
+            currGraph.edges().filter((e) => {
+                return e.width() * 10 <= parseInt(theSlider.value);
+            }).style('display', 'none');
+            //above
+            currGraph.edges().filter((e) => {
+                return e.width() * 10 >= parseInt(theSlider.value);
+            }).style('display', '');
+        }
+    })
+    const div2 = document.createElement('div');
+    div2.classList.add('buttons', 'is-centered');
+    div2.appendChild(sliderRes);
+    // slider.appendChild(document.createElement('br'))
+    // slider.appendChild(sliderRes);
+
     divLegend.appendChild(ulLegend);
+
+    if (getCurrGraphName(currGraph) === 'similarity') {
+        divLegend.appendChild(document.createElement('br'));
+        divLegend.appendChild(slider);
+        divLegend.appendChild(div2);
+    }
     addToSidebar(divLegend, false, null);
     addToSidebar(document.createElement('hr'), false, null);
     showFilteringOptions(currGraph);
@@ -57,7 +122,8 @@ export function showCourseInfo(course_info, currGraph) {
     aCI1.setAttribute('href', course_info['host_url']);
     const aCI2 = document.createElement('a');
     aCI2.innerText = 'UNSW Handbook';
-    aCI2.setAttribute('href', `https://www.handbook.unsw.edu.au/${course_info['grad_level']}/courses/2020/${course_info['course_code']}`);
+    const handbook_lvl = course_info['grad_level'] === 'both' ? 'postgraduate' : handbook_lvl;
+    aCI2.setAttribute('href', `https://www.handbook.unsw.edu.au/${handbook_lvl}/courses/2020/${course_info['course_code']}`);
 
     liCI1.appendChild(aCI1);
     liCI2.appendChild(aCI2);
@@ -247,9 +313,12 @@ export function showFilteringOptions(currGraph) {
     filterTitle.innerText = 'Filter';
     filterTitle.classList.add('title');
     const classes = ['Undergraduate', 'Postgraduate', 'Both'];
-    div.appendChild(filterTitle);
+    // div.appendChild(filterTitle);
     const radioDiv = document.createElement('div');
+    const ul = document.createElement('ul');
+    radioDiv.appendChild(ul);
     classes.forEach(class_ => {
+        const li = document.createElement('li');
         const input = document.createElement('input');
         input.type = 'radio';
         input.id = class_;
@@ -257,9 +326,10 @@ export function showFilteringOptions(currGraph) {
         input.value = class_;
         const label = document.createElement('label');
         label.for = class_;
-        label.innerText = class_;
-        radioDiv.appendChild(input);
-        radioDiv.appendChild(label);
+        label.innerText = ' ' + class_;
+        li.appendChild(input);
+        li.appendChild(label);
+        ul.appendChild(li);
         input.addEventListener('click', () => {
             // unhide all
             // currGraph.nodes().style("display", "");
@@ -279,12 +349,41 @@ export function showFilteringOptions(currGraph) {
                 } else {
                     // unhide all
                     currGraph.nodes().style("display", "");
+                    // const similarityCourses = ['COMP9020', 'COMP6752', 'COMP9242', 'COMP4601', 'COMP6741', 'COMP3141', 'COMP3821', 'COMP3211', 'COMP1511', 'COMP2111', 'COMP9517', 'COMP3231', 'COMP3161', 'COMP3222', 'COMP4418', 'COMP9334'];
+                    // currGraph.filter(ele => {
+                    //     console.log(ele.data('id'))
+                    //     return similarityCourses.includes(ele.data('id'))
+                    // }).style('display', '')
+                    // currGraph.filter(ele => {
+                    //     console.log(ele.data('id'))
+                    //     return !similarityCourses.includes(ele.data('id'))
+                    // }).style('display', 'none')
                 }
             });
         })
     })
-    radioDiv.childNodes[radioDiv.childNodes.length - 2].checked = true;
+    ul.childNodes[ul.childNodes.length - 1].querySelector('input').checked = true;
     div.appendChild(radioDiv)
+    const divRB = document.createElement('div');
+    divRB.classList.add('buttons', 'is-centered');
+    const resetButton = document.createElement('button');
+    resetButton.classList.add('button', 'is-light');
+    resetButton.innerText = 'Reset all filters';
+    resetButton.addEventListener('click', () => {
+        currGraph.nodes().style("display", "");
+        currGraph.edges().style('display', "");
+        document.querySelector('#threshold-slider').value = 25;
+        currGraph.edges().filter((e) => {
+            return e.width() * 10 <= 25;
+        }).style('display', 'none');
+        document.querySelector('#slider-output').value = 25;
+        ul.childNodes[ul.childNodes.length - 1].querySelector('input').checked = true;
+    })
+    divRB.appendChild(resetButton);
+    div.appendChild(document.createElement('br'))
+    if (getCurrGraphName(currGraph) === 'similarity') {
+        div.appendChild(divRB)
+    }
 
     addToSidebar(div, false, null);
 }

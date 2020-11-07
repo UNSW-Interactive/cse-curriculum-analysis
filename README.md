@@ -29,7 +29,7 @@ $ flask run
 
 #### front end
 
-Change URL in index.js
+Change URL in api.js
 
 ```shell
 $ cd client

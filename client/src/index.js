@@ -58,10 +58,7 @@ var currGraph;
 export var currGraphLegend;
 
 function getCurrGraphName() {
-    if (currGraph._private.elements.length > 200) {
-        return "prerequisites";
-    }
-    return "similarity";
+    return currGraph._private.data.name;
 }
 
 (function main() {
@@ -84,7 +81,7 @@ function getCurrGraphName() {
         ['Level 6 course', '#e6194b'],
         ['Level 9 course', '#911eb4'],
     ]
-    const edge_weight_threshold = 30;
+    const edge_weight_threshold = 0;
     const showCourseSimilarityButton = document.getElementById('showSimilarity');
     const showPrereqsButton = document.getElementById('showPrereqs');
 
@@ -104,7 +101,7 @@ function getCurrGraphName() {
 
     Promise.all([generateGraphElements(), generatePrereqGraphElements()]).then(graphs_elements => {
 
-        const similarityGraphElements = graphs_elements[0][0].filter(ele => !ele.data.weight || ele.data.weight > edge_weight_threshold);
+        const similarityGraphElements = graphs_elements[0][0].filter(ele => !ele.data.weight || ele.data.weight > 0);
         const similarityGraphColouredNodes = graphs_elements[0][1];
         const similarityGraph = cytoscape({
             container: document.getElementById('cy-similarity'),
@@ -153,6 +150,7 @@ function getCurrGraphName() {
             }
         });
 
+        similarityGraph._private.data['name'] = 'similarity';
         currGraph = similarityGraph;
         const displayCourseInfoSidebar = node => {
             logg(`Clicked on graph node in graph ${getCurrGraphName()}`);
@@ -176,6 +174,10 @@ function getCurrGraphName() {
                 duration: 0
             });
         });
+
+        similarityGraph.edges().filter((e) => {
+            return e.width() * 10 < 25;
+        }).style('display', 'none');
 
         const prereqsGraph = cytoscape({
             container: document.getElementById('cy-prereqs'),
@@ -240,6 +242,7 @@ function getCurrGraphName() {
                 name: 'breadthfirst'
             }
         });
+        prereqsGraph._private.data['name'] = 'prerequisites';
 
         // TODO: Easy way of sharing these events for both graphs
         prereqsGraph.on('mouseover', 'node', function(e) {
