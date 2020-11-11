@@ -74,12 +74,12 @@ function getCurrGraphName() {
         ['Concurrency', '#9a6324', 'conc'] //brown
     ];
     const course_level_colours = [
-        ['Level 1 course', '#4ea259'],
-        ['Level 2 course', '#546dc7'],
-        ['Level 3 course', '#ffde05'],
-        ['Level 4 course', '#e48542'],
-        ['Level 6 course', '#d22d55'],
-        ['Level 9 course', '#761892'],
+        ['Level 1 course', '#8ac793'],
+        ['Level 2 course', '#9eacdf'],
+        ['Level 3 course', '#fff08e'],
+        ['Level 4 course', '#f2c7a8'],
+        ['Level 6 course', '#ea9eb0'],
+        ['Level 9 course', '#d994ed'],
     ]
     const edge_weight_threshold = 0;
     const showCourseSimilarityButton = document.getElementById('showSimilarity');
@@ -198,8 +198,9 @@ function getCurrGraphName() {
                         "text-halign": "center",
                         "text-wrap": "wrap",
                         "color": ele => {
-                            // return ele.data('or_node') ? '#000000' : '#' + ('000000' + (('0xffffff' ^ course_level_colours[ele.data('id').charAt(4)]).toString(16))).slice(-6)
-                            return "#ffffff"; // todo: complement colour of bg colour
+                            return "black"; // todo: complement colour of bg colour
+                            // return ele.data('or_node') ? 'black' :
+                            //     course_level_colours.find(lvl => 'Level ' + ele.data('id').charAt(4) + ' course' === lvl[0])[1];
                         }
                     }
                 },

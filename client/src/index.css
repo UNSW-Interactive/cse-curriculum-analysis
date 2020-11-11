@@ -35,9 +35,14 @@ li.external-link {
     list-style-type: circle;
 }
 
+ul.ordering li {
+    margin-top: 5px;
+    display: flex;
+}
+
 ul.ordering li span {
-    width: 12px;
-    height: 12px;
+    width: 24px;
+    height: 24px;
     background: red;
     display: inline-block;
     margin-right: 6px;
